@@ -65,7 +65,7 @@ Install apps, force close apps, clear cache, change terminal shell, add notifica
 Copy this line in your terminal and run it.
 
 ```bash
-git clone https://github.com/angelespejo/macos-terminal-utils.git umac && chmod a+x /* && ./umac/.install.sh
+git clone https://github.com/angelespejo/macos-terminal-utils.git umac && chmod a+x umac/* && cd umac && ./install.sh 
 ```
 
 ## ⚙️ Usage
