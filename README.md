@@ -65,7 +65,7 @@ Install apps, force close apps, clear cache, change terminal shell, add notifica
 Copy this line in your terminal and run it.
 
 ```bash
-git clone https://github.com/angelespejo/macos-terminal-utils.git umac && chmod a+x umac/* && cd umac && ./install.sh 
+git clone https://github.com/angelespejo/umac.git umac && chmod a+x umac/* && cd umac && ./install.sh 
 ```
 
 ## ⚙️ Usage
@@ -362,7 +362,7 @@ Help me to develop more interesting things.
 
 The software is licensed with GPL-3 (GNU GENERAL PUBLIC LICENSE Version 3)
 
-[Read more](https://github.com/PigeonPosse/linter/LICENSE)
+[Read more](https://github.com/angelespejo/umac/LICENSE)
 
 ### Collaborators
 
