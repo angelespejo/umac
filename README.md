@@ -70,6 +70,10 @@ git clone https://github.com/angelespejo/umac.git umac && chmod a+x umac/* && cd
 
 ## ⚙️ Usage
 
+```bash
+umac [option/s] [--flags/s]
+```
+
 With ```umac``` you can do many different things. The idea could be to add more and more, who knows 😎
 
 Here is a list of how to use ```umac```
@@ -77,7 +81,7 @@ Here is a list of how to use ```umac```
 ### Apps
 
 ```bash
-umac app [option]
+umac app [option] [--flags]
 ```
 
 #### Install
