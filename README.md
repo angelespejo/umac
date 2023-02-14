@@ -19,6 +19,8 @@
 
 CREATED BY ANGELO 🐦
 
+# Example usage: umac not "Hello! 👋 \nDo you accept the challenge? 🍎🐢" 
+
 -->
 ![Header](docs/header.png)
 

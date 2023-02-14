@@ -20,5 +20,3 @@ fi
 
 
 ############################################################
-
-# Example: umac notification "Hello! 👋 \nDo you accept the challenge? 🍎🐢" 

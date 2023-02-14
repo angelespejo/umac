@@ -19,7 +19,7 @@ workflow(){
 		fi
 
 		if [[ ! -d $script_services_dir ]]; then
-			mkdir $script_services_dir
+			mkdir -p $script_services_dir
 		fi
 
 		cp -R $services_dir/* $script_services_dir
