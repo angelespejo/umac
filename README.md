@@ -82,23 +82,25 @@ umac app [option]
 
 #### Install
 
-Install apps using HomeBrew. Don't worry if HomeBrew is not installed on your system, in theory umac should do it for you automatically 🔮
+Install apps using ```Homebrew```. Don't worry if ```Homebrew``` is not installed on your system, in theory umac should do it for you automatically 🔮
 
 ```bash
 umac app install appName1 appName2
 
-# or 
+# or
+
 umac app i appName1 appName2
 ```
 
 #### Uninstall
 
-Uninstall apps using HomeBrew.
+Uninstall apps using ```Homebrew```.
 
 ```bash
 umac app uninstall appName1 appName2
 
-# or 
+# or
+
 umac app u appName1 appName2
 ```
 
@@ -109,7 +111,8 @@ Search apps using HomeBrew.
 ```bash
 umac app search appName
 
-# or 
+# or
+
 umac app s appName
 ```
 
@@ -122,7 +125,8 @@ Show status for no identificated apps
 ```bash
 umac app dev
 
-# or 
+# or
+
 umac app dev --status
 ```
 
@@ -132,13 +136,15 @@ Change status for no identificated apps
 umac app dev --enable
 
 # or 
+
 umac app dev -e
 ```
 
 ```bash
 umac app dev --disable
 
-# or 
+# or
+
 umac app dev -d
 ```
 
@@ -278,7 +284,6 @@ umac terminal shell change=shellName
 # or
 
 term shell change=shellName
-
 ```
 
 List available shells.
@@ -289,7 +294,6 @@ umac terminal shell list
 # or
 
 umac term shell list
-
 ```
 
 View current shell.
@@ -300,7 +304,6 @@ umac terminal shell curr
 # or
 
 umac term shell curr
-
 ```
 
 ### Spotlight
@@ -309,14 +312,12 @@ To manage Spotlight.
 
 ```bash
 umac spotlight
-
 ```
 
 To enable Spotlight.
 
 ```bash
 umac spotlight --enable
-
 ```
 
 
@@ -324,7 +325,6 @@ To disable Spotlight.
 
 ```bash
 umac spotlight --disable
-
 ```
 
 ### Help
