@@ -1,5 +1,8 @@
 # Projects
 dist
+./dist
+*/dist
+dist/*
 
 # locks
 pnpm-lock.yaml
