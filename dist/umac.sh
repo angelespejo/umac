@@ -4,6 +4,9 @@ if [[ ! "$OSTYPE" == "darwin"* ]]; then
 	echo "This program is for darwinOS types"
     exit
 fi
+DESC="macOS utils for a fast development."
+VERSION="1.1.0"
+CMD="umac"
 documents_dir="$HOME/Documents"
 umac_dir="$documents_dir/umac"
 script_services_dir="$umac_dir/workflows"
@@ -138,9 +141,32 @@ cmd_exist(){
    
 }
                                       
-DESC="macOS utils for a fast development."
-VERSION="1.0.0"
-CMD="umac"
+getOSAProperties(){
+	if [[ -z "$1" ]]; then
+		
+		echo "❌ You need a argument"
+		return
+	fi
+	if [ -n "$3" ]; then
+		osascript -e "tell application \"${1}\" to tell ${2} to get ${3}"
+	elif [ -n "$2" ]; then
+		osascript -e "tell application \"${1}\" to get properties of ${2}"
+	else 
+		osascript -e "tell application \"${1}\" to get properties"
+	fi
+}
+setOSAProperties(){
+	
+	if [ -n "$4" ]; then
+		osascript -e "tell application \"${1}\" to tell ${2} to set ${3} to ${4}"
+	elif [ -n "$3" ]; then
+		osascript -e "tell application \"${1}\" to set ${2} to ${3}"
+	else 
+		echo "❌ You need a argument"
+		return
+	
+	fi
+}
 title(){ echo $( colored " ${1} " "bg-grey" "black"); }
 Version(){
    echo "$(title "Version") $VERSION"
@@ -153,7 +179,7 @@ Help(){
 	echo 
 	echo $(title "Syntax")
 	echo 
-	echo "  $CMD [ options | flags ]"
+	echo "  $CMD [ options | --flags ]"
 	echo
 	echo $(title "Options")
 	echo 
@@ -162,11 +188,6 @@ Help(){
 	echo "  cache=All               Remove all macOS cache."
 	echo "  cache=name1,name2       Remove specific macOS cache."
 	echo "  cache --open            Open macOS cache directory with Finder."
-	echo 
-	echo "  $(title "Close")"
-	echo "  close                   Force close apps from a list."
-	echo "  close=All               Force close all apps."
-	echo "  close=app1,app2         Force close specific apps."
 	echo 
 	echo "  $(title "Open")"
 	echo "  open [path]             Open path in Finder."
@@ -185,11 +206,6 @@ Help(){
 	echo "  workflow copy           Copy workflows to default directory: $script_services_dir."
 	echo
 	echo "  $(title "Applications")"
-	echo "  app dev                 Show status for no identificated apps."
-	echo "  app dev --status        Show status for no identificated apps."
-	echo "  app dev --enable | -e   Enable download no identificated apps."
-	echo "  app dev --disable | -d  Disable download no identificated apps."
-	echo
 	echo "  app search appName             Install apps using brew."
 	echo "  app s appName"
 	echo
@@ -199,19 +215,53 @@ Help(){
 	echo "  app uninstall app1 app2        Uninstall apps using brew."
 	echo "  app u app1 app2"
 	echo
+	echo "  app close                   Force close apps from a list."
+	echo "  app close=All               Force close all apps."
+	echo "  app close=app1,app2         Force close specific apps."
+	echo
+	echo "  app dev                 Show status for no identificated apps."
+	echo "  app dev --status        Show status for no identificated apps."
+	echo "  app dev --enable|-e     Enable download no identificated apps."
+	echo "  app dev --disable|-d    Disable download no identificated apps."
+	echo
+	echo "  $(title "Dark Mode")"
+	echo "  dark-mode                      Show status for dark mode in system."
+	echo "  dark-mode --status             Show status for dark mode in system."
+	echo "  dark-mode true|--enable|-e     Enable dark mode in system."
+	echo "  dark-mode false|--disable|-d   Disable dark mode in system."
+	echo
 	echo "  $(title "Spotlight")"
 	echo "  spotlight                      To manage Spotlight."
 	echo "  spotlight --enable             To enable Spotlight."
 	echo "  spotlight --disable            To disable Spotlight."
 	echo
-	echo "  $(title "Desktop pictures")"
-	echo "  desk-pics [path]               To add Desktop image in desktop pictures directory."
-	echo "  desk-pics [path] --dir         To add Desktop images from a directory in desktop pictures directory."
-	echo "  desk-pics [path] --sys         To add Desktop images from a directory in system desktop pictures directory."
+	echo "  $(title "System")"
+	echo "  sys update|up --list|-l        List all available System updates."
+	echo "  sys update|up --install|-i     Install System updates."
+	echo "  sys shutdown|down              Close down the system at a given time."
+	echo "  sys reboot|                    Reboot System."
+	echo "  sys version|v                  Show system version."
+	echo
+	echo "  $(title "Desktop")"
+	echo "  desk pics remove               Remove Desktop image from a Desktop image list."
+	echo "  desk pics remove=imageNames    Remove Desktop image in desktop pictures directory."
+	echo "  desk pics change=[path]        Change Desktop image in desktop pictures directory."
+	echo "  desk pics change=[path] --sys  Change Desktop images from a directory in system desktop pictures directory."
+	echo "  desk pics add=[path]           Add Desktop image in desktop pictures directory."
+	echo "  desk pics add=[path] --dir     Add Desktop images from a directory in desktop pictures directory."
+	echo "  desk pics add=[path] --sys     Add Desktop images from a directory in system desktop pictures directory."
+	echo
+	echo "  $(title "Finder")"
+	echo "  finder show-all-files                         Show status for show-all-files."
+	echo "  finder show-all-files --status                Show status show-all-files."
+	echo "  finder show-all-files true|--enable|-e        Enable show-all-files."
+	echo "  finder show-all-files false|--disable|-d      Disable show-all-files."
 	echo
 	echo "  $(title "Notification")"
-	echo "  notification text              Set a macOS notification."
+	echo "  notification text                             Set a macOS notification."
 	echo "  not text   "
+	echo "  not text btn-false=cancel btn-true=ok         Set a macOS notification with custom buttons."
+	echo "                                                btn-false returns false & btn-true returns true."
 	echo
 	echo "  $(title "Terminal")"
 	echo "  terminal shell change          Change shell."
@@ -296,7 +346,6 @@ _open_app_convert(){
 }
 _close_func(){
 	item=$1
-	echo $item
 	if [ "$item" == "All" ]; then
 		for open_app in $(_open_apps_list); do
 			
@@ -315,7 +364,7 @@ _close_func(){
 			killall "$item"
 			echo "✅ Close $item!"
 			
-			break
+			return
 		else 
 			echo "❌ Can not close app: $item"
 		fi
@@ -429,9 +478,17 @@ apps(){
 	########################################################
 	elif [[ "$2" == "dev" ]]; then
 		dev_apps "${@:2}"
-	
+	# CLOSE                                                     
+	############################################################
+	elif [[ "$2" == "close" ]]; then
+		close "${@:2}"
+	# CLOSE with args                                                     
+	############################################################
+	elif [[ "$2" == "close="* ]]; then
+		close_arg "${@:2}"
 	else 
-		echo "ℹ️  You need a cmd option like: install, uninstall, search or dev"
+		echo "ℹ️  You need a cmd option like: install, uninstall, search, close or dev"
+		
 	fi
 }
 open_in_nav(){
@@ -477,6 +534,29 @@ open_funct(){
 		fi
 	else 
 		echo "❌ Does not exist path: $2"
+	fi
+}
+softwareUpdateFunct(){
+	softwareupdate
+}
+shutdownFunct(){
+	shutdown
+}
+rebootFunct(){
+	reboot
+	
+}
+sysFunct(){
+	if [[ $1 == "reboot" ]]; then
+		rebootFunct "$@:2"
+	elif [[ $1 == "update" ]] || [[ $1 == "up" ]]; then
+		softwareUpdateFunct "$@:2"
+	elif [[ $1 == "shutdown" ]] || [[ $1 == "down" ]]; then
+		shutdownFunct "$@:2"
+	elif [[ $1 == "version" ]] || [[ $1 == "v" ]]; then
+		sw_vers
+	else 
+		echo "ℹ️ - You need a argument like: reboot, update|up, shutdown|down, version|v"
 	fi
 }
 workflow(){
@@ -540,21 +620,189 @@ spotlight() {
 	fi
 }
                                               
-desk_pics(){
-	
+_deskPicksFolder(){
 	if [[ $@ =~ .*"--sys".* ]]; then
-		DEST=$sys_desk_pics_dir
+		echo $sys_desk_pics_dir
 	else 
-		DEST=$desk_pics_dir
+		echo $desk_pics_dir
 	fi
-	if [[ ${@:2} =~ .*"--dir".* ]]; then
+}
+_nonExistArguments(){
+	echo "ℹ️ - You need a argument like: $1"
+}
+_deskPicsValidate(){
+	if [[ ! -f $1 ]]; then
+		echo "❌ This file does not exist: $1"
+		return 1
+	fi
+	# 0 = true
+	return 0
+}
+deskPicsAdd(){
+	_deskPicsValidate "$1" || return;
+	
+	DEST=$( _deskPicksFolder $@ )
+	PICTURE_NAME=${1##*/}
+	DESTPATH="${DEST}/${PICTURE_NAME}"
+	if [[ $@ =~ .*"--dir".* ]]; then
 		
-		cp -R $2/* $DEST
-	elif [[ "$2" == "" ]]; then
-		echo "ℹ️  You need a arguent like: [image path]"
+		cp -R $1/* $DEST
 	else
-		cp "$2" "$DEST"
-		echo "✅ copied!"
+		if [[ ! -f $DESTPATH ]]; then
+			cp "$1" "$DEST"
+			echo "✅ copied!"
+		else 
+			echo "ℹ️ Exists: $DESTPATH"
+			return
+		fi
+	fi
+}
+deskPicsChange(){
+	_deskPicsValidate "$1" || return;
+	DEST=$( _deskPicksFolder $@ )
+	PICTURE_NAME=${1##*/}
+	FILEPATH="${DEST}/${PICTURE_NAME}"
+	if [[ -f "$FILEPATH" ]]; then
+		
+		osascript -e "tell application  \"System Events\" to set picture of every desktop to \"${FILEPATH}\""
+		echo "✅ Added: $FILEPATH"
+	else 
+		cp "$1" "$DEST"
+		echo "✅ Copied!"
+		osascript -e "tell application \"System Events\" to set picture of every desktop to \"${DEST}/${PICTURE_NAME}\""
+		echo "✅ Added: ${DEST}/${PICTURE_NAME}"
+	
+	fi
+}
+deskPicsRemove(){
+	
+	DEST=$( _deskPicksFolder $@ )
+	opts="$DEST All Quit"
+	PS3="Select a cache type to remove: "
+	
+	select item in $opts
+	do
+		if [ "$item" == "Quit" ]; then
+			echo "✅ Exit !"
+			break
+		else 
+			_cache_func "$item"
+		fi 
+	done
+}
+_deskPicsRm_func(){
+	
+	dir=$2
+	item=$1
+	
+	if [ "$item" == "All" ]; then
+		echo "❌ Option [$item] does not exist"
+		
+	elif [ "$item" == "" ]; then
+		echo "❌ Option does not exist"
+	else 
+		FILENAME=$( echo ${item} | sed -e 's/%20/ /g')
+		# FILENAME=$( echo $FILENAME | sed -e 's/ /\ /g')
+		echo "ℹ️ Option: $dir/$FILENAME"
+		if [ -d "$dir/$FILENAME" ] || [ -f "$dir/$FILENAME" ]; then
+			
+			rm -r "$dir/$FILENAME"
+			echo "✅ Removed !"
+		else
+			echo "❌ Path does not exist"
+		fi
+	fi 
+}
+deskPicsRm(){
+	
+	FOLDER=$( _deskPicksFolder $@ )
+	dirnames="$( ls "$FOLDER"  | sed -e 's/ /%20/g' )"
+	opts="$dirnames Quit"
+	PS3="Select a cache type to remove: "
+	
+	select item in $opts
+	do
+		if [ "$item" == "Quit" ]; then
+			echo "✅ Exit !"
+			break
+		else 
+			_deskPicsRm_func "$item" "$FOLDER"
+		fi 
+	done
+}
+deskPicsRm_arg(){
+	FOLDER=$( _deskPicksFolder $@ )
+	names_opts=${1#*=}
+	dirnames=$( echo ${names_opts} | sed -e 's/,/ /g' )
+	
+	for item in $dirnames; do
+		_deskPicsRm_func "$item" "$FOLDER"
+	done
+}
+deskPics(){
+	if [[ $1 =~ .*"add=".* ]]; then
+		
+		VALUE=${1#*=}
+		deskPicsAdd "$VALUE" ${@:1}
+	elif [[ $1 =~ .*"change=".* ]]; then
+		VALUE=${1#*=}
+		deskPicsChange "$VALUE" ${@:1}
+	
+	elif [[ $1 =~ .*"remove=".* ]]; then
+		deskPicsRm_arg ${@:1}
+	elif [[ $1 == "remove" ]]; then
+		deskPicsRm ${@:2}
+	else 
+		_nonExistArguments "remove, add=your/path, change=your/path"
+	fi
+}
+desk(){
+	if [[ $1 == "pics" ]] || [[ $1 == "pictures" ]]; then
+		deskPics "${@:2}"
+	
+	else 
+		_nonExistArguments "pics"
+	fi
+}
+_finderShowAllFilesStatus(){
+	VALUE="$( defaults read com.apple.finder AppleShowAllFiles )"
+	if [[ $VALUE = "1" ]]; then
+		VALUE="$( colored " true " "bg-green" "white" )"
+	else 
+		VALUE="$( colored " false " "bg-red" "white" )"
+	fi
+	echo "Show all files: $VALUE"
+	
+}
+finderShowAllFile(){
+	if [[ $@ =~ .*"--status".* ]] || [[ $@ =~ .*"-s".* ]]; then
+		_finderShowAllFilesStatus
+	else 
+		if [[ $@ =~ .*"true".* ]] || [[ $@ =~ .*"--enable".* ]] || [[ $@ =~ .*"-e".* ]]; then
+			defaults write com.apple.finder AppleShowAllFiles 1 # view
+			killall Finder
+		elif [[ $@ =~ .*"false".* ]] || [[ $@ =~ .*"--disable".* ]] || [[ $@ =~ .*"-d".* ]]; then
+			defaults write com.apple.finder AppleShowAllFiles 0 # hide
+			killall Finder
+		else 
+			_finderShowAllFilesStatus
+		fi
+	fi
+}
+finderFunct(){
+	if [[ $1 == "show-all-files" ]]; then
+		
+		finderShowAllFile $@:2
+	
+	else 
+		echo "ℹ️ - You need a argument like: show-all-files"
+	fi
+}
+clickOnButton(){
+	if [[ $1 = "button returned:${2}" ]]; then
+	    echo true
+	else
+	    echo false
 	fi
 }
 not_funct(){
@@ -562,9 +810,29 @@ not_funct(){
 		echo "❌ You need a argument with text for the macOS not"
 	else 
 		if [[ $( cmd_exist "osascript" ) ]]; then
-	
-			osascript -e 'display dialog "'"$2"'"' >/dev/null
-		
+			
+			TXT=$2
+			VARS=${@:3}
+			
+			if [[ $VARS =~ .*"btn-false=".* ]]; then
+				BTN_FALSE=${VARS#*btn-false=}
+				BTN_FALSE=${BTN_FALSE%%btn-true*}
+			else 
+				BTN_FALSE="Cancel"
+			fi
+			if [[ $VARS =~ .*"btn-true=".* ]]; then
+				BTN_TRUE=${VARS#*btn-true=}
+				BTN_TRUE=${BTN_TRUE%%btn-false*}
+			else 
+				BTN_TRUE="OK"
+			fi
+			DIALOG=$(osascript -e 'display dialog "'"$TXT"'" buttons { "'"${BTN_FALSE}"'", "'"${BTN_TRUE}"'" } default button "'"${BTN_TRUE}"'"' )
+			
+			if [[ $DIALOG = "button returned:${BTN_TRUE}" ]]; then
+			    echo true
+			else
+			    echo false
+			fi
 		else 
 			echo "❌ You dont have osascript, that function can not work 😢"
 		fi
@@ -668,6 +936,25 @@ terminal_funct(){
 		echo "ℹ️  Needs an option like: shell"
 	fi
 }
+setDarkStatus(){
+	VALUE="$( getOSAProperties "System Events" "appearance preferences" "dark mode" )"
+	VALUE="$( colored " $VALUE " "bg-green" "white" )"
+	echo "Dark mode in system is $VALUE"
+	
+}
+darkMode(){
+	if [[ $@ =~ .*"--status".* ]] || [[ $@ =~ .*"-s".* ]]; then
+		setDarkStatus
+	else 
+		if [[ $@ =~ .*"true".* ]] || [[ $@ =~ .*"--enable".* ]] || [[ $@ =~ .*"-e".* ]]; then
+			$( setOSAProperties "System Events" "appearance preferences" "dark mode" "true")
+		elif [[ $@ =~ .*"false".* ]] || [[ $@ =~ .*"--disable".* ]] || [[ $@ =~ .*"-d".* ]]; then
+			$( setOSAProperties "System Events" "appearance preferences" "dark mode" "false")
+		else 
+			setDarkStatus
+		fi
+	fi
+}
 if [[  $@ =~ .*"--help".* ]] || [[ $@ =~ .*"-h".* ]]; then
 	
 	echo
@@ -683,10 +970,6 @@ if [[ "$1" == "cache" ]]; then
 	cache "$@"
 elif [[ "$1" == "cache="* ]]; then
 	cache_arg "$@"
-elif [[ "$1" == "close" ]]; then
-	close "$@"
-elif [[ "$1" == "close="* ]]; then
-	close_arg "$@"
 elif [[ "$1" == "app" ]]; then
 	apps "$@"
 elif [[ "$1" == "open" ]]; then
@@ -699,8 +982,14 @@ elif [[ "$1" == "terminal" ]] || [[ "$1" == "term" ]]; then
 	terminal_funct "$@"
 elif [[ "$1" == "notification" ]] || [[ "$1" == "not" ]]; then
 	not_funct "$@"
-elif [[ "$1" == "desk-pics" ]]; then
-	desk_pics "$@"
+elif [[ "$1" == "desk" ]]; then
+	desk "${@:2}"
+elif [[ "$1" == "dark-mode" ]]; then
+	darkMode "${@:2}"
+elif [[ "$1" == "finder" ]]; then
+	finderFunct "${@:2}"
+elif [[ "$1" == "sys" ]]; then
+	sysFunct "${@:2}"
 else 
 	
 	if [[ "$1" == "" ]]; then
