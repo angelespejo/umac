@@ -1,0 +1,21 @@
+###############################################################################
+# FOR PIGEONPOSSE WEB/S
+###############################################################################
+
+web:
+  
+  - id: umac
+    type: cli
+    version: '1.0.0'
+    description: '⚡️🍎🐢 Terminal utilities for MacOS: install apps, force close apps, clear cache, change shell, etc.'
+    name: 'u-mac'
+    tags: 
+      - macos
+      - shell
+      - bash
+      - apple
+      - terminal
+      - applescript
+      - darwin
+    # logo: "https://github.com/angelespejo/umac/blob/main/docs/logo.png"
+    banner: "https://github.com/angelespejo/umac/blob/main/docs/banner.png"

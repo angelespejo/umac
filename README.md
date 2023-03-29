@@ -22,7 +22,8 @@ CREATED BY ANGELO 🐦
 # Example usage: umac not "Hello! 👋 \nDo you accept the challenge? 🍎🐢" 
 
 -->
-![Header](docs/header.png)
+
+![Banner](docs/banner.png)
 
 # 🍎🐢 Terminal utilities for MacOS ⚡️🍎
 
@@ -159,19 +160,19 @@ umac app dev -d
 Force close apps from a list
 
 ```bash
-umac close
+umac app close
 ```
 
 Force close all apps
 
 ```bash
-umac close=All
+umac app close=All
 ```
 
 Force close specific apps
 
 ```bash
-umac close=app1,app2
+umac app close=app1,app2
 ```
 
 ### Cache
@@ -240,29 +241,63 @@ umac open your/path/to/open --tor
 
 ### Desktop pictures
 
+#### Change
+
+Change Desktop image in desktop pictures directory.
+
+```bash
+umac desk pics change=your/image/path
+```
+
+
+Change Desktop images from a directory in system desktop
+
+```bash
+umac desk pics change=your/image/path --sys 
+```
+
+#### Add
+
 To add Desktop image in desktop pictures directory.
 
 ```bash
-umac desk-pics your/image/path
+umac desk pics add=your/image/path
 ```
 
 
 To add Desktop images from a directory in desktop pictures directory
 
 ```bash
-umac desk-pics your/image/path --dir 
+umac desk pics add=your/image/path --dir 
 ```
 
 
 To add Desktop images from a directory in system desktop pictures directory.
 
 ```bash
-umac desk-pics your/image/path --sys 
+umac desk pics add=your/image/path --sys 
+```
+
+#### Remove
+
+Remove Desktop image from a Desktop image list
+
+```bash
+umac desk pics remove
+```
+
+
+Remove Desktop image in desktop pictures directory.
+
+```bash
+umac desk pics remove=imageNames
 ```
 
 ### Notification
 
-Set a macOS notification.
+> Returns true|false 
+
+Set a macOS notification with 2 buttons _(true/false)_. 
 
 ```bash
 umac notification yourOwnTextString
@@ -270,6 +305,14 @@ umac notification yourOwnTextString
 # or
 
 umac not yourOwnTextString
+
+```
+
+With custom buttons text
+
+```bash
+
+umac not yourText btn-false=yourText btn-true=yourText
 ```
 
 ### Terminal
@@ -366,9 +409,8 @@ Help me to develop more interesting things.
 
 ## 📜 License
 
-The software is licensed with GPL-3 (GNU GENERAL PUBLIC LICENSE Version 3)
+The software is licensed with _[GPL-3](/LICENSE)_.
 
-[Read more](https://github.com/angelespejo/umac/LICENSE)
 
 ### Collaborators
 

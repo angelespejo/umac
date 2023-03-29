@@ -15,6 +15,9 @@ fi
 # VARS                                             
 ############################################################
 
+DESC="macOS utils for a fast development."
+VERSION="1.1.0"
+CMD="umac"
 documents_dir="$HOME/Documents"
 umac_dir="$documents_dir/umac"
 script_services_dir="$umac_dir/workflows"
