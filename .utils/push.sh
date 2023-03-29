@@ -21,11 +21,11 @@ if [[ $version != false ]]; then
 	git tag -a "v${version}" -m "${git_commit}"
 	
 	echo "Add release v${version}"
-	gh release create "v${version}" --title "${version}" --notes "📜 LICENSE: ${REPO}blob/main/LICENSE"
+	gh release create "v${version}" --title "${version}" --notes "📜 LICENSE: ${REPO}/blob/main/LICENSE"
 	
 	echo "Add asset to release: v${version}"
 	bash build.sh
-	gh release upload "v${version}" ./dist/umac
+	gh release upload "v${version}" ./dist/umac.zip
 
 fi
 
