@@ -78,8 +78,8 @@ export default defineConfig(
 						},
 				}
 				await writeFileContent( pkg, object2string( data ) )
-				const temp = new templates.Templates( { utils } )
-
+				const temp    = new templates.Templates( { utils } )
+				docsInfo.more = docsInfo.more.replaceAll( 'guide', 'packages' )
 				if ( isWs ) content += ( await readFile( joinPath( utils.config.const.coreDir, 'docs/index.md' ), 'utf-8' ) )
 				content += docsInfo.more
 

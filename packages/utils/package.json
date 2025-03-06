@@ -45,8 +45,7 @@
 		"matcher": "5.0.0"
 	},
 	"devDependencies": {
-		"@umac/repo-config": "workspace:*",
-		"@umac/utils": "workspace:*"
+		"@umac/repo-config": "workspace:*"
 	},
 	"publishConfig": {
 		"access": "public",

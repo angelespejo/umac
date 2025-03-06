@@ -33,8 +33,7 @@ MacOS System utils
 
 ## 🗝 Prerequesites
 
-Have a system based on **DarwinOS**, that is, any **apple** computer. 🍎
-
+Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 
 ## 🟢 JavaScript / Typescript library 
 
@@ -57,21 +56,21 @@ deno add @umac/system
 
 ## ➕ More
 
-- ⚒️ [Utils](https://github.com/angelespejo/umac/guide/utils)
-- 🍎 [Umac](https://github.com/angelespejo/umac/guide/umac)
-- 🔌 [Plugins](https://github.com/angelespejo/umac/guide/plugin)
-  - [App](https://github.com/angelespejo/umac/guide/plugin/app)
-  - [Appearance](https://github.com/angelespejo/umac/guide/plugin/appearance)
-  - [Desktop](https://github.com/angelespejo/umac/guide/plugin/desktop)
-  - [Cache](https://github.com/angelespejo/umac/guide/plugin/cache)
-  - [Finder](https://github.com/angelespejo/umac/guide/plugin/finder)
-  - [Interacting](https://github.com/angelespejo/umac/guide/plugin/interacting)
-  - [Open](https://github.com/angelespejo/umac/guide/plugin/open)
-  - [Run](https://github.com/angelespejo/umac/guide/plugin/run)
-  - [Spotlight](https://github.com/angelespejo/umac/guide/plugin/spotlight)
-  - [Terminal](https://github.com/angelespejo/umac/guide/plugin/terminal)
-  - [System](https://github.com/angelespejo/umac/guide/plugin/system)
-  - [Workflow](https://github.com/angelespejo/umac/guide/plugin/workflow)
+- 🍎 [Umac](https://github.com/angelespejo/umac/tree/main/packages/umac)
+- ⚒️ [Utils](https://github.com/angelespejo/umac/tree/main/packages/utils)
+- 🔌 [Plugins](https://github.com/angelespejo/umac/tree/main/packages/plugin)
+  - [App](https://github.com/angelespejo/umac/tree/main/packages/plugin/app)
+  - [Appearance](https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance)
+  - [Cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache)
+  - [Desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop)
+  - [Finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder)
+  - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
+  - [Open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open)
+  - [Run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run)
+  - [Spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight)
+  - [System](https://github.com/angelespejo/umac/tree/main/packages/plugin/system)
+  - [Terminal](https://github.com/angelespejo/umac/tree/main/packages/plugin/terminal)
+  - [Workflow](https://github.com/angelespejo/umac/tree/main/packages/plugin/workflow)
 
 
 ---

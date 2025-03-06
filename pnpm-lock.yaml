@@ -222,9 +222,6 @@ importers:
       '@umac/repo-config':
         specifier: workspace:*
         version: link:../repo-config
-      '@umac/utils':
-        specifier: workspace:*
-        version: 'link:'
 
 packages:
 

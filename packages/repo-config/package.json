@@ -27,8 +27,5 @@
 	"exports": {
 		"./tsconfig.json": "./tsconfig.json",
 		"./unbuild": "./build.config.js"
-	},
-	"files": [
-		"dist"
-	]
+	}
 }

@@ -70,7 +70,7 @@
 		"libraryID": "umac",
 		"repoID": "umac",
 		"rawRepoURL": "https://raw.githubusercontent.com/angelespejo/umac",
-		"docsURL": "https://github.com/angelespejo/umac",
+		"docsURL": "https://github.com/angelespejo/umac/tree/main",
 		"libraryURL": "https://npmjs.com/umac",
 		"type": [
 			"cli",

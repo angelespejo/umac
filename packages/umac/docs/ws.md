@@ -16,7 +16,7 @@
 
 ## 🗝 Prerequesites
 
-Have a system based on **DarwinOS**, that is, any **apple** computer. 🍎
+Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 
 ## 🔢 Use Executable
 
