@@ -1,6 +1,5 @@
 {
 	"name": "umac-mono",
-	"version": "0.0.1",
 	"private": true,
 	"description": "Terminal utilities for MacOS: install apps, force close apps, clear cache, add desk notifications, change shell, etc.",
 	"homepage": "https://github.com/angelespejo/umac",
