@@ -1,0 +1,63 @@
+{
+	"name": "@umac/appearance",
+	"version": "2.0.0",
+	"description": "MacOS appearance utils",
+	"keywords": [
+		"appearance",
+		"apple",
+		"cli",
+		"color",
+		"color-contrast",
+		"dark-mode",
+		"light-mode",
+		"macos",
+		"pigeonposse",
+		"pp",
+		"theme",
+		"umac"
+	],
+	"homepage": "https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance",
+	"bugs": {
+		"url": "https://github.com/angelespejo/umac/issues",
+		"email": "dev@pigeonposse.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/angelespejo/umac",
+		"directory": "packages/plugin/appearance"
+	},
+	"funding": {
+		"type": "individual",
+		"url": "https://pigeonposse.com/contribute"
+	},
+	"license": "GPL-3.0",
+	"author": {
+		"name": "Angelo",
+		"email": "angelo@pigeonposse.com",
+		"url": "https://github.com/angelespejo"
+	},
+	"type": "module",
+	"main": "./dist/main.cjs",
+	"module": "./dist/main.mjs",
+	"types": "./dist/main.d.ts",
+	"bin": {
+		"umac-appearance": "./dist/bin.mjs"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "unbuild",
+		"dev": "tsx src/bin.ts"
+	},
+	"devDependencies": {
+		"@umac/repo-config": "workspace:*"
+	},
+	"peerDependencies": {
+		"@umac/utils": "workspace:*"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	}
+}

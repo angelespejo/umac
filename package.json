@@ -1,0 +1,99 @@
+{
+	"name": "umac-mono",
+	"version": "0.0.1",
+	"private": true,
+	"description": "Terminal utilities for MacOS: install apps, force close apps, clear cache, add desk notifications, change shell, etc.",
+	"homepage": "https://github.com/angelespejo/umac",
+	"bugs": {
+		"url": "https://github.com/angelespejo/umac/issues",
+		"email": "dev@pigeonposse.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/angelespejo/umac"
+	},
+	"funding": {
+		"type": "individual",
+		"url": "https://pigeonposse.com/contribute"
+	},
+	"license": "GPL-3.0",
+	"author": {
+		"name": "Angelo",
+		"email": "angelo@pigeonposse.com",
+		"url": "https://github.com/angelespejo"
+	},
+	"type": "module",
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"+": "run() { pnpm -F @*/\"${@:1}\"; }; run $@",
+		"++": "pnpm -F $@",
+		".": "dovenv",
+		"..": "dovenv x",
+		"build": "pnpm run --sequential \"/build:.*/\"",
+		"build:1": "pnpm + utils build",
+		"build:2": "pnpm -F './packages/plugin/**' build",
+		"build:3": "pnpm + core build",
+		"test": "pnpm run --sequential \"/test:.*/\"",
+		"test:check": "pnpm -F '*umac*' run check",
+		"test:check-ws": "pnpm --silent . check --silent",
+		"test:transform-ws": "pnpm --silent . transform --silent",
+		"test:unit": "vitest run src --passWithNoTests"
+	},
+	"devDependencies": {
+		"@changesets/changelog-github": "0.5.1",
+		"@dovenv/core": "1.4.5",
+		"@dovenv/theme-pigeonposse": "1.4.5",
+		"@playwright/test": "1.50.1",
+		"@types/node": "22.13.9",
+		"eslint": "9.21.0",
+		"tslib": "2.8.1",
+		"tsx": "4.19.3",
+		"typescript": "5.8.2",
+		"unbuild": "3.5.0",
+		"vitest": "3.0.8"
+	},
+	"packageManager": "pnpm@10.6.0",
+	"engines": {
+		"node": ">=20.0.0",
+		"pnpm": ">=8.10.0"
+	},
+	"extra": {
+		"id": "umac",
+		"productName": "umac",
+		"action": "Terminal utilities for macos",
+		"licenseURL": "https://github.com/angelespejo/umac/blob/main/LICENSE",
+		"changelogURL": "https://github.com/angelespejo/umac/blob/main/packages/umac/CHANGELOG.md",
+		"contributingURL": "https://github.com/pigeonposse/.github/blob/main/CONTRIBUTING.md",
+		"libraryID": "umac",
+		"repoID": "umac",
+		"rawRepoURL": "https://raw.githubusercontent.com/angelespejo/umac",
+		"docsURL": "https://github.com/angelespejo/umac",
+		"libraryURL": "https://npmjs.com/umac",
+		"type": [
+			"cli",
+			"bin"
+		],
+		"collective": {
+			"id": "pigeonposse",
+			"name": "PigeonPosse",
+			"funding": "https://pigeonposse.com/contribute",
+			"gh": "https://github.com/pigeonposse",
+			"about": "https://pigeonposse.com/about",
+			"url": "https://pigeonposse.com",
+			"web": "https://pigeonposse.com",
+			"email": "dev@pigeonposse.com",
+			"socialUser": {
+				"twitter": "pigeonposse_",
+				"instagram": "pigeon.posse",
+				"medium": "pigeonposse"
+			},
+			"social": {
+				"twitter": "https://twitter.com/pigeonposse_",
+				"instagram": "https://www.instagram.com/pigeon.posse/",
+				"medium": "https://medium.com/@pigeonposse"
+			}
+		}
+	}
+}

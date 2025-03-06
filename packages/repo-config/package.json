@@ -1,0 +1,34 @@
+{
+	"name": "@umac/repo-config",
+	"version": "2.0.0",
+	"private": true,
+	"description": "Config for workspace repositories",
+	"homepage": "https://github.com/angelespejo/umac/tree/main/packages/repo-config",
+	"bugs": {
+		"url": "https://github.com/angelespejo/umac/issues",
+		"email": "dev@pigeonposse.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/angelespejo/umac",
+		"directory": "packages/repo-config"
+	},
+	"funding": {
+		"type": "individual",
+		"url": "https://pigeonposse.com/contribute"
+	},
+	"license": "GPL-3.0",
+	"author": {
+		"name": "Angelo",
+		"email": "angelo@pigeonposse.com",
+		"url": "https://github.com/angelespejo"
+	},
+	"type": "module",
+	"exports": {
+		"./tsconfig.json": "./tsconfig.json",
+		"./unbuild": "./build.config.js"
+	},
+	"files": [
+		"dist"
+	]
+}

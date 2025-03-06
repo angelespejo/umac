@@ -1,12 +1,12 @@
-# Projects
-dist
-./dist
-*/dist
-dist/*
-
-# locks
-pnpm-lock.yaml
-npm-lock.json
+# #############################################################################
+# .gitignore config.
+# #############################################################################
+#
+# @description Specifies which files and directories should be ignored by Git, 
+#              ensuring a clean version control history.
+# @see https://git-scm.com/docs/gitignore
+#
+# #############################################################################
 
 # Logs
 logs
@@ -17,19 +17,53 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+.pnpm-store
 node_modules
+/build
+**/dist
+dist
+dist-ssr
+**/vendor
+/vendor
+packages/**/build
 *.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# misc
 .DS_Store
+
+# Editor directories and files
+# .vscode/*
+# !.vscode/extensions.json
+.idea
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-# misc
-.DS_Store
+# Tuborepo
+/.turbo
+**/.turbo
+
+# Parcel
+/.parcel-cache
+**/.parcel-cache
+
+# Svelte
+/.svelte-kit
+**/.svelte-kit
+
+# playwright 
+/test-results
+**/test-results
+
+# project 
+**/__temp__
+/__cache__
+**/__cache__
+**/*.timestamp-*
+**/__temp__/*
+**/__cache__/*
+docs/dev-dist
+**/docs/dev-dist
+.wrangler/**

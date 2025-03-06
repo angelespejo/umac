@@ -1,0 +1,26 @@
+{
+	"$schema": "https://unpkg.com/@changesets/config/schema.json",
+	"changelog": [
+		"@changesets/changelog-github",
+		{
+			"repo": "pigeonposse/umac"
+		}
+	],
+	"commit": false,
+	"fixed": [
+		[
+			"*umac*"
+		]
+	],
+	"linked": [
+	],
+	"access": "restricted",
+	"baseBranch": "main",
+	"updateInternalDependencies": "patch",
+	"privatePackages": {
+		"version": true,
+		"tag": true
+	},
+	"ignore": [
+	]
+}

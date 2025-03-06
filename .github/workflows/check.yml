@@ -1,0 +1,173 @@
+###############################################################################
+# RELEASE
+###############################################################################
+
+name: ✅ Tests and check for updates
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+  NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+
+###############################################################################
+# JOBS
+###############################################################################
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+
+      #########################################################################
+      # INIT
+      #########################################################################
+
+      - name: ⬇️🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+      - name: ⬇️🛎 Checkout
+        uses: actions/checkout@v4
+      - name: ⬇️🥡 Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: ⬇️🟢 Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+          cache: 'pnpm'
+
+      - name: 🐙😺 Check GitHub API Rate Limit
+        id: rate_limit
+        run: |
+          response=$(gh api rate_limit)
+          limit=$(echo $response | jq -r '.resources.core.limit')
+          remaining=$(echo $response | jq -r '.resources.core.remaining')
+          echo "GitHub API Rate Limit: $remaining/$limit"
+
+          if [ "$remaining" -lt 10 ]; then
+              exit 1
+          fi
+        env:
+            GH_TOKEN: ${{ env.GITHUB_TOKEN }}
+
+    ############################### W ALL DEPS ################################
+    #   - name: 🛠 Install System Dependencies for canvas and imagemin npm deps
+    #     run: |
+    #       sudo apt-get update
+    #       sudo apt-get install -y \
+    #         build-essential \
+    #         libcairo2-dev \
+    #         libpango1.0-dev \
+    #         libjpeg-dev \
+    #         libgif-dev \
+    #         librsvg2-dev \
+    #         libpng-dev \
+    #         zlib1g-dev \
+    #         libimagequant-dev \
+    #         nasm
+    #   - name: ⬇️📦 Install dependencies
+    #     run: |
+    #        export npm_config_build_from_source=false
+    #        pnpm install --no-frozen-lockfile
+
+      - name: ⬇️📦 Install dependencies
+        run: |
+           export npm_config_build_from_source=false
+           pnpm install --no-frozen-lockfile --ignore-scripts
+
+      - name: ⬇️🌐 Install Playwright Browsers
+        run: pnpx playwright install --with-deps
+
+      #########################################################################
+      # BUILD
+      #########################################################################
+
+      - name: 🏗 Build packages
+        run: pnpm build
+
+      #########################################################################
+      # TEST
+      #########################################################################
+
+      - name: ✅ Run [e2e & unit] tests
+        run: pnpm test
+
+      #########################################################################
+      # EXIT IF IS PULL REQUEST
+      #########################################################################
+
+      - name: 🚪 Exit here if is pull request
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "Pull request detected, exiting..."
+          exit 0
+        env:
+          GITHUB_TOKEN: ${{env.GITHUB_TOKEN }}
+
+      #########################################################################
+      #########################################################################
+      # UPDATE VERSIONS
+      #########################################################################
+      #########################################################################
+
+      - name: 📣 Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          title: "chore(release): version packages 🦋"
+          version: pnpm . pkg version --silent
+          publish: pnpm . pkg publish --silent
+          commit: "chore(release): version packages 🦋 [skip ci]"
+          createGithubReleases: false
+        env:
+          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ env.NPM_TOKEN }}
+
+      - name: Get updated versions if exists
+        id: updated
+        run: |
+          core_version=$(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r '.[] | select(.name == "umac") | .version')
+          core_version_major=${core_version%%.*}
+          echo Set changesets outputs
+          echo '${{ toJSON(steps.changesets.outputs) }}'
+          echo Set updated versions
+          echo "core_version=$core_version" >> $GITHUB_OUTPUT
+          echo "core_version_major=$core_version_major" >> $GITHUB_OUTPUT
+
+      - name: Add core version TAG to Github
+        if: steps.updated.outputs.core_version != ''
+        uses: richardsimko/update-tag@v1
+        with:
+          tag_name: ${{steps.updated.outputs.core_version}}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ℹ️➡️ Check for changes in package.json
+        run: |
+          git fetch origin main
+          git diff --name-only HEAD origin/main | grep 'package.json' || echo "No changes in package.json"
+        continue-on-error: true
+        id: check_package_json
+
+      #########################################################################
+      # CALL TO WORKFLOWS
+      #########################################################################
+
+      - name: ℹ️🐙😺➡️ Update repo info
+        if: steps.check_package_json.outputs.stdout != 'No changes in package.json'
+        run: pnpm . gh info update
+        continue-on-error: true
+
+    #   - name: 📚🐙😺➡️ Call to workflow for deploy Documentation
+    #     if: steps.updated.outputs.core_version != ''
+    #     uses: benc-uk/workflow-dispatch@v1
+    #     with:
+    #       workflow: release-docs.yml
+    #     continue-on-error: true
+
+###############################################################################

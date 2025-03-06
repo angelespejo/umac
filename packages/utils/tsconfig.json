@@ -1,0 +1,3 @@
+{
+	"extends": "./node_modules/@umac/repo-config/tsconfig.json",
+}

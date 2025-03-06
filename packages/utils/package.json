@@ -1,0 +1,55 @@
+{
+	"name": "@umac/utils",
+	"version": "2.0.0",
+	"description": "Utilities for umac",
+	"keywords": [
+		"cli",
+		"macos",
+		"pigeonposse",
+		"pp",
+		"umac"
+	],
+	"homepage": "https://github.com/angelespejo/umac/tree/main/packages/utils",
+	"bugs": {
+		"url": "https://github.com/angelespejo/umac/issues",
+		"email": "dev@pigeonposse.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/angelespejo/umac",
+		"directory": "packages/utils"
+	},
+	"funding": {
+		"type": "individual",
+		"url": "https://pigeonposse.com/contribute"
+	},
+	"license": "GPL-3.0",
+	"author": {
+		"name": "Angelo",
+		"email": "angelo@pigeonposse.com",
+		"url": "https://github.com/angelespejo"
+	},
+	"type": "module",
+	"main": "./dist/main.cjs",
+	"module": "./dist/main.mjs",
+	"types": "./dist/main.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "unbuild",
+		"dev": "tsx src/bin.ts"
+	},
+	"dependencies": {
+		"@jxa/run": "1.3.6",
+		"matcher": "5.0.0"
+	},
+	"devDependencies": {
+		"@umac/repo-config": "workspace:*",
+		"@umac/utils": "workspace:*"
+	},
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	}
+}

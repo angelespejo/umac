@@ -1,0 +1,64 @@
+/**
+ * *****************************************************************************
+ * vscode config.
+ * *****************************************************************************
+ * @description Configuration file for Visual Studio Code (VSCode) settings specific to your project.
+ * @see https://code.visualstudio.com/docs/getstarted/settings
+ *
+ * *****************************************************************************
+ */
+{
+	"files.autoSave": "onFocusChange",
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "explicit",
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.stylelint": "explicit"
+	},
+	"eslint.useFlatConfig": true,
+	"stylelint.validate": [
+		"css",
+		"scss",
+		"less",
+		"html",
+		"vue",
+		"svelte",
+		"astro",
+	],
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"markdown",
+		"json",
+		"jsonc",
+		"json5",
+		"yaml",
+		"toml",
+		"html",
+		"css",
+		"scss",
+		"less",
+		"svelte",
+		"vue"
+	],
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"[markdown]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	},
+	"markdownlint.ignore": [
+		"**/LICENSE",
+		"docs/partials/**",
+		"docs/index",
+		"docs/post/**"
+	],
+	"terminal.integrated.defaultProfile.linux": "zsh",
+	"terminal.integrated.profiles.linux": {
+		"zsh": {
+			"path": "/bin/zsh"
+		},
+	},
+	"editor.tabSize": 4,
+	"typescript.tsdk": "node_modules/typescript/lib"
+}
