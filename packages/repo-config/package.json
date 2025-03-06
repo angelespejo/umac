@@ -1,6 +1,6 @@
 {
 	"name": "@umac/repo-config",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"private": true,
 	"description": "Config for workspace repositories",
 	"homepage": "https://github.com/angelespejo/umac/tree/main/packages/repo-config",
@@ -10,7 +10,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/angelespejo/umac",
+		"url": "https://github.com/angelespejo/umac/tree/main",
 		"directory": "packages/repo-config"
 	},
 	"funding": {

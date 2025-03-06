@@ -57,7 +57,7 @@ export default defineConfig(
 					},
 					repository : {
 						type : 'git',
-						url  : repoURL,
+						url  : isWs ? repoURL : joinUrl( repoURL, 'tree/main' ),
 						directory,
 					},
 					funding : {
@@ -94,7 +94,7 @@ export default defineConfig(
 						installation : { input: docs.partial.installation },
 					},
 					const : {
-						title        : data.name,
+						title        : isWs ? data.extra.productName : data.name,
 						libPkg       : isWs ? utils.config.const.corePkg : data,
 						desc         : data.description,
 						info         : docsInfo,

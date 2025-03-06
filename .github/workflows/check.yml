@@ -22,7 +22,7 @@ env:
 
 jobs:
   checks:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
 
       #########################################################################
@@ -80,15 +80,15 @@ jobs:
            export npm_config_build_from_source=false
            pnpm install --no-frozen-lockfile --ignore-scripts
 
-      - name: ⬇️🌐 Install Playwright Browsers
-        run: pnpx playwright install --with-deps
+    #   - name: ⬇️🌐 Install Playwright Browsers
+    #     run: pnpx playwright install --with-deps
 
       #########################################################################
       # BUILD
       #########################################################################
 
       - name: 🏗 Build packages
-        run: pnpm build
+        run: pnpm build && pnpm build-bin
 
       #########################################################################
       # TEST
@@ -163,11 +163,15 @@ jobs:
         run: pnpm . gh info update
         continue-on-error: true
 
-    #   - name: 📚🐙😺➡️ Call to workflow for deploy Documentation
-    #     if: steps.updated.outputs.core_version != ''
-    #     uses: benc-uk/workflow-dispatch@v1
-    #     with:
-    #       workflow: release-docs.yml
-    #     continue-on-error: true
+      - name: Release binary 
+        if: ${{ steps.updated.outputs.core_version != '' }}
+        uses: ncipollo/release-action@v1
+        with: 
+          tag: "v${{ steps.updated.outputs.core_version }}"
+          draft: false
+          prerelease: false
+          allowUpdates: true
+          artifacts: "packages/umac/build/compress/*"
+          omitBodyDuringUpdate: true
 
 ###############################################################################

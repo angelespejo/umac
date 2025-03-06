@@ -1,0 +1,7 @@
+# @umac/utils
+
+## 2.0.1
+
+### Patch Changes
+
+- update first js version (v2)

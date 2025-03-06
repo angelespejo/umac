@@ -24,7 +24,8 @@
 	},
 	"type": "module",
 	"workspaces": [
-		"packages/*"
+		"packages/*",
+		"packages/plugin/*"
 	],
 	"scripts": {
 		"+": "run() { pnpm -F @*/\"${@:1}\"; }; run $@",
@@ -32,9 +33,10 @@
 		".": "dovenv",
 		"..": "dovenv x",
 		"build": "pnpm run --sequential \"/build:.*/\"",
+		"build-bin": "pnpm ++ umac build-bin",
 		"build:1": "pnpm + utils build",
 		"build:2": "pnpm -F './packages/plugin/**' build",
-		"build:3": "pnpm + core build",
+		"build:3": "pnpm ++ umac build",
 		"test": "pnpm run --sequential \"/test:.*/\"",
 		"test:check": "pnpm -F '*umac*' run check",
 		"test:check-ws": "pnpm --silent . check --silent",
@@ -45,8 +47,8 @@
 		"@changesets/changelog-github": "0.5.1",
 		"@dovenv/core": "1.4.5",
 		"@dovenv/theme-pigeonposse": "1.4.5",
-		"@playwright/test": "1.50.1",
 		"@types/node": "22.13.9",
+		"binarium": "2.0.6",
 		"eslint": "9.21.0",
 		"tslib": "2.8.1",
 		"tsx": "4.19.3",

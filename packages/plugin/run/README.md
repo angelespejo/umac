@@ -64,14 +64,14 @@ deno add @umac/run
   - [Appearance](https://github.com/angelespejo/umac/guide/plugin/appearance)
   - [Cache](https://github.com/angelespejo/umac/guide/plugin/cache)
   - [Desktop](https://github.com/angelespejo/umac/guide/plugin/desktop)
-  - [Finder](https://github.com/angelespejo/umac/guide/plugin/finder)
   - [Interacting](https://github.com/angelespejo/umac/guide/plugin/interacting)
+  - [Finder](https://github.com/angelespejo/umac/guide/plugin/finder)
   - [Open](https://github.com/angelespejo/umac/guide/plugin/open)
-  - [Run](https://github.com/angelespejo/umac/guide/plugin/run)
   - [Spotlight](https://github.com/angelespejo/umac/guide/plugin/spotlight)
-  - [Terminal](https://github.com/angelespejo/umac/guide/plugin/terminal)
-  - [Workflow](https://github.com/angelespejo/umac/guide/plugin/workflow)
   - [System](https://github.com/angelespejo/umac/guide/plugin/system)
+  - [Terminal](https://github.com/angelespejo/umac/guide/plugin/terminal)
+  - [Run](https://github.com/angelespejo/umac/guide/plugin/run)
+  - [Workflow](https://github.com/angelespejo/umac/guide/plugin/workflow)
 
 
 ---

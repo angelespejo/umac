@@ -1,5 +1,11 @@
 # @dovenv/repo-config
 
+## 2.0.1
+
+### Patch Changes
+
+- update first js version (v2)
+
 ## 1.4.4
 
 ### Patch Changes

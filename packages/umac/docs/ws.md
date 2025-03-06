@@ -1,5 +1,7 @@
 ## What can we do with `umac`?
 
+[![HELP]({{const.pkg.repository.url}}/blob/main/docs/public/help.png?raw=true)]({{const.pkg.homepage}})
+
 - Set dialogs
 - Set notifications
 - Set voice messages
@@ -12,17 +14,19 @@
 - Run scripts
 - ...
 
-[![HELP]({{const.pkg.repository.url}}/blob/main/docs/public/help.png?raw=true)]({{const.pkg.homepage}})
-
 ## 🗝 Prerequesites
 
 Have a system based on **DarwinOS**, that is, any **apple** computer. 🍎
+
+## 🔢 Use Executable
+
+You can download the binary directly from the [releases]({{const.pkg.repository.url}}/releases) section
 
 ## 🟢 JavaScript / Typescript library 
 
 > Now You can use `umac` on your **JS** / **TS** project
 
-## 🔢 CLI
+## 🚀 CLI
 
 Execute cli with:
 

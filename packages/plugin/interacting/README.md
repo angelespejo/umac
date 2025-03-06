@@ -61,17 +61,17 @@ deno add @umac/interacting
 - ⚒️ [Utils](https://github.com/angelespejo/umac/guide/utils)
 - 🔌 [Plugins](https://github.com/angelespejo/umac/guide/plugin)
   - [App](https://github.com/angelespejo/umac/guide/plugin/app)
-  - [Appearance](https://github.com/angelespejo/umac/guide/plugin/appearance)
   - [Cache](https://github.com/angelespejo/umac/guide/plugin/cache)
-  - [Desktop](https://github.com/angelespejo/umac/guide/plugin/desktop)
+  - [Appearance](https://github.com/angelespejo/umac/guide/plugin/appearance)
   - [Finder](https://github.com/angelespejo/umac/guide/plugin/finder)
   - [Interacting](https://github.com/angelespejo/umac/guide/plugin/interacting)
+  - [Desktop](https://github.com/angelespejo/umac/guide/plugin/desktop)
   - [Open](https://github.com/angelespejo/umac/guide/plugin/open)
   - [Run](https://github.com/angelespejo/umac/guide/plugin/run)
-  - [System](https://github.com/angelespejo/umac/guide/plugin/system)
   - [Spotlight](https://github.com/angelespejo/umac/guide/plugin/spotlight)
   - [Terminal](https://github.com/angelespejo/umac/guide/plugin/terminal)
   - [Workflow](https://github.com/angelespejo/umac/guide/plugin/workflow)
+  - [System](https://github.com/angelespejo/umac/guide/plugin/system)
 
 
 ---

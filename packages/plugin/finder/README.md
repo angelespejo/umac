@@ -57,21 +57,21 @@ deno add @umac/finder
 
 ## ➕ More
 
-- 🍎 [Umac](https://github.com/angelespejo/umac/guide/umac)
 - ⚒️ [Utils](https://github.com/angelespejo/umac/guide/utils)
+- 🍎 [Umac](https://github.com/angelespejo/umac/guide/umac)
 - 🔌 [Plugins](https://github.com/angelespejo/umac/guide/plugin)
   - [App](https://github.com/angelespejo/umac/guide/plugin/app)
-  - [Appearance](https://github.com/angelespejo/umac/guide/plugin/appearance)
   - [Cache](https://github.com/angelespejo/umac/guide/plugin/cache)
   - [Desktop](https://github.com/angelespejo/umac/guide/plugin/desktop)
+  - [Appearance](https://github.com/angelespejo/umac/guide/plugin/appearance)
   - [Finder](https://github.com/angelespejo/umac/guide/plugin/finder)
-  - [Interacting](https://github.com/angelespejo/umac/guide/plugin/interacting)
   - [Open](https://github.com/angelespejo/umac/guide/plugin/open)
+  - [Interacting](https://github.com/angelespejo/umac/guide/plugin/interacting)
   - [Run](https://github.com/angelespejo/umac/guide/plugin/run)
-  - [Spotlight](https://github.com/angelespejo/umac/guide/plugin/spotlight)
   - [System](https://github.com/angelespejo/umac/guide/plugin/system)
   - [Terminal](https://github.com/angelespejo/umac/guide/plugin/terminal)
   - [Workflow](https://github.com/angelespejo/umac/guide/plugin/workflow)
+  - [Spotlight](https://github.com/angelespejo/umac/guide/plugin/spotlight)
 
 
 ---

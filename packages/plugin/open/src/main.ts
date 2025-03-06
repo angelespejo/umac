@@ -62,7 +62,7 @@ const cli = new UmacCommand( {
 		const open = new Open()
 		await open.run( path, ID )
 
-		console.log( successStyle( `Opened "${path || process.cwd()}" in ${bold( ID || path?.startsWith( 'http' ) ? 'Default Browser' : 'Finder' )}` ) )
+		console.log( successStyle( `Opened "${path || process.cwd()}" in ${bold( ID ? ID : ( path?.startsWith( 'http' ) ? 'Default Browser' : 'Finder' ) )}` ) )
 
 	},
 } )

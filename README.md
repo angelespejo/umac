@@ -1,4 +1,4 @@
-# umac-mono
+# umac
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -18,8 +18,9 @@ Terminal utilities for MacOS: install apps, force close apps, clear cache, add d
 
 - [What can we do with `umac`?](#what-can-we-do-with-umac)
 - [🗝 Prerequesites](#-prerequesites)
+- [🔢 Use Executable](#-use-executable)
 - [🟢 JavaScript / Typescript library](#-javascript--typescript-library)
-- [🔢 CLI](#-cli)
+- [🚀 CLI](#-cli)
 - [🔑 Installation](#-installation)
 - [⚙️ Usage](#-usage)
   - [Apps](#apps)
@@ -72,6 +73,8 @@ Terminal utilities for MacOS: install apps, force close apps, clear cache, add d
 
 ## What can we do with `umac`?
 
+[![HELP](https://github.com/angelespejo/umac/blob/main/docs/public/help.png?raw=true)](https://github.com/angelespejo/umac)
+
 - Set dialogs
 - Set notifications
 - Set voice messages
@@ -84,17 +87,19 @@ Terminal utilities for MacOS: install apps, force close apps, clear cache, add d
 - Run scripts
 - ...
 
-[![HELP](https://github.com/angelespejo/umac/blob/main/docs/public/help.png?raw=true)](https://github.com/angelespejo/umac)
-
 ## 🗝 Prerequesites
 
 Have a system based on **DarwinOS**, that is, any **apple** computer. 🍎
+
+## 🔢 Use Executable
+
+You can download the binary directly from the [releases](https://github.com/angelespejo/umac/releases) section
 
 ## 🟢 JavaScript / Typescript library 
 
 > Now You can use `umac` on your **JS** / **TS** project
 
-## 🔢 CLI
+## 🚀 CLI
 
 Execute cli with:
 
@@ -117,9 +122,6 @@ bun add umac
 # or
 deno add umac
 ```
-
-
-
 
 ## ⚙️ Usage
 
@@ -546,18 +548,18 @@ umac appearance color --help
 - 🍎 [Umac](https://github.com/angelespejo/umac/guide/umac)
 - ⚒️ [Utils](https://github.com/angelespejo/umac/guide/utils)
 - 🔌 [Plugins](https://github.com/angelespejo/umac/guide/plugin)
-  - [Appearance](https://github.com/angelespejo/umac/guide/plugin/appearance)
-  - [Cache](https://github.com/angelespejo/umac/guide/plugin/cache)
   - [App](https://github.com/angelespejo/umac/guide/plugin/app)
+  - [Appearance](https://github.com/angelespejo/umac/guide/plugin/appearance)
   - [Desktop](https://github.com/angelespejo/umac/guide/plugin/desktop)
-  - [Interacting](https://github.com/angelespejo/umac/guide/plugin/interacting)
   - [Finder](https://github.com/angelespejo/umac/guide/plugin/finder)
+  - [Interacting](https://github.com/angelespejo/umac/guide/plugin/interacting)
   - [Open](https://github.com/angelespejo/umac/guide/plugin/open)
-  - [Spotlight](https://github.com/angelespejo/umac/guide/plugin/spotlight)
+  - [Cache](https://github.com/angelespejo/umac/guide/plugin/cache)
   - [Run](https://github.com/angelespejo/umac/guide/plugin/run)
+  - [Spotlight](https://github.com/angelespejo/umac/guide/plugin/spotlight)
   - [System](https://github.com/angelespejo/umac/guide/plugin/system)
-  - [Workflow](https://github.com/angelespejo/umac/guide/plugin/workflow)
   - [Terminal](https://github.com/angelespejo/umac/guide/plugin/terminal)
+  - [Workflow](https://github.com/angelespejo/umac/guide/plugin/workflow)
 
 
 ---
