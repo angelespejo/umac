@@ -1,5 +1,14 @@
 # @umac-js/terminal
 
+## 2.0.4
+
+### Patch Changes
+
+- add license file
+
+- Updated dependencies []:
+  - @umac-js/utils@2.0.4
+
 ## 2.0.3
 
 ### Patch Changes

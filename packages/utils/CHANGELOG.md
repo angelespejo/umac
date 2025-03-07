@@ -1,5 +1,11 @@
 # @umac-js/utils
 
+## 2.0.4
+
+### Patch Changes
+
+- add license file
+
 ## 2.0.3
 
 ### Patch Changes

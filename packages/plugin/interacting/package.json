@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/interacting",
-	"version": "2.0.3",
+	"version": "2.0.4",
 	"description": "MacOS Workflow utils",
 	"keywords": [
 		"cli",
