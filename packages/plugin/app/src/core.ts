@@ -4,7 +4,7 @@ import {
 	getMatch,
 	PATH,
 	promptMultipleSelect,
-} from '@umac/utils'
+} from '@umac-js/utils'
 
 export class Brew {
 

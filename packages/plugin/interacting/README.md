@@ -1,4 +1,4 @@
-# @umac/interacting
+# @umac-js/interacting
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -43,15 +43,15 @@ Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 ## 🔑 Installation
 
 ```bash 
-npm install @umac/interacting
+npm install @umac-js/interacting
 # or
-pnpm install @umac/interacting
+pnpm install @umac-js/interacting
 # or
-yarn add @umac/interacting
+yarn add @umac-js/interacting
 # or
-bun add @umac/interacting
+bun add @umac-js/interacting
 # or
-deno add @umac/interacting
+deno add @umac-js/interacting
 ```
 
 ## ➕ More

@@ -6,7 +6,7 @@ import {
 	copyDir,
 	readDir,
 	joinPath,
-} from '@umac/utils'
+} from '@umac-js/utils'
 
 export const WORKFLOW_CMD = {
 	LIST     : 'list',

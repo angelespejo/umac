@@ -6,7 +6,7 @@ import {
 	PATH,
 	promptSelect,
 	removePathIfExist,
-} from '@umac/utils'
+} from '@umac-js/utils'
 
 export class Desktop {
 

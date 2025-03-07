@@ -1,6 +1,6 @@
 {
-	"name": "@umac/interacting",
-	"version": "2.0.1",
+	"name": "@umac-js/interacting",
+	"version": "2.0.2",
 	"description": "MacOS Workflow utils",
 	"keywords": [
 		"cli",
@@ -45,10 +45,10 @@
 		"dev": "tsx src/bin.ts"
 	},
 	"devDependencies": {
-		"@umac/repo-config": "workspace:*"
+		"@umac-js/repo-config": "workspace:*"
 	},
 	"peerDependencies": {
-		"@umac/utils": "workspace:*"
+		"@umac-js/utils": "workspace:*"
 	},
 	"publishConfig": {
 		"access": "public",

@@ -1,4 +1,4 @@
-# @umac/open
+# @umac-js/open
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -43,15 +43,15 @@ Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 ## 🔑 Installation
 
 ```bash 
-npm install @umac/open
+npm install @umac-js/open
 # or
-pnpm install @umac/open
+pnpm install @umac-js/open
 # or
-yarn add @umac/open
+yarn add @umac-js/open
 # or
-bun add @umac/open
+bun add @umac-js/open
 # or
-deno add @umac/open
+deno add @umac-js/open
 ```
 
 ## ➕ More

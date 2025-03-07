@@ -3,7 +3,7 @@ import {
 	liStyle,
 	UmacCommand,
 	underline,
-} from '@umac/utils'
+} from '@umac-js/utils'
 
 import {
 	BIN_NAME,

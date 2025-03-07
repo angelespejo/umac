@@ -1,6 +1,6 @@
 {
 	"name": "umac",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "Terminal utilities for MacOS",
 	"keywords": [
 		"cli",
@@ -45,22 +45,22 @@
 		"dev": "tsx src/bin.ts"
 	},
 	"dependencies": {
-		"@umac/app": "workspace:*",
-		"@umac/appearance": "workspace:*",
-		"@umac/cache": "workspace:*",
-		"@umac/desktop": "workspace:*",
-		"@umac/finder": "workspace:*",
-		"@umac/interacting": "workspace:*",
-		"@umac/open": "workspace:*",
-		"@umac/run": "workspace:*",
-		"@umac/spotlight": "workspace:*",
-		"@umac/system": "workspace:*",
-		"@umac/terminal": "workspace:*",
-		"@umac/utils": "workspace:*",
-		"@umac/workflow": "workspace:*"
+		"@umac-js/app": "workspace:*",
+		"@umac-js/appearance": "workspace:*",
+		"@umac-js/cache": "workspace:*",
+		"@umac-js/desktop": "workspace:*",
+		"@umac-js/finder": "workspace:*",
+		"@umac-js/interacting": "workspace:*",
+		"@umac-js/open": "workspace:*",
+		"@umac-js/run": "workspace:*",
+		"@umac-js/spotlight": "workspace:*",
+		"@umac-js/system": "workspace:*",
+		"@umac-js/terminal": "workspace:*",
+		"@umac-js/utils": "workspace:*",
+		"@umac-js/workflow": "workspace:*"
 	},
 	"devDependencies": {
-		"@umac/repo-config": "workspace:*"
+		"@umac-js/repo-config": "workspace:*"
 	},
 	"publishConfig": {
 		"access": "public",

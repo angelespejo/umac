@@ -5,7 +5,7 @@ import {
 	promptSelect,
 	readDir,
 	removePathIfExist,
-} from '@umac/utils'
+} from '@umac-js/utils'
 
 export class Cache {
 

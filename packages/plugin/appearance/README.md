@@ -1,4 +1,4 @@
-# @umac/appearance
+# @umac-js/appearance
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -43,15 +43,15 @@ Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 ## 🔑 Installation
 
 ```bash 
-npm install @umac/appearance
+npm install @umac-js/appearance
 # or
-pnpm install @umac/appearance
+pnpm install @umac-js/appearance
 # or
-yarn add @umac/appearance
+yarn add @umac-js/appearance
 # or
-bun add @umac/appearance
+bun add @umac-js/appearance
 # or
-deno add @umac/appearance
+deno add @umac-js/appearance
 ```
 
 ## ➕ More

@@ -1,7 +1,7 @@
 import {
 	catchError,
 	runJXA,
-} from '@umac/utils'
+} from '@umac-js/utils'
 
 export type NotificationOpts = {
 	desc      : string

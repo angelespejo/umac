@@ -1,4 +1,4 @@
-# @umac/cache
+# @umac-js/cache
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -43,15 +43,15 @@ Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 ## 🔑 Installation
 
 ```bash 
-npm install @umac/cache
+npm install @umac-js/cache
 # or
-pnpm install @umac/cache
+pnpm install @umac-js/cache
 # or
-yarn add @umac/cache
+yarn add @umac-js/cache
 # or
-bun add @umac/cache
+bun add @umac-js/cache
 # or
-deno add @umac/cache
+deno add @umac-js/cache
 ```
 
 ## ➕ More

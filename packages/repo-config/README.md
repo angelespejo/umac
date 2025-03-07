@@ -1,4 +1,4 @@
-# @umac/repo-config
+# @umac-js/repo-config
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -43,15 +43,15 @@ Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 ## 🔑 Installation
 
 ```bash 
-npm install @umac/repo-config
+npm install @umac-js/repo-config
 # or
-pnpm install @umac/repo-config
+pnpm install @umac-js/repo-config
 # or
-yarn add @umac/repo-config
+yarn add @umac-js/repo-config
 # or
-bun add @umac/repo-config
+bun add @umac-js/repo-config
 # or
-deno add @umac/repo-config
+deno add @umac-js/repo-config
 ```
 
 ## ➕ More

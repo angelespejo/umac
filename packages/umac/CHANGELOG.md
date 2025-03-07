@@ -1,5 +1,26 @@
 # umac
 
+## 2.0.2
+
+### Patch Changes
+
+- fix dep issue
+
+- Updated dependencies []:
+  - @umac-js/interacting@2.0.2
+  - @umac-js/appearance@2.0.2
+  - @umac-js/spotlight@2.0.2
+  - @umac-js/terminal@2.0.2
+  - @umac-js/workflow@2.0.2
+  - @umac-js/desktop@2.0.2
+  - @umac-js/finder@2.0.2
+  - @umac-js/system@2.0.2
+  - @umac-js/cache@2.0.2
+  - @umac-js/open@2.0.2
+  - @umac-js/app@2.0.2
+  - @umac-js/run@2.0.2
+  - @umac-js/utils@2.0.2
+
 ## 2.0.1
 
 ### Patch Changes
@@ -7,16 +28,16 @@
 - update first js version (v2)
 
 - Updated dependencies []:
-  - @umac/interacting@2.0.1
-  - @umac/appearance@2.0.1
-  - @umac/spotlight@2.0.1
-  - @umac/terminal@2.0.1
-  - @umac/workflow@2.0.1
-  - @umac/desktop@2.0.1
-  - @umac/finder@2.0.1
-  - @umac/system@2.0.1
-  - @umac/cache@2.0.1
-  - @umac/open@2.0.1
-  - @umac/app@2.0.1
-  - @umac/run@2.0.1
-  - @umac/utils@2.0.1
+  - @umac-js/interacting@2.0.1
+  - @umac-js/appearance@2.0.1
+  - @umac-js/spotlight@2.0.1
+  - @umac-js/terminal@2.0.1
+  - @umac-js/workflow@2.0.1
+  - @umac-js/desktop@2.0.1
+  - @umac-js/finder@2.0.1
+  - @umac-js/system@2.0.1
+  - @umac-js/cache@2.0.1
+  - @umac-js/open@2.0.1
+  - @umac-js/app@2.0.1
+  - @umac-js/run@2.0.1
+  - @umac-js/utils@2.0.1

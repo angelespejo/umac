@@ -2,7 +2,7 @@ import {
 	infoStyle,
 	successStyle,
 	UmacCommand,
-} from '@umac/utils'
+} from '@umac-js/utils'
 
 import {
 	BIN_NAME,

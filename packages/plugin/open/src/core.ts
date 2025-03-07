@@ -4,7 +4,7 @@ import {
 	process,
 	existsPath,
 	getStringType,
-} from '@umac/utils'
+} from '@umac-js/utils'
 
 export const APP_PATH = {
 	CHROME    : '/Applications/Google Chrome.app',

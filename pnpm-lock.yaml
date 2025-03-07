@@ -44,121 +44,121 @@ importers:
 
   packages/plugin/app:
     dependencies:
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../../utils
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../../repo-config
 
   packages/plugin/appearance:
     dependencies:
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../../utils
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../../repo-config
 
   packages/plugin/cache:
     dependencies:
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../../utils
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../../repo-config
 
   packages/plugin/desktop:
     dependencies:
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../../utils
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../../repo-config
 
   packages/plugin/finder:
     dependencies:
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../../utils
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../../repo-config
 
   packages/plugin/interacting:
     dependencies:
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../../utils
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../../repo-config
 
   packages/plugin/open:
     dependencies:
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../../utils
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../../repo-config
 
   packages/plugin/run:
     dependencies:
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../../utils
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../../repo-config
 
   packages/plugin/spotlight:
     dependencies:
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../../utils
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../../repo-config
 
   packages/plugin/system:
     dependencies:
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../../utils
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../../repo-config
 
   packages/plugin/terminal:
     dependencies:
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../../utils
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../../repo-config
 
   packages/plugin/workflow:
     dependencies:
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../../utils
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../../repo-config
 
@@ -166,47 +166,47 @@ importers:
 
   packages/umac:
     dependencies:
-      '@umac/app':
+      '@umac-js/app':
         specifier: workspace:*
         version: link:../plugin/app
-      '@umac/appearance':
+      '@umac-js/appearance':
         specifier: workspace:*
         version: link:../plugin/appearance
-      '@umac/cache':
+      '@umac-js/cache':
         specifier: workspace:*
         version: link:../plugin/cache
-      '@umac/desktop':
+      '@umac-js/desktop':
         specifier: workspace:*
         version: link:../plugin/desktop
-      '@umac/finder':
+      '@umac-js/finder':
         specifier: workspace:*
         version: link:../plugin/finder
-      '@umac/interacting':
+      '@umac-js/interacting':
         specifier: workspace:*
         version: link:../plugin/interacting
-      '@umac/open':
+      '@umac-js/open':
         specifier: workspace:*
         version: link:../plugin/open
-      '@umac/run':
+      '@umac-js/run':
         specifier: workspace:*
         version: link:../plugin/run
-      '@umac/spotlight':
+      '@umac-js/spotlight':
         specifier: workspace:*
         version: link:../plugin/spotlight
-      '@umac/system':
+      '@umac-js/system':
         specifier: workspace:*
         version: link:../plugin/system
-      '@umac/terminal':
+      '@umac-js/terminal':
         specifier: workspace:*
         version: link:../plugin/terminal
-      '@umac/utils':
+      '@umac-js/utils':
         specifier: workspace:*
         version: link:../utils
-      '@umac/workflow':
+      '@umac-js/workflow':
         specifier: workspace:*
         version: link:../plugin/workflow
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../repo-config
 
@@ -219,7 +219,7 @@ importers:
         specifier: 5.0.0
         version: 5.0.0
     devDependencies:
-      '@umac/repo-config':
+      '@umac-js/repo-config':
         specifier: workspace:*
         version: link:../repo-config
 

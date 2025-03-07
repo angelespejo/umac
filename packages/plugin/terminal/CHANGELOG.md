@@ -1,4 +1,13 @@
-# @umac/terminal
+# @umac-js/terminal
+
+## 2.0.2
+
+### Patch Changes
+
+- fix dep issue
+
+- Updated dependencies []:
+  - @umac-js/utils@2.0.2
 
 ## 2.0.1
 
@@ -7,4 +16,4 @@
 - update first js version (v2)
 
 - Updated dependencies []:
-  - @umac/utils@2.0.1
+  - @umac-js/utils@2.0.1

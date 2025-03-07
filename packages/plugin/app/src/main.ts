@@ -7,7 +7,7 @@ import {
 	UmacCommand,
 	underline,
 	warnStyle,
-} from '@umac/utils'
+} from '@umac-js/utils'
 
 import {
 	BIN_NAME,

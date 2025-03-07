@@ -1,4 +1,4 @@
-import { exec } from '@umac/utils'
+import { exec } from '@umac-js/utils'
 
 import { Color }    from './color'
 import { DarkMode } from './dark'

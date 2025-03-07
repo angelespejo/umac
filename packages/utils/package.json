@@ -1,6 +1,6 @@
 {
-	"name": "@umac/utils",
-	"version": "2.0.1",
+	"name": "@umac-js/utils",
+	"version": "2.0.2",
 	"description": "Utilities for umac",
 	"keywords": [
 		"cli",
@@ -45,7 +45,7 @@
 		"matcher": "5.0.0"
 	},
 	"devDependencies": {
-		"@umac/repo-config": "workspace:*"
+		"@umac-js/repo-config": "workspace:*"
 	},
 	"publishConfig": {
 		"access": "public",

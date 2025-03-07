@@ -1,4 +1,4 @@
-# @umac/terminal
+# @umac-js/terminal
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -43,15 +43,15 @@ Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 ## 🔑 Installation
 
 ```bash 
-npm install @umac/terminal
+npm install @umac-js/terminal
 # or
-pnpm install @umac/terminal
+pnpm install @umac-js/terminal
 # or
-yarn add @umac/terminal
+yarn add @umac-js/terminal
 # or
-bun add @umac/terminal
+bun add @umac-js/terminal
 # or
-deno add @umac/terminal
+deno add @umac-js/terminal
 ```
 
 ## ➕ More

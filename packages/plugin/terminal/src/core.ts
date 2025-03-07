@@ -1,7 +1,7 @@
 import {
 	exec,
 	promptSelect,
-} from '@umac/utils'
+} from '@umac-js/utils'
 import { env } from 'node:process'
 
 export class Terminal {

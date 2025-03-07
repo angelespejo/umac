@@ -1,4 +1,4 @@
-# @umac/spotlight
+# @umac-js/spotlight
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -43,15 +43,15 @@ Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 ## 🔑 Installation
 
 ```bash 
-npm install @umac/spotlight
+npm install @umac-js/spotlight
 # or
-pnpm install @umac/spotlight
+pnpm install @umac-js/spotlight
 # or
-yarn add @umac/spotlight
+yarn add @umac-js/spotlight
 # or
-bun add @umac/spotlight
+bun add @umac-js/spotlight
 # or
-deno add @umac/spotlight
+deno add @umac-js/spotlight
 ```
 
 ## ➕ More

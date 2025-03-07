@@ -1,4 +1,4 @@
-# @umac/workflow
+# @umac-js/workflow
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -43,15 +43,15 @@ Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 ## 🔑 Installation
 
 ```bash 
-npm install @umac/workflow
+npm install @umac-js/workflow
 # or
-pnpm install @umac/workflow
+pnpm install @umac-js/workflow
 # or
-yarn add @umac/workflow
+yarn add @umac-js/workflow
 # or
-bun add @umac/workflow
+bun add @umac-js/workflow
 # or
-deno add @umac/workflow
+deno add @umac-js/workflow
 ```
 
 ## ➕ More

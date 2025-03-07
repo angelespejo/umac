@@ -1,4 +1,4 @@
-# @umac/desktop
+# @umac-js/desktop
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -43,15 +43,15 @@ Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 ## 🔑 Installation
 
 ```bash 
-npm install @umac/desktop
+npm install @umac-js/desktop
 # or
-pnpm install @umac/desktop
+pnpm install @umac-js/desktop
 # or
-yarn add @umac/desktop
+yarn add @umac-js/desktop
 # or
-bun add @umac/desktop
+bun add @umac-js/desktop
 # or
-deno add @umac/desktop
+deno add @umac-js/desktop
 ```
 
 ## ➕ More

@@ -1,4 +1,4 @@
-# @umac/finder
+# @umac-js/finder
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -43,15 +43,15 @@ Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 ## 🔑 Installation
 
 ```bash 
-npm install @umac/finder
+npm install @umac-js/finder
 # or
-pnpm install @umac/finder
+pnpm install @umac-js/finder
 # or
-yarn add @umac/finder
+yarn add @umac-js/finder
 # or
-bun add @umac/finder
+bun add @umac-js/finder
 # or
-deno add @umac/finder
+deno add @umac-js/finder
 ```
 
 ## ➕ More

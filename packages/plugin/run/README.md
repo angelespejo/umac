@@ -1,4 +1,4 @@
-# @umac/run
+# @umac-js/run
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -43,15 +43,15 @@ Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 ## 🔑 Installation
 
 ```bash 
-npm install @umac/run
+npm install @umac-js/run
 # or
-pnpm install @umac/run
+pnpm install @umac-js/run
 # or
-yarn add @umac/run
+yarn add @umac-js/run
 # or
-bun add @umac/run
+bun add @umac-js/run
 # or
-deno add @umac/run
+deno add @umac-js/run
 ```
 
 ## ➕ More
