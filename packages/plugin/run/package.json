@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/run",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"description": "Run multiple language scripts (jxa, osascript, python, js, bash etc)",
 	"keywords": [
 		"apps",

@@ -56,21 +56,21 @@ deno add @umac-js/run
 
 ## ➕ More
 
-- 🍎 [Umac](https://github.com/angelespejo/umac/tree/main/packages/umac)
 - ⚒️ [Utils](https://github.com/angelespejo/umac/tree/main/packages/utils)
+- 🍎 [Umac](https://github.com/angelespejo/umac/tree/main/packages/umac)
 - 🔌 [Plugins](https://github.com/angelespejo/umac/tree/main/packages/plugin)
-  - [Cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache)
   - [App](https://github.com/angelespejo/umac/tree/main/packages/plugin/app)
+  - [Cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache)
   - [Appearance](https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance)
   - [Desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop)
   - [Finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder)
-  - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
   - [Open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open)
   - [Run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run)
   - [Spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight)
   - [System](https://github.com/angelespejo/umac/tree/main/packages/plugin/system)
-  - [Terminal](https://github.com/angelespejo/umac/tree/main/packages/plugin/terminal)
+  - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
   - [Workflow](https://github.com/angelespejo/umac/tree/main/packages/plugin/workflow)
+  - [Terminal](https://github.com/angelespejo/umac/tree/main/packages/plugin/terminal)
 
 
 ---

@@ -56,21 +56,21 @@ deno add @umac-js/spotlight
 
 ## ➕ More
 
-- ⚒️ [Utils](https://github.com/angelespejo/umac/tree/main/packages/utils)
 - 🍎 [Umac](https://github.com/angelespejo/umac/tree/main/packages/umac)
+- ⚒️ [Utils](https://github.com/angelespejo/umac/tree/main/packages/utils)
 - 🔌 [Plugins](https://github.com/angelespejo/umac/tree/main/packages/plugin)
-  - [App](https://github.com/angelespejo/umac/tree/main/packages/plugin/app)
   - [Appearance](https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance)
+  - [App](https://github.com/angelespejo/umac/tree/main/packages/plugin/app)
   - [Cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache)
   - [Desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop)
+  - [Finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder)
   - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
   - [Open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open)
-  - [Finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder)
   - [Run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run)
-  - [System](https://github.com/angelespejo/umac/tree/main/packages/plugin/system)
   - [Spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight)
-  - [Workflow](https://github.com/angelespejo/umac/tree/main/packages/plugin/workflow)
+  - [System](https://github.com/angelespejo/umac/tree/main/packages/plugin/system)
   - [Terminal](https://github.com/angelespejo/umac/tree/main/packages/plugin/terminal)
+  - [Workflow](https://github.com/angelespejo/umac/tree/main/packages/plugin/workflow)
 
 
 ---

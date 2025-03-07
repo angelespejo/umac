@@ -1,5 +1,12 @@
 # @umac-js/system
 
+## 2.0.3
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @umac-js/utils@2.0.3
+
 ## 2.0.2
 
 ### Patch Changes

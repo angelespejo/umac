@@ -40,13 +40,9 @@ export default defineConfig(
 				const isPrivate = data.private === true || data.private === 'true' ? true : false
 				const pkgDir    = pkg.replace( 'package.json', '' )
 				const readmeDir = joinPath( pkgDir, 'README.md' )
+				const isCore    = data.name === 'umac'
 				const directory = isWs ? undefined : relativePath( wsDir, pkgDir )
 				const homepage  = isWs ? repoURL : joinUrl( repoURL, 'tree/main', directory )
-				const docs      = new Predocs( {
-					utils,
-					opts : { emoji: { umac: '🍎' } },
-				} )
-				const docsInfo  = await docs.getMarkdownInfo()
 				if ( !data.files && !isPrivate ) data.files = [ 'dist' ]
 				data = {
 					...data,
@@ -78,11 +74,18 @@ export default defineConfig(
 						},
 				}
 				await writeFileContent( pkg, object2string( data ) )
-				const temp    = new templates.Templates( { utils } )
-				docsInfo.more = docsInfo.more.replaceAll( 'guide', 'packages' )
-				if ( isWs ) content += ( await readFile( joinPath( utils.config.const.coreDir, 'docs/index.md' ), 'utf-8' ) )
-				content += docsInfo.more
 
+				const docs = new Predocs( {
+					utils,
+					opts : { emoji: { umac: '🍎' } },
+				} )
+
+				const docsInfo = await docs.getMarkdownInfo()
+
+				docsInfo.more = docsInfo.more.replaceAll( 'guide', 'packages' )
+				if ( isWs || isCore ) content += ( await readFile( joinPath( utils.config.const.coreDir, 'docs/index.md' ), 'utf-8' ) )
+				content   += docsInfo.more
+				const temp = new templates.Templates( { utils } )
 				await temp.get( {
 					// @see https://github.com/pigeonposse/dovenv/blob/main/packages/theme/pigeonposse/src/docs/data/templates.ts
 					input   : docs.template.readmePkg,

@@ -60,17 +60,17 @@ deno add @umac-js/open
 - ⚒️ [Utils](https://github.com/angelespejo/umac/tree/main/packages/utils)
 - 🔌 [Plugins](https://github.com/angelespejo/umac/tree/main/packages/plugin)
   - [App](https://github.com/angelespejo/umac/tree/main/packages/plugin/app)
-  - [Cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache)
-  - [Desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop)
   - [Appearance](https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance)
+  - [Cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache)
   - [Finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder)
+  - [Desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop)
   - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
   - [Open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open)
-  - [Spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight)
   - [Run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run)
-  - [System](https://github.com/angelespejo/umac/tree/main/packages/plugin/system)
+  - [Spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight)
   - [Terminal](https://github.com/angelespejo/umac/tree/main/packages/plugin/terminal)
   - [Workflow](https://github.com/angelespejo/umac/tree/main/packages/plugin/workflow)
+  - [System](https://github.com/angelespejo/umac/tree/main/packages/plugin/system)
 
 
 ---

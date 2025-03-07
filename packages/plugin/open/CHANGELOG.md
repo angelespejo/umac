@@ -1,5 +1,14 @@
 # @umac-js/open
 
+## 2.0.3
+
+### Patch Changes
+
+- fix help output
+
+- Updated dependencies []:
+  - @umac-js/utils@2.0.3
+
 ## 2.0.2
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/repo-config",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"private": true,
 	"description": "Config for workspace repositories",
 	"homepage": "https://github.com/angelespejo/umac/tree/main/packages/repo-config",

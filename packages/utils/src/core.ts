@@ -75,13 +75,14 @@ export class UmacCommand {
 	#setHelp( cmds: string[] | undefined ) {
 
 		if ( !cmds || !cmds.length ) return helpOut( this.helpOpts )
-		const getCmdHelpOpts       = ( helpOpts: HelpOpts | HelpOptsCmd, cmdValue: string ): HelpOptsCmd | undefined => {
+
+		const getCmdHelpOpts = ( helpOpts: HelpOpts | HelpOptsCmd, cmdValue: string ): HelpOptsCmd | undefined => {
 
 			if ( !helpOpts.cmds ) return undefined
-
-			return helpOpts.cmds.find( cmd => cmd.value === cmdValue )
+			return helpOpts.cmds.find( v => v.value.split( ',' ).map( d => d.trim() ).includes( cmdValue ) )
 
 		}
+
 		let isFirst                = true,
 			currentHelpOpts: HelpOptsCmd = this.helpOpts
 		const currentCmd: string[] = []

@@ -44,7 +44,7 @@ const cli = new UmacCommand( {
 			},
 			{
 				value      : CMD.CHANGE,
-				posicional : true,
+				posicional : 'image',
 				desc       : 'Change the Desktop image in the desktop pictures directory.',
 			},
 			{
@@ -68,7 +68,7 @@ const cli = new UmacCommand( {
 	fn : async (  ) => {
 
 		// const desk = new Desktop()
-		console.log( infoStyle( `Currently in development` ) )
+		console.log( infoStyle( [ 'Coming soon', `Currently in development` ] ) )
 
 	},
 } )
