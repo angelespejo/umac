@@ -16,8 +16,11 @@ env:
   GITHUB_TOKEN: ${{ github.token }}
   NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
 permissions:
-  contents: write
-  pull-requests: write
+  contents: write # to create release (changesets/action)
+  pull-requests: write # to create pull request (changesets/action)
+  issues: write # to post issue comments (changesets/action
+  id-token: write # to use OpenID Connect token for provenance (changesets/action)
+  actions: write # to create workflow dispatches 
 
 ###############################################################################
 # JOBS
@@ -51,40 +54,16 @@ jobs:
           limit=$(echo $response | jq -r '.resources.core.limit')
           remaining=$(echo $response | jq -r '.resources.core.remaining')
           echo "GitHub API Rate Limit: $remaining/$limit"
-
           if [ "$remaining" -lt 10 ]; then
               exit 1
           fi
         env:
             GH_TOKEN: ${{ env.GITHUB_TOKEN }}
 
-    ############################### W ALL DEPS ################################
-    #   - name: 🛠 Install System Dependencies for canvas and imagemin npm deps
-    #     run: |
-    #       sudo apt-get update
-    #       sudo apt-get install -y \
-    #         build-essential \
-    #         libcairo2-dev \
-    #         libpango1.0-dev \
-    #         libjpeg-dev \
-    #         libgif-dev \
-    #         librsvg2-dev \
-    #         libpng-dev \
-    #         zlib1g-dev \
-    #         libimagequant-dev \
-    #         nasm
-    #   - name: ⬇️📦 Install dependencies
-    #     run: |
-    #        export npm_config_build_from_source=false
-    #        pnpm install --no-frozen-lockfile
-
       - name: ⬇️📦 Install dependencies
         run: |
            export npm_config_build_from_source=false
            pnpm install --no-frozen-lockfile --ignore-scripts
-
-    #   - name: ⬇️🌐 Install Playwright Browsers
-    #     run: pnpx playwright install --with-deps
 
       #########################################################################
       # BUILD
@@ -126,10 +105,11 @@ jobs:
           version: pnpm . pkg version --silent
           publish: pnpm . pkg publish --silent
           commit: "chore(release): version packages 🦋 [skip ci]"
-          createGithubReleases: false
+          createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ env.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
 
       - name: Get updated versions if exists
         id: updated

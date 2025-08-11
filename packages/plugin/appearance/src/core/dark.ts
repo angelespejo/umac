@@ -20,7 +20,7 @@ export class DarkMode {
 
 		const {
 			stdout, stderr,
-		} =  await exec(  `osascript -e 'tell application "${this.#app}" to set ${this.#property} of ${this.#target} to ${value}'` )
+		} =  await exec( `osascript -e 'tell application "${this.#app}" to set ${this.#property} of ${this.#target} to ${value}'` )
 		if ( stderr ) throw new Error( stderr.toString() )
 		return stdout
 
@@ -36,7 +36,7 @@ export class DarkMode {
 
 	async getStatus() {
 
-		return  await this.#getOSAProperties()
+		return await this.#getOSAProperties()
 
 	}
 

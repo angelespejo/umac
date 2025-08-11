@@ -1,5 +1,11 @@
 # @umac-js/utils
 
+## 2.0.5
+
+### Patch Changes
+
+- update deps, lint code
+
 ## 2.0.4
 
 ### Patch Changes

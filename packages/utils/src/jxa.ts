@@ -1,4 +1,3 @@
-
 import {
 	run as runJXA,
 	runJXACode,

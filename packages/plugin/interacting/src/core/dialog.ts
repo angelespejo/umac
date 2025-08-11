@@ -32,7 +32,7 @@ export type DialogOpts = {
 
 export class Dialog {
 
-	async run( options: DialogOpts )  {
+	async run( options: DialogOpts ) {
 
 		const defaultButton = options.defaultButton || 'Ok'
 		const cancelButton  = options.cancelButton || 'Cancel'

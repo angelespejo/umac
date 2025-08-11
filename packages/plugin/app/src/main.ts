@@ -134,7 +134,7 @@ export const cli = new UmacCommand( {
 
 			if ( ask ) await app.askClose( async v => console.log( successStyle( [ 'Removed app', v ] ) ) )
 			else if ( !filters ) console.warn( warnStyle( [ 'Must add a install value!\n\nExample:', '... close vlc' ] ) )
-			else  {
+			else {
 
 				const res = await app.close( filters, async v => console.log( successStyle( [ 'Removed app', v ] ) ) )
 				if ( !res ) console.log( warnStyle( [ 'Any app found with pattern:', filters.join( ', ' ) ] ) )
@@ -169,7 +169,7 @@ export const cli = new UmacCommand( {
 
 			const filters = argv.getCmdValues( CMD.LIST )
 
-			console.log(  infoStyle( [ underline( 'Sytem apps' ), '\n' ] ) )
+			console.log( infoStyle( [ underline( 'Sytem apps' ), '\n' ] ) )
 			const apps = await app.getAll( filters )
 			for ( const a of apps ) {
 
@@ -182,7 +182,7 @@ export const cli = new UmacCommand( {
 
 			const permission = argv.existsFlag( 'toggle' )
 				? !app.getUndevPermissions()
-				:  argv.existsFlag( 'enable' )
+				: argv.existsFlag( 'enable' )
 					? true
 					: argv.existsFlag( 'disable' ) ? false : undefined
 			if ( typeof permission !== 'undefined' ) {

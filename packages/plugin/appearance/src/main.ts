@@ -78,7 +78,7 @@ const cli = new UmacCommand( {
 	] },
 	fn : async ( { argv } ) => {
 
-		const theme = new Appearance(  )
+		const theme = new Appearance( )
 
 		if ( argv.existsCmd( 'dark-mode' ) ) {
 
@@ -119,7 +119,7 @@ const cli = new UmacCommand( {
 			if ( argv.existsFlag( 'reload' ) || argv.existsFlag( 'r' ) ) await theme.reloadFinder()
 
 			console.log( infoStyle( [ `Color Accent:`, colored( accent ) ] ) )
-			console.log( infoStyle( [ `Color Highlight:`,  colored( highlight ) ] ) )
+			console.log( infoStyle( [ `Color Highlight:`, colored( highlight ) ] ) )
 
 		}
 

@@ -10,17 +10,19 @@ export const getMatch = matcher
 /**
  * Indents a given string by prefixing each line with a given prefix
  * (default is two spaces).
- * @param {string} v - The string to indent.
- * @param {string} [prefix] - The prefix to prepend to each line (default is two spaces).
- * @returns {string} - The indented string.
+ *
+ * @param   {string} v        - The string to indent.
+ * @param   {string} [prefix] - The prefix to prepend to each line (default is two spaces).
+ * @returns {string}          - The indented string.
  */
 export const indent = ( v:string, prefix = '  ' ) =>
 	v.split( '\n' ).map( line => `${prefix}${line}` ).join( '\n' )
 
 /**
  * Capitalizes the first letter of a word.
- * @param {string} s - The word to capitalize.
- * @returns {string} - The capitalized word.
+ *
+ * @param   {string} s - The word to capitalize.
+ * @returns {string}   - The capitalized word.
  */
 export const capitalize = ( s: string ) => s.charAt( 0 ).toUpperCase() + s.slice( 1 )
 
@@ -50,8 +52,9 @@ const isUrl = ( value: string ): boolean => {
 
 /**
  * Joins the given URL parts into a single string.
- * @param {string[]} parts - The URL parts to join.
- * @returns {string} - The joined URL string.
+ *
+ * @param   {string[]} parts - The URL parts to join.
+ * @returns {string}         - The joined URL string.
  */
 export const joinUrl = ( ...parts: string[] ) => {
 
@@ -63,6 +66,7 @@ export const joinUrl = ( ...parts: string[] ) => {
 
 /**
  * Fetch content from a URL to string.
+ *
  * @param   {string}          url - URL of the resource.
  * @returns {Promise<string>}     - The fetched content.
  * @throws {Error} If there is an error fetching content from the URL.

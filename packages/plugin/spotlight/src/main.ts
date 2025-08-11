@@ -45,7 +45,7 @@ const cli = new UmacCommand( {
 		const path      = argv.getPositionalAt( 0 ) || '/'
 		const flag      = argv.existsFlag( 'disable' )
 			? false
-			:  argv.existsFlag( 'enable' )
+			: argv.existsFlag( 'enable' )
 				? true
 				: argv.existsFlag( 'toggle' )
 					? 'toggle'

@@ -22,7 +22,7 @@ export const exec = async ( cmd: string ): Promise<ExecResult> => {
 
 	try {
 
-		return  await execPromise( cmd )
+		return await execPromise( cmd )
 
 	}
 	catch ( e ) {
@@ -49,7 +49,7 @@ const promptSelectBase = async ( question: string, values: string[], multiple: b
 	values.forEach( ( option, index ) =>
 		console.log( indent( `${bold( ( index + 1 ).toString() )} ${dim( option === 'quit' ? 'Quit' : option )}` ) ),
 	)
-	console.log(  )
+	console.log( )
 
 	const answer = await rl.question( customStyle( ICON.ARROW, [ multiple ? 'Enter choices (separated by a comma)' : 'Enter choice: ', '' ] ) )
 	rl.close()

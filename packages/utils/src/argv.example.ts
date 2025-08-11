@@ -8,7 +8,7 @@ const argv = new Argv( [
 	'225',
 	'0',
 ] )
-console.log(  )
+console.log( )
 console.log( {
 	cmd  : argv.getCmdValues( 'command' ),
 	flag : argv.getFlagValues( 'color' ),

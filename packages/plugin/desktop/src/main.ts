@@ -65,7 +65,7 @@ const cli = new UmacCommand( {
 			},
 		],
 	},
-	fn : async (  ) => {
+	fn : async ( ) => {
 
 		// const desk = new Desktop()
 		console.log( infoStyle( [ 'Coming soon', `Currently in development` ] ) )

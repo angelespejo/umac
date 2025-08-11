@@ -1,5 +1,14 @@
 # @umac-js/desktop
 
+## 2.0.5
+
+### Patch Changes
+
+- update deps, lint code
+
+- Updated dependencies []:
+  - @umac-js/utils@2.0.5
+
 ## 2.0.4
 
 ### Patch Changes

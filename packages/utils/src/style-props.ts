@@ -1,19 +1,19 @@
-export type StyleForegroundColor =
-	| 'black' | 'blackBright' | 'blue' | 'blueBright' | 'cyan' | 'cyanBright'
-	| 'gray' | 'green' | 'greenBright' | 'grey' | 'magenta' | 'magentaBright'
-	| 'red' | 'redBright' | 'white' | 'whiteBright' | 'yellow' | 'yellowBright'
+export type StyleForegroundColor
+	= | 'black' | 'blackBright' | 'blue' | 'blueBright' | 'cyan' | 'cyanBright'
+		| 'gray' | 'green' | 'greenBright' | 'grey' | 'magenta' | 'magentaBright'
+		| 'red' | 'redBright' | 'white' | 'whiteBright' | 'yellow' | 'yellowBright'
 
-export type StyleBackgroundColor =
-	| 'bgBlack' | 'bgBlackBright' | 'bgBlue' | 'bgBlueBright' | 'bgCyan'
-	| 'bgCyanBright' | 'bgGray' | 'bgGreen' | 'bgGreenBright' | 'bgGrey'
-	| 'bgMagenta' | 'bgMagentaBright' | 'bgRed' | 'bgRedBright' | 'bgWhite'
-	| 'bgWhiteBright' | 'bgYellow' | 'bgYellowBright'
+export type StyleBackgroundColor
+	= | 'bgBlack' | 'bgBlackBright' | 'bgBlue' | 'bgBlueBright' | 'bgCyan'
+		| 'bgCyanBright' | 'bgGray' | 'bgGreen' | 'bgGreenBright' | 'bgGrey'
+		| 'bgMagenta' | 'bgMagentaBright' | 'bgRed' | 'bgRedBright' | 'bgWhite'
+		| 'bgWhiteBright' | 'bgYellow' | 'bgYellowBright'
 
-export type StyleModifier =
-	| 'blink' | 'bold' | 'dim' | 'doubleunderline' | 'framed' | 'hidden'
-	| 'inverse' | 'italic' | 'overlined' | 'reset' | 'strikethrough' | 'underline'
+export type StyleModifier
+	= | 'blink' | 'bold' | 'dim' | 'doubleunderline' | 'framed' | 'hidden'
+		| 'inverse' | 'italic' | 'overlined' | 'reset' | 'strikethrough' | 'underline'
 
-export const  STYLE_FOREGROUND_COLOR = {
+export const STYLE_FOREGROUND_COLOR = {
 	black         : 'black',
 	red           : 'red',
 	green         : 'green',

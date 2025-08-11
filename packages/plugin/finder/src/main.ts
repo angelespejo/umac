@@ -70,7 +70,7 @@ const cli = new UmacCommand( {
 
 			const flag = argv.existsFlag( 'disable' )
 				? false
-				:  argv.existsFlag( 'enable' )
+				: argv.existsFlag( 'enable' )
 					? true
 					: argv.existsFlag( 'toggle' )
 						? 'toggle'

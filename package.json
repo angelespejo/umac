@@ -8,7 +8,7 @@
 		"email": "dev@pigeonposse.com"
 	},
 	"repository": {
-		"type": "git",
+		"type": "https",
 		"url": "https://github.com/angelespejo/umac"
 	},
 	"funding": {
@@ -30,12 +30,13 @@
 		"+": "run() { pnpm -F @*/\"${@:1}\"; }; run $@",
 		"++": "pnpm -F $@",
 		".": "dovenv",
-		"..": "dovenv x",
 		"build": "pnpm run --sequential \"/build:.*/\"",
 		"build-bin": "pnpm ++ umac build-bin",
 		"build:1": "pnpm + utils build",
 		"build:2": "pnpm -F './packages/plugin/**' build",
 		"build:3": "pnpm ++ umac build",
+		"lint:eslint": "dovenv lint eslint",
+		"lint:pkg": "dovenv lint custom -k pkg",
 		"test": "pnpm run --sequential \"/test:.*/\"",
 		"test:check": "pnpm -F '*umac*' run check",
 		"test:check-ws": "pnpm --silent . check --silent",

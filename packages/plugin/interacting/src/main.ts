@@ -102,7 +102,7 @@ const normalizeArray    = ( arr: ( number | string )[] ): [number, number, numbe
 	return arr
 		.map( item => Number( item ) )
 		.slice( 0, 3 )
-		.concat( Array( Math.max( 0, 3 - arr.length ) ).fill( 0 ) ) as  [number, number, number]
+		.concat( Array( Math.max( 0, 3 - arr.length ) ).fill( 0 ) ) as [number, number, number]
 
 }
 
@@ -242,7 +242,7 @@ export const cli = new UmacCommand( {
 	] },
 	fn : async ( { argv } ) => {
 
-		const interact = new Interacting(  )
+		const interact = new Interacting( )
 		if ( argv.existsCmd( CMD.DIALOG ) ) {
 
 			const text = argv.getFlagValue( 'desc' )
@@ -322,7 +322,7 @@ export const cli = new UmacCommand( {
 			else if ( argv.existsCmd( CMD.PROMPT_INPUT ) ) {
 
 				const desc =  argv.getFlagValue( 'desc' )
-				if ( !desc )  console.log( warnStyle( '--desc [text] is required!' ) )
+				if ( !desc ) console.log( warnStyle( '--desc [text] is required!' ) )
 				else {
 
 					const res = await interact.prompt.input( {

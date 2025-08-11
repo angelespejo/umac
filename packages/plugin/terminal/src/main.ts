@@ -70,7 +70,7 @@ const cli = new UmacCommand( {
 				console.log( infoStyle( [ 'Termnial shell', shell ] ) )
 
 			}
-			else if (  argv.existsCmd( CMD.SHELL_LIST ) ) {
+			else if ( argv.existsCmd( CMD.SHELL_LIST ) ) {
 
 				const shells = await term.getShellList()
 				console.log( infoStyle( [ 'Available shells:', '\n' ] ) )

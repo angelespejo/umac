@@ -1,5 +1,26 @@
 # umac
 
+## 2.0.5
+
+### Patch Changes
+
+- update deps, lint code
+
+- Updated dependencies []:
+  - @umac-js/interacting@2.0.5
+  - @umac-js/appearance@2.0.5
+  - @umac-js/spotlight@2.0.5
+  - @umac-js/terminal@2.0.5
+  - @umac-js/workflow@2.0.5
+  - @umac-js/desktop@2.0.5
+  - @umac-js/finder@2.0.5
+  - @umac-js/system@2.0.5
+  - @umac-js/cache@2.0.5
+  - @umac-js/open@2.0.5
+  - @umac-js/app@2.0.5
+  - @umac-js/run@2.0.5
+  - @umac-js/utils@2.0.5
+
 ## 2.0.4
 
 ### Patch Changes

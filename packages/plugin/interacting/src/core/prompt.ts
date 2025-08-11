@@ -50,6 +50,7 @@ export type PromptFileOpt = {
 	title?                  : string
 	/**
 	 * a list of file types or type identifiers. Only files of the specified types will be selectable.
+	 *
 	 * @example ['png']
 	 */
 	types?                  : string[]
@@ -59,16 +60,19 @@ export type PromptFileOpt = {
 	defaultLocation?        : string
 	/**
 	 * Show invisible files and folders?
+	 *
 	 * @default false
 	 */
 	dotfiles?               : boolean
 	/**
 	 * Allow multiple items to be selected?
+	 *
 	 * @default false
 	 */
 	multiple?               : boolean
 	/**
 	 * Show the contents of packages? (Packages will be treated as folders)
+	 *
 	 * @default false
 	 */
 	showingPackageContents? : boolean
@@ -88,16 +92,19 @@ export type PromptFolderOpt = {
 	defaultLocation?        : string
 	/**
 	 * Show invisible files and folders?
+	 *
 	 * @default false
 	 */
 	dotfiles?               : boolean
 	/**
 	 * Allow multiple items to be selected?
+	 *
 	 * @default false
 	 */
 	multiple?               : boolean
 	/**
 	 * Show the contents of packages? (Packages will be treated as folders)
+	 *
 	 * @default false
 	 */
 	showingPackageContents? : boolean
@@ -189,7 +196,7 @@ export class Prompt {
 					// @ts-ignore
 					const app                    = Application.currentApplication()
 					app.includeStandardAdditions = true
-					if ( !defaultColor ) return app.chooseColor(  )
+					if ( !defaultColor ) return app.chooseColor( )
 					else return app.chooseColor( { defaultColor } )
 
 				}
@@ -276,7 +283,7 @@ export class Prompt {
 			)
 
 			// @ts-ignore
-			return  res === cancelButton || res.buttonReturned === cancelButton
+			return res === cancelButton || res.buttonReturned === cancelButton
 				? undefined
 				: {
 					button : res.buttonReturned === defaultButton
@@ -325,7 +332,7 @@ export class Prompt {
 					// @ts-ignore
 					if ( defaultLocation && defaultLocation !== null ) opts.defaultLocation = defaultLocation
 					const path  = app.chooseFile( opts )
-					const paths = typeof path === 'string' ?  [ path ] : path
+					const paths = typeof path === 'string' ? [ path ] : path
 					// @ts-ignore
 					return paths.map( v => v.toString() )
 
@@ -382,7 +389,7 @@ export class Prompt {
 					// @ts-ignore
 					if ( defaultLocation && defaultLocation !== null ) opts.defaultLocation = defaultLocation
 					const path  = app.chooseFolder( opts )
-					const paths = typeof path === 'string' ?  [ path ] : path
+					const paths = typeof path === 'string' ? [ path ] : path
 					// @ts-ignore
 					return paths.map( v => v.toString() )
 

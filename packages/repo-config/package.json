@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/repo-config",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"private": true,
 	"description": "Config for workspace repositories",
 	"homepage": "https://github.com/angelespejo/umac/tree/main/packages/repo-config",
@@ -9,7 +9,7 @@
 		"email": "dev@pigeonposse.com"
 	},
 	"repository": {
-		"type": "git",
+		"type": "https",
 		"url": "https://github.com/angelespejo/umac/tree/main",
 		"directory": "packages/repo-config"
 	},

@@ -71,7 +71,7 @@ export const cli = new UmacCommand( {
 		argv, getHelp,
 	} ) => {
 
-		const code = argv.getFlagValue( 'input' ) ||  argv.getFlagValue( 'i' )
+		const code = argv.getFlagValue( 'input' ) || argv.getFlagValue( 'i' )
 
 		const run = new Run()
 		if ( !code ) console.log( warnStyle( 'need --input|-i [value] flag with a local route' ) )

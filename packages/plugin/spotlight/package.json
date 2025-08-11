@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/spotlight",
-	"version": "2.0.4",
+	"version": "2.0.5",
 	"description": "MacOS Spotlight utils",
 	"keywords": [
 		"apple",
@@ -17,7 +17,7 @@
 		"email": "dev@pigeonposse.com"
 	},
 	"repository": {
-		"type": "git",
+		"type": "https",
 		"url": "https://github.com/angelespejo/umac/tree/main",
 		"directory": "packages/plugin/spotlight"
 	},
@@ -32,9 +32,12 @@
 		"url": "https://github.com/angelespejo"
 	},
 	"type": "module",
-	"main": "./dist/main.cjs",
-	"module": "./dist/main.mjs",
-	"types": "./dist/main.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/main.d.ts",
+			"import": "./dist/main.mjs"
+		}
+	},
 	"bin": {
 		"umac-spotlight": "./dist/bin.mjs"
 	},

@@ -13,7 +13,7 @@ class FinderSuper {
 	}
 
 }
-export class FinderFiles  extends FinderSuper {
+export class FinderFiles extends FinderSuper {
 
 	async isShowingAll(): Promise<boolean> {
 

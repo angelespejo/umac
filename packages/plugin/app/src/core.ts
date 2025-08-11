@@ -100,7 +100,7 @@ export class Apps {
 
 	}
 
-	async askClose(  onClose?: ( app: string ) => Promise<unknown>  ) {
+	async askClose( onClose?: ( app: string ) => Promise<unknown> ) {
 
 		const openApps = await this.getOpenApps()
 
@@ -117,7 +117,7 @@ export class Apps {
 
 	}
 
-	async close( pattern: string[], onClose?: ( app: string ) => Promise<unknown>  ) {
+	async close( pattern: string[], onClose?: ( app: string ) => Promise<unknown> ) {
 
 		const openApps = await this.getOpenApps()
 
@@ -169,7 +169,7 @@ export class Apps {
 
 	}
 
-	async getUndevPermissions(  ) {
+	async getUndevPermissions( ) {
 
 		try {
 
@@ -179,7 +179,7 @@ export class Apps {
 		}
 		catch ( _e ) {
 
-			return true  // error means that is enabled
+			return true // error means that is enabled
 
 		}
 
@@ -187,7 +187,7 @@ export class Apps {
 
 	async settUndevPermissions( action: boolean | 'toggle' ) {
 
-		if ( action === 'toggle' )  action = !( await this.getUndevPermissions() )
+		if ( action === 'toggle' ) action = !( await this.getUndevPermissions() )
 
 		if ( action ) return await this.#exec( 'sudo spctl --master-disable; killall Finder' )
 

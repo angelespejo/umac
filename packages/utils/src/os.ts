@@ -6,6 +6,7 @@ import {
 
 /**
  * Returns the path to the operating system's temporary directory.
+ *
  * @returns {string} The path to the operating system's temporary directory.
  */
 export const getTempDir = () =>
@@ -13,6 +14,7 @@ export const getTempDir = () =>
 
 /**
  * Determines the operating system.
+ *
  * @returns {'windows' | 'macos' | 'linux' | 'unknown'} - The operating system. Possible values are 'linux', 'macos', or 'windows'.
  */
 export const getPlatform = async (): Promise<'windows' | 'macos' | 'linux' | 'unknown'> => {
@@ -36,6 +38,7 @@ export const getPlatform = async (): Promise<'windows' | 'macos' | 'linux' | 'un
 
 /**
  * Returns the operating system CPU architecture.
+ *
  * @returns {'arm64' | 'x64' | 'unknown'} - The operating system CPU architecture.
  */
 export function getArch(): 'arm64' | 'x64' | 'unknown' {

@@ -123,7 +123,7 @@ export class UmacCommand {
 				plat,
 			} )
 
-			const getHelp = () =>  this.#setHelp( argv.getCmds() )
+			const getHelp = () => this.#setHelp( argv.getCmds() )
 
 			if ( !argv.args || !argv.args.length || argv.existsFlag( 'help' ) || argv.existsFlag( 'h' ) )
 				return console.log( getHelp() )

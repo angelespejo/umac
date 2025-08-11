@@ -117,7 +117,7 @@ export class Color {
 
 	}
 
-	async setHighlightColor( color:  Exclude<ColorId, 'multiple'> ) {
+	async setHighlightColor( color: Exclude<ColorId, 'multiple'> ) {
 
 		const code = this.getHighlightCodeFrom( color )
 		if ( !code ) return

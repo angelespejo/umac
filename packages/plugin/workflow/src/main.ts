@@ -38,12 +38,12 @@ const cli = new UmacCommand( {
 	} ) ) },
 	fn : async ( { argv } ) => {
 
-		const wf = new Workflow(  )
+		const wf = new Workflow( )
 
 		if ( argv.existsCmd( WORKFLOW_CMD.LIST ) ) {
 
 			const list = await wf.list()
-			console.log( underline(  'Available Workflows' ), '\n' )
+			console.log( underline( 'Available Workflows' ), '\n' )
 			list.forEach( item => console.log( indent( liStyle( item ) ) ) )
 
 		}

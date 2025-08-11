@@ -26,6 +26,7 @@ export type HelpOptsCmd = {
 
 	/**
 	 * Custom replace value for $0 in examples
+	 *
 	 * @default this.title
 	 */
 	examples$0? : string
