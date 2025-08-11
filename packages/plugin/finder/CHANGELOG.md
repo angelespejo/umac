@@ -1,5 +1,14 @@
 # @umac-js/finder
 
+## 2.0.6
+
+### Patch Changes
+
+- add update notifier to umac bin
+
+- Updated dependencies []:
+  - @umac-js/utils@2.0.6
+
 ## 2.0.5
 
 ### Patch Changes

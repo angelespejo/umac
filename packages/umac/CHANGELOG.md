@@ -1,5 +1,26 @@
 # umac
 
+## 2.0.6
+
+### Patch Changes
+
+- add update notifier to umac bin
+
+- Updated dependencies []:
+  - @umac-js/app@2.0.6
+  - @umac-js/appearance@2.0.6
+  - @umac-js/cache@2.0.6
+  - @umac-js/desktop@2.0.6
+  - @umac-js/finder@2.0.6
+  - @umac-js/interacting@2.0.6
+  - @umac-js/open@2.0.6
+  - @umac-js/run@2.0.6
+  - @umac-js/spotlight@2.0.6
+  - @umac-js/system@2.0.6
+  - @umac-js/terminal@2.0.6
+  - @umac-js/workflow@2.0.6
+  - @umac-js/utils@2.0.6
+
 ## 2.0.5
 
 ### Patch Changes

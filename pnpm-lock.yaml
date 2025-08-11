@@ -187,6 +187,9 @@ importers:
 
   packages/umac:
     dependencies:
+      '@clippium/updater':
+        specifier: 1.0.2
+        version: 1.0.2
       '@umac-js/app':
         specifier: workspace:*
         version: link:../plugin/app
@@ -968,6 +971,9 @@ packages:
 
   '@clack/prompts@0.11.0':
     resolution: {integrity: sha512-pMN5FcrEw9hUkZA4f+zLlzivQSeQf5dRGJjSUbvVYDLvpKCdQx5OaknvKzgbtXOizhP+SJJJjqEbOe55uKKfAw==}
+
+  '@clippium/updater@1.0.2':
+    resolution: {integrity: sha512-dxhz0UQhud9I59obiIPiD04WUbUds3lFQK7WdOMdbAk5tRsqZRcajCDwA5xeG1LAfcXltXsu0FgAK1GfBX2r+A==}
 
   '@colors/colors@1.5.0':
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -8300,6 +8306,8 @@ snapshots:
       '@clack/core': 0.5.0
       picocolors: 1.1.1
       sisteransi: 1.0.5
+
+  '@clippium/updater@1.0.2': {}
 
   '@colors/colors@1.5.0':
     optional: true

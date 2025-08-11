@@ -1,6 +1,6 @@
 {
 	"name": "umac",
-	"version": "2.0.5",
+	"version": "2.0.6",
 	"description": "Terminal utilities for MacOS",
 	"keywords": [
 		"cli",
@@ -48,6 +48,7 @@
 		"dev": "tsx src/bin.ts"
 	},
 	"dependencies": {
+		"@clippium/updater": "1.0.2",
 		"@umac-js/app": "workspace:*",
 		"@umac-js/appearance": "workspace:*",
 		"@umac-js/cache": "workspace:*",
