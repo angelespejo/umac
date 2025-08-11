@@ -38,6 +38,9 @@
 			"import": "./dist/main.mjs"
 		}
 	},
+	"main": "./dist/main.mjs",
+	"module": "./dist/main.mjs",
+	"types": "./dist/main.d.ts",
 	"bin": {
 		"umac-system": "./dist/bin.mjs"
 	},
