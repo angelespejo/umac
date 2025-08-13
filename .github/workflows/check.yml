@@ -46,7 +46,9 @@ jobs:
         with:
           node-version: 23.6.0
           cache: 'pnpm'
-
+      - uses: oven-sh/setup-bun@v2
+        with:
+           bun-version: 1.2.20
       - name: 🐙😺 Check GitHub API Rate Limit
         id: rate_limit
         run: |

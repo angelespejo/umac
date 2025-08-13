@@ -14,9 +14,12 @@ Here is a list of how to use **umac**
 
 ### Apps
 
+
 ```bash
 umac app --help
 ```
+
+> ℹ️  You can also use [umac/app](https://github.com/angelespejo/umac/tree/main/packages/plugin/app) independently.
 
 #### Install
 
@@ -112,6 +115,8 @@ umac app close "*Avast*"
 umac cache --help
 ```
 
+> ℹ️  You can also use [umac/cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache) independently.
+
 #### Open cache Directory in Finder
 
 ```bash
@@ -131,6 +136,8 @@ umac cache rm
 ```bash
 umac open --help
 ```
+
+> ℹ️  You can also use [umac/open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open) independently.
 
 #### Examples
 
@@ -157,6 +164,9 @@ umac desktop --help
 umac desk -h
 ```
 
+> ℹ️  You can also use [umac/desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop) independently.
+
+
 ### Interact / Interacting
 
 ```bash
@@ -164,6 +174,8 @@ umac interacting --help
 # or (short command)
 umac interact -h
 ```
+
+> ℹ️  You can also use [umac/interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting) independently.
 
 #### Notification  
 
@@ -214,6 +226,8 @@ umac terminal --help
 umac term --help
 ```
 
+> ℹ️  You can also use [umac/terminal](https://github.com/angelespejo/umac/tree/main/packages/plugin/terminal) independently.
+
 #### Change
 Change shell.
 
@@ -242,8 +256,10 @@ umac terminal shell current
 MacOS Spotlight utils
 
 ```bash
-umac spotlight--help
+umac spotlight --help
 ```
+
+> ℹ️  You can also use [umac/spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight) independently.
 
 To see Spotlight status.
 
@@ -277,6 +293,9 @@ Run multiple language scripts (applescript, jxa, osascript, python, js, bash etc
 ```bash
 umac run --help
 ```
+
+> ℹ️  You can also use [umac/run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run) independently.
+
 #### jxa
 
 Run jxa file script
@@ -326,6 +345,8 @@ umac system --help
 # or (short command)
 umac sys -h
 ```
+
+> ℹ️  You can also use [umac/system](https://github.com/angelespejo/umac/tree/main/packages/plugin/system) independently.
 
 #### Update
 
@@ -385,6 +406,8 @@ MacOS Finder utils
 umac finder --help
 ```
 
+> ℹ️  You can also use [umac/finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder) independently.
+
 ### Workflow
 
 MacOS Workflow utils
@@ -395,6 +418,8 @@ umac workflow --help
 umac wf -h
 ```
 
+> ℹ️  You can also use [umac/workflow](https://github.com/angelespejo/umac/tree/main/packages/plugin/workflow) independently.
+
 ### Appearance
 
 MacOS Appearance utils
@@ -402,6 +427,8 @@ MacOS Appearance utils
 ```bash
 umac appearance --help
 ```
+
+> ℹ️  You can also use [umac/appearance](https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance) independently.
 
 #### Dark mode
 

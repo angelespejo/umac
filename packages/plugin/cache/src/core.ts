@@ -16,7 +16,7 @@ export class Cache {
 			stdout,
 		} = await exec( cmd )
 
-		if ( stderr ) throw new Error( stderr.toString() )
+		if ( stderr && stderr.toString().trim() !== '' ) throw new Error( stderr.toString() )
 		return stdout.toString()
 
 	}

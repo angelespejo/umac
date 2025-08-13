@@ -1,5 +1,11 @@
 # @umac-js/repo-config
 
+## 2.0.7
+
+### Patch Changes
+
+- fix binaries build
+
 ## 2.0.6
 
 ### Patch Changes

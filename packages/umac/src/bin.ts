@@ -3,5 +3,11 @@
 import cli         from './main'
 import { updater } from './up'
 
-await cli.run()
-await updater()
+const run = async ( ) => {
+
+	await cli.run()
+	await updater()
+
+}
+
+run()

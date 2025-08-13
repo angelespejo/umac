@@ -4,14 +4,13 @@
 web:
   umac:
     name: umac
-    version: 0.0.1
     desc: >-
       Terminal utilities for MacOS: install apps, force close apps, clear cache,
       add desk notifications, change shell, etc.
     homepage: https://github.com/angelespejo/umac
     library: https://npmjs.com/umac
     changelog: https://github.com/angelespejo/umac/blob/main/packages/umac/CHANGELOG.md
-    docs: https://github.com/angelespejo/umac
+    docs: https://github.com/angelespejo/umac/tree/main
     type:
       - cli
       - bin

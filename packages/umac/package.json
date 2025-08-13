@@ -1,6 +1,6 @@
 {
 	"name": "umac",
-	"version": "2.0.6",
+	"version": "2.0.7",
 	"description": "Terminal utilities for MacOS",
 	"keywords": [
 		"cli",
@@ -47,7 +47,7 @@
 	],
 	"scripts": {
 		"build": "unbuild",
-		"build-bin": "binarium -i dist/bin.cjs --onlyOs -n umac",
+		"build-bin": "binarium bun -i src/exec.ts --onlyOs -n umac --debug",
 		"dev": "tsx src/bin.ts"
 	},
 	"dependencies": {

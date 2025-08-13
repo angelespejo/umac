@@ -1,5 +1,26 @@
 # umac
 
+## 2.0.7
+
+### Patch Changes
+
+- fix binaries build
+
+- Updated dependencies []:
+  - @umac-js/cache@2.0.7
+  - @umac-js/app@2.0.7
+  - @umac-js/appearance@2.0.7
+  - @umac-js/desktop@2.0.7
+  - @umac-js/finder@2.0.7
+  - @umac-js/interacting@2.0.7
+  - @umac-js/open@2.0.7
+  - @umac-js/run@2.0.7
+  - @umac-js/spotlight@2.0.7
+  - @umac-js/system@2.0.7
+  - @umac-js/terminal@2.0.7
+  - @umac-js/workflow@2.0.7
+  - @umac-js/utils@2.0.7
+
 ## 2.0.6
 
 ### Patch Changes
