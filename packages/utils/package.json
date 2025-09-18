@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/utils",
-	"version": "2.0.7",
+	"version": "2.0.8",
 	"description": "Utilities for umac",
 	"keywords": [
 		"cli",
@@ -48,7 +48,7 @@
 	},
 	"dependencies": {
 		"@jxa/run": "1.4.0",
-		"matcher": "5.0.0"
+		"matcher": "6.0.0"
 	},
 	"devDependencies": {
 		"@umac-js/repo-config": "workspace:*"

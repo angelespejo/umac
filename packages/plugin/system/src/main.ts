@@ -12,11 +12,13 @@ import {
 import { System } from './core'
 
 export const CMD = {
-	REBOOT   : 'reboot',
-	SHUTDOWN : 'shutdown',
-	UPDATE   : 'update',
-	HARDWARE : 'hardware',
-	VERSION  : 'version',
+	REBOOT    : 'reboot',
+	SHUTDOWN  : 'shutdown',
+	UPDATE    : 'update',
+	HARDWARE  : 'hardware',
+	VERSION   : 'version',
+	SLEEP     : 'sleep',
+	SLEEP_NOW : 'sleep-now',
 } as const
 
 const cli = new UmacCommand( {
@@ -51,6 +53,34 @@ const cli = new UmacCommand( {
 			desc  : 'Show system version',
 			value : CMD.VERSION,
 		},
+		{
+			desc  : 'Sleep system now',
+			value : CMD.SLEEP_NOW,
+			flags : [
+				{
+					value : '--force',
+					desc  : 'Force sleep',
+				},
+			],
+		},
+		{
+			value : CMD.SLEEP,
+			desc  : 'Sleep mode utilities. toggle, set, get...',
+			flags : [
+				{
+					value : '--toggle',
+					desc  : 'Toggle sleep mode',
+				},
+				{
+					value : '--enable',
+					desc  : 'Enable sleep mode',
+				},
+				{
+					value : '--disable',
+					desc  : 'Disable sleep mode',
+				},
+			],
+		},
 	] },
 	fn : async ( {
 		argv, getHelp,
@@ -68,6 +98,33 @@ const cli = new UmacCommand( {
 			console.log( infoStyle( [ 'Hardware\n', '\n' + ( await sys.getHardwareInfo() ) ] ) )
 		else if ( argv.existsCmd( CMD.VERSION ) )
 			console.log( infoStyle( [ 'System Version\n', '\n' + ( await sys.getVersion() ) ] ) )
+		else if ( argv.existsCmd( CMD.SLEEP_NOW ) )
+			await sys.sleep( argv.existsFlag( 'force' ) )
+		else if ( argv.existsCmd( CMD.SLEEP ) ) {
+
+			const toggle  = argv.existsFlag( 'toggle' )
+			const enable  = argv.existsFlag( 'enable' )
+			const disable = argv.existsFlag( 'disable' )
+			const status  = await sys.getSleepStatus()
+
+			const res =  !( toggle || enable || disable )
+				? status
+				: await sys.sleepMode(
+					toggle
+						? !status
+						: enable ? true : disable ? false : status,
+				)
+
+			// console.log( {
+			// 	toggle,
+			// 	enable,
+			// 	disable,
+			// 	res,
+			// 	status,
+			// } )
+			console.log( infoStyle( [ 'Sleep Mode Status', res ? 'Enabled' : 'Disabled' ] ) )
+
+		}
 		else console.log( getHelp() )
 
 	},

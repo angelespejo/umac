@@ -1,29 +1,42 @@
 /**
- * *****************************************************************************
- * vscode config.
- * *****************************************************************************
- * @description Configuration file for Visual Studio Code (VSCode) settings specific to your project.
- * @see https://code.visualstudio.com/docs/getstarted/settings
- *
- * *****************************************************************************
- */
+* *****************************************************************************
+* vscode config.
+* *****************************************************************************
+*
+* @description Configuration file for Visual Studio Code (VSCode) settings specific to your project.
+* @see https://code.visualstudio.com/docs/getstarted/settings
+*
+* *****************************************************************************
+*/
 {
+	/**
+	******************************************************************************
+	* General settings
+	******************************************************************************
+	*/
+	"editor.tabSize": 4,
 	"files.autoSave": "onFocusChange",
 	"editor.codeActionsOnSave": {
 		"source.fixAll": "explicit",
 		"source.fixAll.eslint": "explicit",
-		"source.fixAll.stylelint": "explicit"
 	},
+	/**
+	******************************************************************************
+	* Terminal settings
+	******************************************************************************
+	*/
+	"terminal.integrated.defaultProfile.linux": "zsh",
+	"terminal.integrated.profiles.linux": {
+		"zsh": {
+			"path": "/bin/zsh",
+		},
+	},
+	/**
+	******************************************************************************
+	* JavaScript/TypeScript settings
+	******************************************************************************
+	*/
 	"eslint.useFlatConfig": true,
-	"stylelint.validate": [
-		"css",
-		"scss",
-		"less",
-		"html",
-		"vue",
-		"svelte",
-		"astro",
-	],
 	"eslint.validate": [
 		"javascript",
 		"javascriptreact",
@@ -43,22 +56,14 @@
 		"vue"
 	],
 	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.tsdk": "node_modules/typescript/lib",
+	/**
+	******************************************************************************
+	* MARKDOWN settings
+	******************************************************************************
+	*/
 	"[markdown]": {
 		"editor.formatOnSave": true,
 		"editor.formatOnPaste": true
 	},
-	"markdownlint.ignore": [
-		"**/LICENSE",
-		"docs/partials/**",
-		"docs/index",
-		"docs/post/**"
-	],
-	"terminal.integrated.defaultProfile.linux": "zsh",
-	"terminal.integrated.profiles.linux": {
-		"zsh": {
-			"path": "/bin/zsh"
-		},
-	},
-	"editor.tabSize": 4,
-	"typescript.tsdk": "node_modules/typescript/lib"
 }

@@ -1,5 +1,26 @@
 # umac
 
+## 2.0.8
+
+### Patch Changes
+
+- add sleep and sleep-now methods
+
+- Updated dependencies []:
+  - @umac-js/system@2.0.8
+  - @umac-js/utils@2.0.8
+  - @umac-js/app@2.0.8
+  - @umac-js/appearance@2.0.8
+  - @umac-js/cache@2.0.8
+  - @umac-js/desktop@2.0.8
+  - @umac-js/finder@2.0.8
+  - @umac-js/interacting@2.0.8
+  - @umac-js/open@2.0.8
+  - @umac-js/run@2.0.8
+  - @umac-js/spotlight@2.0.8
+  - @umac-js/terminal@2.0.8
+  - @umac-js/workflow@2.0.8
+
 ## 2.0.7
 
 ### Patch Changes

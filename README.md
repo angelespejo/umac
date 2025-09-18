@@ -55,6 +55,7 @@ Terminal utilities for MacOS: install apps, force close apps, clear cache, add d
   - [System](#system)
     - [Update](#update)
     - [Shutdown](#shutdown)
+	- [Sleep](#sleep)
     - [Reboot](#reboot)
     - [Hardware](#hardware)
     - [Version](#version)
@@ -470,6 +471,25 @@ Close down the system at a given time
 umac system shutdown --help
 # or (short command)
 umac sys down -h
+```
+
+#### Sleep
+
+- Active/Inactive sleep mode in macOS 
+- View sleep mode status
+
+```bash
+umac system sleep --help
+# or (short command)
+umac sys sleep -h
+```
+
+- Put the system to sleep 
+
+```bash
+umac system sleep-now --help
+# or (short command)
+umac sys sleep-now -h
 ```
 
 #### Reboot
