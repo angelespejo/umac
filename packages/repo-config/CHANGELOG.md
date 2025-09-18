@@ -1,5 +1,11 @@
 # @umac-js/repo-config
 
+## 2.0.9
+
+### Patch Changes
+
+- sleep status when is not defined return true
+
 ## 2.0.8
 
 ### Patch Changes

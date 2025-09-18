@@ -100,9 +100,19 @@ export class System {
 	 */
 	async getSleepStatus() {
 
-		const data     = await this.#exec( 'pmset -g | grep SleepDisabled' )
-		const lastChar = data.trim().slice( -1 )
-		return lastChar === '0'
+		try {
+
+			const data     = await this.#exec( 'pmset -g | grep SleepDisabled' )
+			const lastChar = data.trim().slice( -1 )
+			return lastChar === '0'
+
+		}
+		catch ( _e ) {
+
+			// if not found return that sleep mode is enabled, which is the default
+			return true
+
+		}
 
 	}
 

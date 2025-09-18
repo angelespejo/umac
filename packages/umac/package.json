@@ -1,6 +1,6 @@
 {
 	"name": "umac",
-	"version": "2.0.8",
+	"version": "2.0.9",
 	"description": "Terminal utilities for MacOS",
 	"keywords": [
 		"cli",

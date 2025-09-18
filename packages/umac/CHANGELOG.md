@@ -1,5 +1,26 @@
 # umac
 
+## 2.0.9
+
+### Patch Changes
+
+- sleep status when is not defined return true
+
+- Updated dependencies []:
+  - @umac-js/system@2.0.9
+  - @umac-js/app@2.0.9
+  - @umac-js/appearance@2.0.9
+  - @umac-js/cache@2.0.9
+  - @umac-js/desktop@2.0.9
+  - @umac-js/finder@2.0.9
+  - @umac-js/interacting@2.0.9
+  - @umac-js/open@2.0.9
+  - @umac-js/run@2.0.9
+  - @umac-js/spotlight@2.0.9
+  - @umac-js/terminal@2.0.9
+  - @umac-js/workflow@2.0.9
+  - @umac-js/utils@2.0.9
+
 ## 2.0.8
 
 ### Patch Changes
