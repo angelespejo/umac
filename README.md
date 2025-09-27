@@ -187,18 +187,12 @@ Change or show status for unidentificated apps.
 Show status for no identificated apps
 
 ```bash
-umac app undev 
+umac app undev --enable
 ```
-
-Change status for no identificated apps
-
 ```bash
-umac app dev --enable
+umac app undev --disable
 ```
 
-```bash
-umac app dev --disable
-```
 
 #### Close
 
@@ -331,6 +325,30 @@ Set custom prompts like text, choices, files, color, etc.
 umac interact prompt --help
 ```
 
+#### Siri  
+
+Open Siri app. 
+
+```bash
+umac interact siri --help
+```
+
+
+#### Keyboard  
+
+Interact with the keyboard
+
+```bash
+umac interact keyboard --help
+```
+
+#### screen  
+
+Interact with the screen. Record, screenshot, etc
+
+```bash
+umac interact screen --help
+```
 
 ### Terminal
 
@@ -502,14 +520,14 @@ umac system reboot --help
 umac sys reboot -h
 ```
 
-#### Hardware
+#### Info
 
-Show hardware information
+Show system information
 
 ```bash
-umac system hardware --help
+umac system info --help
 # or (short command)
-umac sys hardware -h
+umac sys info -h
 ```
 
 #### Version

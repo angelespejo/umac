@@ -9,9 +9,10 @@ import {
 	HELP_URL,
 	version,
 } from './const'
+import { Interacting } from './core'
 import { Alert }       from './core/alert'
 import { Dialog }      from './core/dialog'
-import { Interacting } from './core/main'
+import { cliKeyboard } from './core/keyborad.cli'
 import {
 	NotificationOpts,
 	Notification,
@@ -20,7 +21,9 @@ import {
 	Prompt,
 	PromptInputOpt,
 } from './core/prompt'
-import { Say } from './core/say'
+import { Say }       from './core/say'
+import { cliScreen } from './core/screen.cli'
+import { cliSiri }   from './core/siri.cli'
 
 export {
 	Notification,
@@ -29,17 +32,21 @@ export {
 	Say,
 	Prompt,
 }
+
 export const CMD = {
-	DIALOG        : 'dialog',
-	ALERT         : 'alert',
-	NOTFICATION   : 'notification',
-	SAY           : 'say',
-	PROMPT        : 'prompt',
-	PROMPT_COLOR  : 'color',
-	PROMPT_INPUT  : 'input',
-	PROMPT_SELECT : 'select',
-	PROMPT_FILE   : 'file',
-	PROMPT_FOLDER : 'folder',
+	DIALOG         : 'dialog',
+	ALERT          : 'alert',
+	NOTFICATION    : 'notification',
+	SAY            : 'say',
+	PROMPT         : 'prompt',
+	PROMPT_COLOR   : 'color',
+	PROMPT_INPUT   : 'input',
+	PROMPT_SELECT  : 'select',
+	PROMPT_FILE    : 'file',
+	PROMPT_FOLDER  : 'folder',
+	KEYBOARD       : 'keyboard',
+	KEYBOARD_PRESS : 'press',
+	KEYBOARD_WRITE : 'write',
 } as const
 export type Cmd = ( typeof CMD )[keyof typeof CMD]
 
@@ -153,6 +160,9 @@ export const cli = new UmacCommand( {
 			desc  : 'Display voice message',
 			flags : [ flags[0] ],
 		},
+		cliSiri.cmd,
+		cliScreen.cmd,
+		cliKeyboard.cmd,
 		{
 			value : CMD.PROMPT,
 			desc  : 'Set custom prompts like, text, choices, files, color etc',
@@ -240,8 +250,9 @@ export const cli = new UmacCommand( {
 			],
 		},
 	] },
-	fn : async ( { argv } ) => {
+	fn : async data => {
 
+		const { argv } = data
 		const interact = new Interacting( )
 		if ( argv.existsCmd( CMD.DIALOG ) ) {
 
@@ -391,6 +402,22 @@ export const cli = new UmacCommand( {
 			}
 
 		}
+		else if ( argv.existsCmd( cliScreen.cmd.value ) ) {
+
+			await cliScreen.fn( data )
+
+		}
+		else if ( argv.existsCmd( cliKeyboard.cmd.value ) ) {
+
+			await cliKeyboard.fn( data )
+
+		}
+		else if ( argv.existsCmd( cliSiri.cmd.value ) ) {
+
+			await cliSiri.fn( data )
+
+		}
+		else console.log( data.getHelp( ) )
 
 	},
 } )

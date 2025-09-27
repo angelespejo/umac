@@ -1,60 +1,42 @@
-import {
-	catchError,
-	runJXA,
-} from '@umac-js/utils'
+// import {
+// 	catchError,
+// 	runJXA,
+// } from '@umac-js/utils'
 
-export type AlertOpts = {
-	/**
-	 * Description
-	 */
-	desc           : string
-	/**
-	 * a list of up to three button names
-	 */
-	extraButton?   : string
-	/**
-	 * number of the default button
-	 */
-	defaultButton? : string
-	/**
-	 * number of the cancel button
-	 */
-	cancelButton?  : string
-
-	as? : 'critical' | 'stop' | 'note'
-}
+import { execute } from './_shared'
 
 export class Say {
 
 	async run( text: string ) {
 
-		const [ _e, res ] = await catchError( ( async () => {
+		return await execute( `say "${text}"` )
+		// const [ _e, res ] = await catchError( ( async () => {
 
-			return await runJXA<string>(
-				text => {
+		// 	return await runJXA<string>(
+		// 		text => {
 
-					try {
+		// 			try {
 
-						// @ts-ignore
-						const app                    = Application.currentApplication()
-						app.includeStandardAdditions = true
+		// 				// @ts-ignore
+		// 				const app                    = Application.currentApplication()
+		// 				app.includeStandardAdditions = true
 
-						return app.say( text )
+		// 				return app.say( text )
 
-					}
-					catch ( _e ) {
+		// 			}
+		// 			catch ( _e ) {
 
-						return undefined
+		// 				return undefined
 
-					}
+		// 			}
 
-				},
-				text,
-			)
+		// 		},
+		// 		text,
+		// 	)
 
-		} )() )
+		// } )() )
 
-		return res
+		// return res
 
 	}
 

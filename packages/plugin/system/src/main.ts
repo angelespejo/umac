@@ -1,7 +1,4 @@
-import {
-	infoStyle,
-	UmacCommand,
-} from '@umac-js/utils'
+import { UmacCommand } from '@umac-js/utils'
 
 import {
 	BIN_NAME,
@@ -9,17 +6,20 @@ import {
 	HELP_URL,
 	version,
 } from './const'
-import { System } from './core'
+import {
+	cliReboot,
+	cliShutdown,
+	cliUpdate,
+	cliVersion,
+	CMD as CoreCMD,
+} from './core/core.cli'
+import { cliInfo } from './core/info.cli'
+import {
+	cliSleep,
+	cliSleepNow,
+} from './core/sleep.cli'
 
-export const CMD = {
-	REBOOT    : 'reboot',
-	SHUTDOWN  : 'shutdown',
-	UPDATE    : 'update',
-	HARDWARE  : 'hardware',
-	VERSION   : 'version',
-	SLEEP     : 'sleep',
-	SLEEP_NOW : 'sleep-now',
-} as const
+export * from './core'
 
 const cli = new UmacCommand( {
 	description,
@@ -27,104 +27,34 @@ const cli = new UmacCommand( {
 	name     : BIN_NAME,
 	helpURL  : HELP_URL,
 	helpOpts : { cmds : [
-		{
-			value : `${CMD.UPDATE}, up`,
-			desc  : 'System updates',
-			flags : [
-				{
-					value : '--install, -i',
-					desc  : 'Install System updates',
-				},
-			],
-		},
-		{
-			value : `${CMD.SHUTDOWN}, down`,
-			desc  : 'Close down the system at a given time',
-		},
-		{
-			value : CMD.REBOOT,
-			desc  : 'Reboot system',
-		},
-		{
-			desc  : 'Show hardware information',
-			value : CMD.HARDWARE,
-		},
-		{
-			desc  : 'Show system version',
-			value : CMD.VERSION,
-		},
-		{
-			desc  : 'Sleep system now',
-			value : CMD.SLEEP_NOW,
-			flags : [
-				{
-					value : '--force',
-					desc  : 'Force sleep',
-				},
-			],
-		},
-		{
-			value : CMD.SLEEP,
-			desc  : 'Sleep mode utilities. toggle, set, get...',
-			flags : [
-				{
-					value : '--toggle',
-					desc  : 'Toggle sleep mode',
-				},
-				{
-					value : '--enable',
-					desc  : 'Enable sleep mode',
-				},
-				{
-					value : '--disable',
-					desc  : 'Disable sleep mode',
-				},
-			],
-		},
+		cliReboot.cmd,
+		cliShutdown.cmd,
+		cliUpdate.cmd,
+		cliVersion.cmd,
+		cliSleepNow.cmd,
+		cliSleep.cmd,
+		cliInfo.cmd,
 	] },
-	fn : async ( {
-		argv, getHelp,
-	} ) => {
+	fn : async data => {
 
-		const sys = new System()
+		const {
+			argv, getHelp,
+		} = data
 
-		if ( argv.existsCmd( CMD.REBOOT ) )
-			await sys.reboot()
-		else if ( argv.existsCmd( CMD.SHUTDOWN ) || argv.existsCmd( 'down' ) )
-			await sys.shutdown()
-		else if ( argv.existsCmd( CMD.UPDATE ) || argv.existsCmd( 'up' ) )
-			await sys.update( argv.existsFlag( 'install' ) || argv.existsFlag( 'i' ) )
-		else if ( argv.existsCmd( CMD.HARDWARE ) )
-			console.log( infoStyle( [ 'Hardware\n', '\n' + ( await sys.getHardwareInfo() ) ] ) )
-		else if ( argv.existsCmd( CMD.VERSION ) )
-			console.log( infoStyle( [ 'System Version\n', '\n' + ( await sys.getVersion() ) ] ) )
-		else if ( argv.existsCmd( CMD.SLEEP_NOW ) )
-			await sys.sleep( argv.existsFlag( 'force' ) )
-		else if ( argv.existsCmd( CMD.SLEEP ) ) {
-
-			const toggle  = argv.existsFlag( 'toggle' )
-			const enable  = argv.existsFlag( 'enable' )
-			const disable = argv.existsFlag( 'disable' )
-			const status  = await sys.getSleepStatus()
-
-			const res =  !( toggle || enable || disable )
-				? status
-				: await sys.sleepMode(
-					toggle
-						? !status
-						: enable ? true : disable ? false : status,
-				)
-
-			// console.log( {
-			// 	toggle,
-			// 	enable,
-			// 	disable,
-			// 	res,
-			// 	status,
-			// } )
-			console.log( infoStyle( [ 'Sleep Mode Status', res ? 'Enabled' : 'Disabled' ] ) )
-
-		}
+		if ( CoreCMD.REBOOT.some( v => argv.existsCmd( v ) ) )
+			await cliReboot.fn( data )
+		else if ( CoreCMD.SHUTDOWN.some( v => argv.existsCmd( v ) ) )
+			await cliShutdown.fn( data )
+		else if ( CoreCMD.UPDATE.some( v => argv.existsCmd( v ) ) )
+			await cliUpdate.fn( data )
+		else if ( CoreCMD.VERSION.some( v => argv.existsCmd( v ) ) )
+			await cliVersion.fn( data )
+		else if ( argv.existsCmd( cliSleepNow.cmd.value ) )
+			await cliSleepNow.fn( data )
+		else if ( argv.existsCmd( cliSleep.cmd.value ) )
+			await cliSleep.fn( data )
+		else if ( argv.existsCmd( cliInfo.cmd.value ) )
+			await cliInfo.fn( data )
 		else console.log( getHelp() )
 
 	},

@@ -63,6 +63,12 @@ export const cli = new UmacCommand( {
 			value      : `${CMD.SEARCH}, ${CMD_ALIAS.SEARCH}`,
 			posicional : 'query',
 			desc       : `Search apps with ${italic( 'brew search' )}`,
+			examples   : [
+				{
+					value : '$0 app search vpn',
+					desc  : 'Search vpn apps',
+				},
+			],
 		},
 		{
 			value      : CMD.CLOSE,
@@ -116,7 +122,7 @@ export const cli = new UmacCommand( {
 			examples : [
 				{
 					value : 'app dev list \'!Avast*\' \'!*.avast*\'',
-					desc  : 'list alll apps less Avast apps',
+					desc  : 'list all apps less Avast apps',
 				},
 			],
 		},
@@ -133,7 +139,7 @@ export const cli = new UmacCommand( {
 			const filters = argv.getCmdValues( CMD.CLOSE )
 
 			if ( ask ) await app.askClose( async v => console.log( successStyle( [ 'Removed app', v ] ) ) )
-			else if ( !filters ) console.warn( warnStyle( [ 'Must add a install value!\n\nExample:', '... close vlc' ] ) )
+			else if ( !filters ) console.warn( warnStyle( [ 'Must add a install value!\n\nExample:', '$0 close vlc' ] ) )
 			else {
 
 				const res = await app.close( filters, async v => console.log( successStyle( [ 'Removed app', v ] ) ) )
@@ -144,24 +150,24 @@ export const cli = new UmacCommand( {
 		}
 		else if ( argv.existsCmd( CMD.INSTALL ) || argv.existsCmd( CMD_ALIAS.INSTALL ) ) {
 
-			const filters = argv.getCmdValues( CMD.INSTALL )
+			const filters = argv.getCmdValues( CMD.INSTALL ) || argv.getCmdValues( CMD_ALIAS.INSTALL )
 
-			if ( !filters ) console.warn( warnStyle( [ 'You must add an install value!\n\nExample:', '... install vlc' ] ) )
+			if ( !filters ) console.warn( warnStyle( [ 'You must add an install value!\n\nExample:', '$0 install vlc' ] ) )
 			else await app.install( filters )
 
 		}
 		else if ( argv.existsCmd( CMD.UNINSTALL ) || argv.existsCmd( CMD_ALIAS.UNINSTALL ) ) {
 
-			const filters = argv.getCmdValues( CMD.UNINSTALL )
+			const filters = argv.getCmdValues( CMD.UNINSTALL ) || argv.getCmdValues( CMD_ALIAS.UNINSTALL )
 
-			if ( !filters ) console.warn( warnStyle( [ 'You must add an unistall value!\n\nExample:', '... uninstall vlc' ] ) )
+			if ( !filters ) console.warn( warnStyle( [ 'You must add an unistall value!\n\nExample:', '$0 uninstall vlc' ] ) )
 			else await app.uninstall( filters )
 
 		}
 		else if ( argv.existsCmd( CMD.SEARCH ) || argv.existsCmd( CMD_ALIAS.SEARCH ) ) {
 
-			const filters = argv.getCmdValues( CMD.SEARCH )
-			if ( !filters ) console.warn( warnStyle( [ 'You must add an search query!\n\nExample:', '... search "Chrome"' ] ) )
+			const filters = argv.getCmdValues( CMD.SEARCH ) || argv.getCmdValues( CMD_ALIAS.SEARCH )
+			if ( !filters ) console.warn( warnStyle( [ 'You must add an search query!\n\nExample:', '$0 search "Chrome"' ] ) )
 			else console.log( await app.search( filters?.join( ' ' ) ) )
 
 		}
@@ -169,7 +175,7 @@ export const cli = new UmacCommand( {
 
 			const filters = argv.getCmdValues( CMD.LIST )
 
-			console.log( infoStyle( [ underline( 'Sytem apps' ), '\n' ] ) )
+			console.log( infoStyle( [ underline( 'System apps' ), '\n' ] ) )
 			const apps = await app.getAll( filters )
 			for ( const a of apps ) {
 

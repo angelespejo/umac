@@ -1,5 +1,28 @@
 # umac
 
+## 2.1.0
+
+### Minor Changes
+
+- add feats: siri, keyboard, info, screen
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @umac-js/interacting@3.0.0
+  - @umac-js/system@3.0.0
+  - @umac-js/cache@3.0.0
+  - @umac-js/app@3.0.0
+  - @umac-js/utils@2.1.0
+  - @umac-js/appearance@3.0.0
+  - @umac-js/desktop@3.0.0
+  - @umac-js/finder@3.0.0
+  - @umac-js/open@3.0.0
+  - @umac-js/run@3.0.0
+  - @umac-js/spotlight@3.0.0
+  - @umac-js/terminal@3.0.0
+  - @umac-js/workflow@3.0.0
+
 ## 2.0.9
 
 ### Patch Changes

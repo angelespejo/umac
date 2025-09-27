@@ -1,8 +1,11 @@
 import { Alert }        from './alert'
 import { Dialog }       from './dialog'
+import { Keyboard }     from './keyboard'
 import { Notification } from './notification'
 import { Prompt }       from './prompt'
 import { Say }          from './say'
+import { Screen }       from './screen'
+import { Siri }         from './siri'
 
 export class Interacting {
 
@@ -11,6 +14,9 @@ export class Interacting {
 	alert = new Alert()
 	say = new Say()
 	prompt = new Prompt()
+	keyboard = new Keyboard()
+	screen = new Screen()
+	siri = new Siri()
 
 }
 

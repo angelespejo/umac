@@ -1,3 +1,20 @@
+const getValueAfter = ( arr: string[], target: string ) => {
+
+	try {
+
+		const index = arr.indexOf( target )
+		if ( index === -1 || index === arr.length - 1 ) return undefined
+		return arr[index + 1]
+
+	}
+	catch ( _e ) {
+
+		return undefined
+
+	}
+
+}
+
 export class Argv {
 
 	constructor( public args: string[] ) {}
@@ -127,6 +144,12 @@ export class Argv {
 	getPositionalAt( position: number ): string | undefined {
 
 		return this.getPositional()[position]
+
+	}
+
+	getPositionalAfter( value: string ): string | undefined {
+
+		return getValueAfter( this.getPositional(), value )
 
 	}
 

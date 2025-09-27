@@ -1,5 +1,11 @@
 # @umac-js/repo-config
 
+## 2.1.0
+
+### Minor Changes
+
+- add feats: siri, keyboard, info, screen
+
 ## 2.0.9
 
 ### Patch Changes

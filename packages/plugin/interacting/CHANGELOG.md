@@ -1,5 +1,16 @@
 # @umac-js/interacting
 
+## 2.1.0
+
+### Minor Changes
+
+- add feats: siri, keyboard, info, screen
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @umac-js/utils@2.1.0
+
 ## 2.0.9
 
 ### Patch Changes
