@@ -26,30 +26,32 @@ const cli = new UmacCommand( {
 	version,
 	name     : BIN_NAME,
 	helpURL  : HELP_URL,
-	helpOpts : { cmds : [
-		{
-			value : CMD.OPEN,
-			desc  : 'Opem Temrinal app',
-		},
-		{
-			value : CMD.SHELL,
-			desc  : 'Shell functions',
-			cmds  : [
-				{
-					value : CMD.SHELL_LIST,
-					desc  : 'List all shells',
-				},
-				{
-					value : CMD.SHELL_CHANGE,
-					desc  : 'Change to another shell',
-				},
-				{
-					value : CMD.SHELL_CURRENT,
-					desc  : 'Set current shell',
-				},
-			],
-		},
-	] },
+	helpOpts : {
+		cmds : [
+			{
+				value : CMD.OPEN,
+				desc  : 'Opem Temrinal app',
+			},
+			{
+				value : CMD.SHELL,
+				desc  : 'Shell functions',
+				cmds  : [
+					{
+						value : CMD.SHELL_LIST,
+						desc  : 'List all shells',
+					},
+					{
+						value : CMD.SHELL_CHANGE,
+						desc  : 'Change to another shell',
+					},
+					{
+						value : CMD.SHELL_CURRENT,
+						desc  : 'Set current shell',
+					},
+				],
+			},
+		],
+	},
 	fn : async ( {
 		argv, getHelp,
 	} ) => {
@@ -91,4 +93,6 @@ const cli = new UmacCommand( {
 } )
 
 export default cli
-export { cli }
+export {
+	cli,
+}

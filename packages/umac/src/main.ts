@@ -2,10 +2,14 @@ import { cli as app }         from '@umac-js/app'
 import { cli as appearance }  from '@umac-js/appearance'
 import { cli as cache }       from '@umac-js/cache'
 import { cli as desktop }     from '@umac-js/desktop'
+import { cli as disk }        from '@umac-js/disk'
 import { cli as finder }      from '@umac-js/finder'
 import { cli as interacting } from '@umac-js/interacting'
+import { cli as messages }    from '@umac-js/messages'
+import { cli as notes }       from '@umac-js/notes'
 import { cli as open }        from '@umac-js/open'
 import { cli as run }         from '@umac-js/run'
+import { cli as shortcuts }   from '@umac-js/shortcuts'
 import { cli as spotlight }   from '@umac-js/spotlight'
 import { cli as sys }         from '@umac-js/system'
 import { cli as terminal }    from '@umac-js/terminal'
@@ -32,6 +36,10 @@ export const CMD_ID = {
 	INTERACTING : 'interacting',
 	APPS        : 'app',
 	RUN         : 'run',
+	MESSAGES    : 'messages',
+	SHORTCUTS   : 'shortcuts',
+	DISK        : 'disk',
+	NOTES       : 'notes',
 } as const
 type commandID = typeof CMD_ID[keyof typeof CMD_ID]
 
@@ -84,6 +92,10 @@ const CMDS = {
 	interacting : setCMD( CMD_ID.INTERACTING, interacting as unknown as UmacCommand ),
 	app         : setCMD( CMD_ID.APPS, app as unknown as UmacCommand ),
 	run         : setCMD( CMD_ID.RUN, run as unknown as UmacCommand ),
+	messages    : setCMD( CMD_ID.MESSAGES, messages as unknown as UmacCommand ),
+	shortcuts   : setCMD( CMD_ID.SHORTCUTS, shortcuts as unknown as UmacCommand ),
+	disk        : setCMD( CMD_ID.DISK, disk as unknown as UmacCommand ),
+	notes       : setCMD( CMD_ID.NOTES, notes as unknown as UmacCommand ),
 } satisfies { [k in commandID]: unknown }
 
 const umac = new UmacCommand( {

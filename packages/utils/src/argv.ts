@@ -74,7 +74,6 @@ export class Argv {
 
 	/**
 	 * Retrieves multiple values for a command based on the provided key.
-	 * Supports formats like `--key=value1,value2,...` and `--key value1 value2 ...`.
 	 *
 	 * @param   {string}               key - The command key to search for.
 	 * @returns {string[] | undefined}     Array of command values if found, otherwise undefined.

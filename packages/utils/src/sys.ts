@@ -298,7 +298,7 @@ export async function removeDir( path: string ): Promise<void> {
 	catch ( error ) {
 
 		// @ts-ignore
-		throw new Error( `Error removing ${path}: ${error.message}` )
+		throw new Error( `Error removing ${path}: ${error.message}`, { cause: error } )
 
 	}
 
@@ -415,7 +415,7 @@ export async function createDir( path: string ): Promise<void> {
 	}
 	catch ( error ) {
 
-		throw Error( `Error creating the directory: ${error}` )
+		throw Error( `Error creating the directory: ${error}`, { cause: error } )
 
 	}
 

@@ -14,7 +14,9 @@ import {
 
 const execPromise = promisify( nodeExec )
 
-export { process }
+export {
+	process,
+}
 
 export type ExecResult = Awaited<ReturnType<typeof execPromise>>
 

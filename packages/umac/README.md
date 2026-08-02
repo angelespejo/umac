@@ -11,6 +11,7 @@
 
 [![License](https://img.shields.io/github/license/pigeonposse/umac?style=for-the-badge&color=green&logoColor=white)](/LICENSE)
 [![Version](https://img.shields.io/npm/v/umac?style=for-the-badge&color=blue&label=Version)](https://www.npmjs.com/package/umac)
+{{const.libPkgBadges}}
 
 Terminal utilities for MacOS
 
@@ -71,7 +72,7 @@ Terminal utilities for MacOS
 
 ## 🍎 umac (toolkit)
 
-[Read more](https://github.com/angelespejo/umac)
+[Read more]({{const.pkg.repository.url}})
 
 ## 🗝 Prerequesites
 
@@ -112,9 +113,12 @@ Here is a list of how to use **umac**
 
 ### Apps
 
+
 ```bash
 umac app --help
 ```
+
+> ℹ️  You can also use [umac/app](https://github.com/angelespejo/umac/tree/main/packages/plugin/app) independently.
 
 #### Install
 
@@ -210,6 +214,8 @@ umac app close "*Avast*"
 umac cache --help
 ```
 
+> ℹ️  You can also use [umac/cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache) independently.
+
 #### Open cache Directory in Finder
 
 ```bash
@@ -229,6 +235,8 @@ umac cache rm
 ```bash
 umac open --help
 ```
+
+> ℹ️  You can also use [umac/open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open) independently.
 
 #### Examples
 
@@ -255,6 +263,9 @@ umac desktop --help
 umac desk -h
 ```
 
+> ℹ️  You can also use [umac/desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop) independently.
+
+
 ### Interact / Interacting
 
 ```bash
@@ -262,6 +273,8 @@ umac interacting --help
 # or (short command)
 umac interact -h
 ```
+
+> ℹ️  You can also use [umac/interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting) independently.
 
 #### Notification  
 
@@ -312,6 +325,8 @@ umac terminal --help
 umac term --help
 ```
 
+> ℹ️  You can also use [umac/terminal](https://github.com/angelespejo/umac/tree/main/packages/plugin/terminal) independently.
+
 #### Change
 Change shell.
 
@@ -340,8 +355,10 @@ umac terminal shell current
 MacOS Spotlight utils
 
 ```bash
-umac spotlight--help
+umac spotlight --help
 ```
+
+> ℹ️  You can also use [umac/spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight) independently.
 
 To see Spotlight status.
 
@@ -375,6 +392,9 @@ Run multiple language scripts (applescript, jxa, osascript, python, js, bash etc
 ```bash
 umac run --help
 ```
+
+> ℹ️  You can also use [umac/run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run) independently.
+
 #### jxa
 
 Run jxa file script
@@ -424,6 +444,8 @@ umac system --help
 # or (short command)
 umac sys -h
 ```
+
+> ℹ️  You can also use [umac/system](https://github.com/angelespejo/umac/tree/main/packages/plugin/system) independently.
 
 #### Update
 
@@ -483,6 +505,8 @@ MacOS Finder utils
 umac finder --help
 ```
 
+> ℹ️  You can also use [umac/finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder) independently.
+
 ### Workflow
 
 MacOS Workflow utils
@@ -493,6 +517,8 @@ umac workflow --help
 umac wf -h
 ```
 
+> ℹ️  You can also use [umac/workflow](https://github.com/angelespejo/umac/tree/main/packages/plugin/workflow) independently.
+
 ### Appearance
 
 MacOS Appearance utils
@@ -500,6 +526,8 @@ MacOS Appearance utils
 ```bash
 umac appearance --help
 ```
+
+> ℹ️  You can also use [umac/appearance](https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance) independently.
 
 #### Dark mode
 
@@ -522,13 +550,17 @@ umac appearance color --help
 - ⚒️ [Utils](https://github.com/angelespejo/umac/tree/main/packages/utils)
 - 🔌 [Plugins](https://github.com/angelespejo/umac/tree/main/packages/plugin)
   - [App](https://github.com/angelespejo/umac/tree/main/packages/plugin/app)
-  - [Cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache)
-  - [Finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder)
   - [Appearance](https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance)
+  - [Cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache)
   - [Desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop)
+  - [Disk](https://github.com/angelespejo/umac/tree/main/packages/plugin/disk)
+  - [Finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder)
+  - [Messages](https://github.com/angelespejo/umac/tree/main/packages/plugin/messages)
   - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
+  - [Notes](https://github.com/angelespejo/umac/tree/main/packages/plugin/notes)
   - [Open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open)
   - [Run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run)
+  - [Shortcuts](https://github.com/angelespejo/umac/tree/main/packages/plugin/shortcuts)
   - [Spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight)
   - [System](https://github.com/angelespejo/umac/tree/main/packages/plugin/system)
   - [Terminal](https://github.com/angelespejo/umac/tree/main/packages/plugin/terminal)
@@ -542,7 +574,7 @@ umac appearance color --help
 __umac__ is an open-source project and its development is open to anyone who wants to participate.
 
 [![Issues](https://img.shields.io/badge/Issues-grey?style=for-the-badge)](https://github.com/angelespejo/umac/issues)
-[![Pull requests](https://img.shields.io/badge/Pulls-grey?style=for-the-badge)]({{const.pkg.repository.url}}/pulls)
+[![Pull requests](https://img.shields.io/badge/Pulls-grey?style=for-the-badge)](https://github.com/angelespejo/umac/pulls)
 [![Read more](https://img.shields.io/badge/Read%20more-grey?style=for-the-badge)]({{const.pkg.homepage}})
 
 ## ❤️ Donate
@@ -553,7 +585,7 @@ Help us to develop more interesting things.
 
 ## 📜 License
 
-This software is licensed with __[GPL-3.0](https://github.com/angelespejo/umac/blob/main/LICENSE)__.
+This software is licensed with __[MIT](https://github.com/angelespejo/umac/blob/main/LICENSE)__.
 
 [![Read more](https://img.shields.io/badge/Read-more-grey?style=for-the-badge)](https://github.com/angelespejo/umac/blob/main/LICENSE)
 
@@ -563,9 +595,10 @@ This software is licensed with __[GPL-3.0](https://github.com/angelespejo/umac/b
 
 [![More](https://img.shields.io/badge/Read-more-grey?style=for-the-badge)](https://github.com/pigeonposse)
 
+
+
+
 ---
-
-
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -582,21 +615,15 @@ This software is licensed with __[GPL-3.0](https://github.com/angelespejo/umac/b
 ██╔═══╝ ██║██║   ██║██╔══╝  ██║   ██║██║╚██╗██║██╔═══╝ ██║   ██║╚════██║╚════██║██╔══╝  
 ██║     ██║╚██████╔╝███████╗╚██████╔╝██║ ╚████║██║     ╚██████╔╝███████║███████║███████╗
 ╚═╝     ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝      ╚═════╝ ╚══════╝╚══════╝╚══════╝
-                                                                                        
-                                                                                        
-                                                                                        
-█████╗█████╗█████╗█████╗█████╗█████╗█████╗                                              
-╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝                                              
-                                                                                        
-                                                                                        
-                                                                                        
+█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗                                  
+╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝                                  
 ██╗   ██╗███╗   ███╗ █████╗  ██████╗                                                    
 ██║   ██║████╗ ████║██╔══██╗██╔════╝                                                    
 ██║   ██║██╔████╔██║███████║██║                                                         
 ██║   ██║██║╚██╔╝██║██╔══██║██║                                                         
 ╚██████╔╝██║ ╚═╝ ██║██║  ██║╚██████╗                                                    
  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝                                                    
-                                                                                        
+
 - Author: [Angelo](https://github.com/angelespejo)
 
 

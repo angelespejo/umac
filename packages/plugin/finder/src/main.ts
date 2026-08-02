@@ -22,34 +22,36 @@ const cli = new UmacCommand( {
 	version,
 	name     : BIN_NAME,
 	helpURL  : HELP_URL,
-	helpOpts : { cmds : [
-		{
-			value : CMD.CLOSE,
-			desc  : 'Close all Finder windows and force exit from Finder',
-		},
-		{
-			value : CMD.RELOAD,
-			desc  : 'Reload Finder',
-		},
-		{
-			value : CMD.DOTFILES,
-			desc  : 'Show hide or toggle dotfiles visibility',
-			flags : [
-				{
-					value : '--toggle',
-					desc  : 'Toggle dotfile visibility',
-				},
-				{
-					value : '--enable',
-					desc  : 'Enable dotfile visibility',
-				},
-				{
-					value : '--disable',
-					desc  : 'Disable dotfile visibility',
-				},
-			],
-		},
-	] },
+	helpOpts : {
+		cmds : [
+			{
+				value : CMD.CLOSE,
+				desc  : 'Close all Finder windows and force exit from Finder',
+			},
+			{
+				value : CMD.RELOAD,
+				desc  : 'Reload Finder',
+			},
+			{
+				value : CMD.DOTFILES,
+				desc  : 'Show hide or toggle dotfiles visibility',
+				flags : [
+					{
+						value : '--toggle',
+						desc  : 'Toggle dotfile visibility',
+					},
+					{
+						value : '--enable',
+						desc  : 'Enable dotfile visibility',
+					},
+					{
+						value : '--disable',
+						desc  : 'Disable dotfile visibility',
+					},
+				],
+			},
+		],
+	},
 	fn : async ( { argv } ) => {
 
 		const finder = new Finder()

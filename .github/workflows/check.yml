@@ -104,8 +104,8 @@ jobs:
         uses: changesets/action@v1
         with:
           title: "chore(release): version packages 🦋"
-          version: pnpm . pkg version --silent
-          publish: pnpm . pkg publish --silent
+          version: pnpm dovenv pkg version --silent
+          publish: pnpm dovenv pkg publish --silent
           commit: "chore(release): version packages 🦋 [skip ci]"
           createGithubReleases: true
         env:
@@ -145,7 +145,7 @@ jobs:
 
       - name: ℹ️🐙😺➡️ Update repo info
         if: steps.check_package_json.outputs.stdout != 'No changes in package.json'
-        run: pnpm . gh info update
+        run: pnpm dovenv gh info update
         continue-on-error: true
 
       - name: Release binary 

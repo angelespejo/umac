@@ -172,7 +172,25 @@ export class Screen {
 		else if ( options?.mode === 'interactive' ) flags.push( '-i' ) // interactive mode
 		const cmd = `screencapture ${flags.join( ' ' )} "${outputPath}"`
 
-		return await execute( cmd )
+		try {
+
+			return await execute( cmd )
+
+		}
+		catch ( error ) {
+
+			throw new Error(
+				`Failed to capture screen.\n\n`
+				+ `• Command: ${cmd}\n`
+				+ `• Original error: ${error instanceof Error ? error.message : String( error )}\n`
+				+ `• Possible causes:\n`
+				+ `  1. The running application or terminal lacks "Screen Recording" permissions.\n`
+				+ `     To fix: Go to System Settings > Privacy & Security > Screen Recording and enable the application.\n`
+				+ `  2. The screen capture was manually canceled (e.g. pressing Esc in interactive mode).\n`,
+				{ cause: error },
+			)
+
+		}
 
 	}
 

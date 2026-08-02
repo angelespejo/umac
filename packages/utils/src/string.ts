@@ -101,7 +101,7 @@ export async function fetch2string( url: string ): Promise<string> {
 	catch ( error ) {
 
 		// @ts-ignore
-		throw new Error( `Fetching URL Error: ${error.message}` )
+		throw new Error( `Fetching URL Error: ${error.message}`, { cause: error } )
 
 	}
 

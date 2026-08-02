@@ -30,4 +30,9 @@ export default defineConfig(
 			'**/packages/config/**/tests/**',
 		],
 	} ),
+	{
+		name  : 'umac-package-json',
+		files : [ '**/package.json' ],
+		rules : { 'package-json/no-redundant-publishConfig': 'off' },
+	},
 )

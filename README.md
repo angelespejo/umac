@@ -11,6 +11,7 @@
 
 [![License](https://img.shields.io/github/license/pigeonposse/umac?style=for-the-badge&color=green&logoColor=white)](/LICENSE)
 [![Version](https://img.shields.io/npm/v/umac?style=for-the-badge&color=blue&label=Version)](https://www.npmjs.com/package/umac)
+{{const.libPkgBadges}}
 
 Terminal utilities for MacOS: install apps, force close apps, clear cache, add desk notifications, change shell, etc.
 
@@ -55,7 +56,6 @@ Terminal utilities for MacOS: install apps, force close apps, clear cache, add d
   - [System](#system)
     - [Update](#update)
     - [Shutdown](#shutdown)
-	- [Sleep](#sleep)
     - [Reboot](#reboot)
     - [Hardware](#hardware)
     - [Version](#version)
@@ -94,7 +94,7 @@ Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
 
 ## 🔢 Use Executable
 
-You can download the binary directly from the [releases](https://github.com/angelespejo/umac/releases) section
+You can download the binary directly from the [releases]({{const.pkg.repository.url}}/releases) section
 
 ## 🟢 JavaScript / Typescript library 
 
@@ -140,9 +140,12 @@ Here is a list of how to use **umac**
 
 ### Apps
 
+
 ```bash
 umac app --help
 ```
+
+> ℹ️  You can also use [umac/app](https://github.com/angelespejo/umac/tree/main/packages/plugin/app) independently.
 
 #### Install
 
@@ -187,12 +190,18 @@ Change or show status for unidentificated apps.
 Show status for no identificated apps
 
 ```bash
-umac app undev --enable
-```
-```bash
-umac app undev --disable
+umac app undev 
 ```
 
+Change status for no identificated apps
+
+```bash
+umac app dev --enable
+```
+
+```bash
+umac app dev --disable
+```
 
 #### Close
 
@@ -232,6 +241,8 @@ umac app close "*Avast*"
 umac cache --help
 ```
 
+> ℹ️  You can also use [umac/cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache) independently.
+
 #### Open cache Directory in Finder
 
 ```bash
@@ -251,6 +262,8 @@ umac cache rm
 ```bash
 umac open --help
 ```
+
+> ℹ️  You can also use [umac/open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open) independently.
 
 #### Examples
 
@@ -277,6 +290,9 @@ umac desktop --help
 umac desk -h
 ```
 
+> ℹ️  You can also use [umac/desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop) independently.
+
+
 ### Interact / Interacting
 
 ```bash
@@ -284,6 +300,8 @@ umac interacting --help
 # or (short command)
 umac interact -h
 ```
+
+> ℹ️  You can also use [umac/interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting) independently.
 
 #### Notification  
 
@@ -325,30 +343,6 @@ Set custom prompts like text, choices, files, color, etc.
 umac interact prompt --help
 ```
 
-#### Siri  
-
-Open Siri app. 
-
-```bash
-umac interact siri --help
-```
-
-
-#### Keyboard  
-
-Interact with the keyboard
-
-```bash
-umac interact keyboard --help
-```
-
-#### screen  
-
-Interact with the screen. Record, screenshot, etc
-
-```bash
-umac interact screen --help
-```
 
 ### Terminal
 
@@ -357,6 +351,8 @@ umac terminal --help
 # or (short command)
 umac term --help
 ```
+
+> ℹ️  You can also use [umac/terminal](https://github.com/angelespejo/umac/tree/main/packages/plugin/terminal) independently.
 
 #### Change
 Change shell.
@@ -386,8 +382,10 @@ umac terminal shell current
 MacOS Spotlight utils
 
 ```bash
-umac spotlight--help
+umac spotlight --help
 ```
+
+> ℹ️  You can also use [umac/spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight) independently.
 
 To see Spotlight status.
 
@@ -421,6 +419,9 @@ Run multiple language scripts (applescript, jxa, osascript, python, js, bash etc
 ```bash
 umac run --help
 ```
+
+> ℹ️  You can also use [umac/run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run) independently.
+
 #### jxa
 
 Run jxa file script
@@ -471,6 +472,8 @@ umac system --help
 umac sys -h
 ```
 
+> ℹ️  You can also use [umac/system](https://github.com/angelespejo/umac/tree/main/packages/plugin/system) independently.
+
 #### Update
 
 System updates
@@ -491,25 +494,6 @@ umac system shutdown --help
 umac sys down -h
 ```
 
-#### Sleep
-
-- Active/Inactive sleep mode in macOS 
-- View sleep mode status
-
-```bash
-umac system sleep --help
-# or (short command)
-umac sys sleep -h
-```
-
-- Put the system to sleep 
-
-```bash
-umac system sleep-now --help
-# or (short command)
-umac sys sleep-now -h
-```
-
 #### Reboot
 
 Reboot system
@@ -520,14 +504,14 @@ umac system reboot --help
 umac sys reboot -h
 ```
 
-#### Info
+#### Hardware
 
-Show system information
+Show hardware information
 
 ```bash
-umac system info --help
+umac system hardware --help
 # or (short command)
-umac sys info -h
+umac sys hardware -h
 ```
 
 #### Version
@@ -548,6 +532,8 @@ MacOS Finder utils
 umac finder --help
 ```
 
+> ℹ️  You can also use [umac/finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder) independently.
+
 ### Workflow
 
 MacOS Workflow utils
@@ -558,6 +544,8 @@ umac workflow --help
 umac wf -h
 ```
 
+> ℹ️  You can also use [umac/workflow](https://github.com/angelespejo/umac/tree/main/packages/plugin/workflow) independently.
+
 ### Appearance
 
 MacOS Appearance utils
@@ -565,6 +553,8 @@ MacOS Appearance utils
 ```bash
 umac appearance --help
 ```
+
+> ℹ️  You can also use [umac/appearance](https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance) independently.
 
 #### Dark mode
 
@@ -590,10 +580,14 @@ umac appearance color --help
   - [Appearance](https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance)
   - [Cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache)
   - [Desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop)
+  - [Disk](https://github.com/angelespejo/umac/tree/main/packages/plugin/disk)
   - [Finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder)
+  - [Messages](https://github.com/angelespejo/umac/tree/main/packages/plugin/messages)
   - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
+  - [Notes](https://github.com/angelespejo/umac/tree/main/packages/plugin/notes)
   - [Open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open)
   - [Run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run)
+  - [Shortcuts](https://github.com/angelespejo/umac/tree/main/packages/plugin/shortcuts)
   - [Spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight)
   - [System](https://github.com/angelespejo/umac/tree/main/packages/plugin/system)
   - [Terminal](https://github.com/angelespejo/umac/tree/main/packages/plugin/terminal)
@@ -607,7 +601,7 @@ umac appearance color --help
 __umac__ is an open-source project and its development is open to anyone who wants to participate.
 
 [![Issues](https://img.shields.io/badge/Issues-grey?style=for-the-badge)](https://github.com/angelespejo/umac/issues)
-[![Pull requests](https://img.shields.io/badge/Pulls-grey?style=for-the-badge)]({{const.pkg.repository.url}}/pulls)
+[![Pull requests](https://img.shields.io/badge/Pulls-grey?style=for-the-badge)](https://github.com/angelespejo/umac/pulls)
 [![Read more](https://img.shields.io/badge/Read%20more-grey?style=for-the-badge)]({{const.pkg.homepage}})
 
 ## ❤️ Donate
@@ -618,7 +612,7 @@ Help us to develop more interesting things.
 
 ## 📜 License
 
-This software is licensed with __[GPL-3.0](https://github.com/angelespejo/umac/blob/main/LICENSE)__.
+This software is licensed with __[MIT](https://github.com/angelespejo/umac/blob/main/LICENSE)__.
 
 [![Read more](https://img.shields.io/badge/Read-more-grey?style=for-the-badge)](https://github.com/angelespejo/umac/blob/main/LICENSE)
 
@@ -628,9 +622,10 @@ This software is licensed with __[GPL-3.0](https://github.com/angelespejo/umac/b
 
 [![More](https://img.shields.io/badge/Read-more-grey?style=for-the-badge)](https://github.com/pigeonposse)
 
+
+
+
 ---
-
-
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -647,21 +642,15 @@ This software is licensed with __[GPL-3.0](https://github.com/angelespejo/umac/b
 ██╔═══╝ ██║██║   ██║██╔══╝  ██║   ██║██║╚██╗██║██╔═══╝ ██║   ██║╚════██║╚════██║██╔══╝  
 ██║     ██║╚██████╔╝███████╗╚██████╔╝██║ ╚████║██║     ╚██████╔╝███████║███████║███████╗
 ╚═╝     ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝      ╚═════╝ ╚══════╝╚══════╝╚══════╝
-                                                                                        
-                                                                                        
-                                                                                        
-█████╗█████╗█████╗█████╗█████╗█████╗█████╗                                              
-╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝                                              
-                                                                                        
-                                                                                        
-                                                                                        
+█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗                                  
+╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝                                  
 ██╗   ██╗███╗   ███╗ █████╗  ██████╗                                                    
 ██║   ██║████╗ ████║██╔══██╗██╔════╝                                                    
 ██║   ██║██╔████╔██║███████║██║                                                         
 ██║   ██║██║╚██╔╝██║██╔══██║██║                                                         
 ╚██████╔╝██║ ╚═╝ ██║██║  ██║╚██████╗                                                    
  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝                                                    
-                                                                                        
+
 - Author: [Angelo](https://github.com/angelespejo)
 
 

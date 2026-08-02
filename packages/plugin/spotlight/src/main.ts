@@ -61,4 +61,6 @@ const cli = new UmacCommand( {
 } )
 
 export default cli
-export { cli }
+export {
+	cli,
+}

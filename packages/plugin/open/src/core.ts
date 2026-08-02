@@ -47,7 +47,7 @@ export class Open {
 		catch ( error ) {
 
 			// @ts-ignore
-			throw new Error( `Failed to open file:\n\n${error.message}` )
+			throw new Error( `Failed to open file:\n\n${error.message}`, { cause: error } )
 
 		}
 

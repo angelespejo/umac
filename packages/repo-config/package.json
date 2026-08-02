@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/repo-config",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"private": true,
 	"description": "Config for workspace repositories",
 	"homepage": "https://github.com/angelespejo/umac/tree/main/packages/repo-config",
@@ -9,7 +9,7 @@
 		"email": "dev@pigeonposse.com"
 	},
 	"repository": {
-		"type": "https",
+		"type": "git",
 		"url": "https://github.com/angelespejo/umac/tree/main",
 		"directory": "packages/repo-config"
 	},
@@ -17,7 +17,7 @@
 		"type": "individual",
 		"url": "https://pigeonposse.com/contribute"
 	},
-	"license": "GPL-3.0",
+	"license": "MIT",
 	"author": {
 		"name": "Angelo",
 		"email": "angelo@pigeonposse.com",

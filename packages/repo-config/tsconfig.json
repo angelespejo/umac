@@ -3,6 +3,9 @@
 		"target": "ES2022",
 		"module": "ESNext",
 		"moduleResolution": "Bundler",
+		"types": [
+			"node"
+		],
 		/**
 		 * Options.
 		 */
@@ -32,6 +35,7 @@
 		"importHelpers": true,
 		"removeComments": false,
 		"allowSyntheticDefaultImports": true,
+		"ignoreDeprecations": "6.0",
 		"outDir": "./dist",
 		"baseUrl": "./src"
 	},

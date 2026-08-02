@@ -1,4 +1,5 @@
 import { Alert }        from './alert'
+import { Clipboard }    from './clipboard'
 import { Dialog }       from './dialog'
 import { Keyboard }     from './keyboard'
 import { Notification } from './notification'
@@ -9,7 +10,7 @@ import { Siri }         from './siri'
 
 export class Interacting {
 
-	notification  = new Notification()
+	notification = new Notification()
 	dialog = new Dialog()
 	alert = new Alert()
 	say = new Say()
@@ -17,6 +18,7 @@ export class Interacting {
 	keyboard = new Keyboard()
 	screen = new Screen()
 	siri = new Siri()
+	clipboard = new Clipboard()
 
 }
 

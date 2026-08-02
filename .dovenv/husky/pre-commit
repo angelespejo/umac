@@ -11,4 +11,4 @@ echo '🚀 Precommit'
 echo
 pnpm test:check-ws
 echo
-pnpm --silent . lint staged --silent
+pnpm --silent dovenv lint staged --silent

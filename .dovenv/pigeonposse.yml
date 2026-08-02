@@ -15,6 +15,6 @@ web:
       - cli
       - bin
     license:
-      name: GPL-3.0
+      name: MIT
       url: https://github.com/angelespejo/umac/blob/main/LICENSE
     status: active

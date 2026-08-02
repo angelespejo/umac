@@ -18,7 +18,9 @@ import {
 } from './core/color'
 import { Appearance } from './core/main'
 
-export { Appearance }
+export {
+	Appearance,
+}
 const {
 	MULTIPLE: _, ...COLOR_ACCEPTED
 } = COLOR_ID
@@ -39,43 +41,45 @@ const cli = new UmacCommand( {
 	version,
 	name     : BIN_NAME,
 	helpURL  : HELP_URL,
-	helpOpts : { cmds : [
-		{
-			value : 'dark-mode',
-			desc  : 'Dark mode utilities. toggle, set, get...',
-			flags : [
-				{
-					value : '--toggle',
-					desc  : 'Toggle dark mode',
-				},
-				{
-					value : '--enable',
-					desc  : 'Enable dark mode',
-				},
-				{
-					value : '--disable',
-					desc  : 'Disable dark mode',
-				},
-			],
-		},
-		{
-			value : 'color',
-			desc  : 'Color utilities. Like accent, highlight...',
-			cmds  : [
-				{
-					value : 'accent',
-					desc  : 'Accent color utils',
-					flags : flagColor,
-				},
-				{
-					value : 'highlight',
-					desc  : 'Highlight color utils',
-					flags : flagColor,
-				},
-			],
-			flags : flagColor,
-		},
-	] },
+	helpOpts : {
+		cmds : [
+			{
+				value : 'dark-mode',
+				desc  : 'Dark mode utilities. toggle, set, get...',
+				flags : [
+					{
+						value : '--toggle',
+						desc  : 'Toggle dark mode',
+					},
+					{
+						value : '--enable',
+						desc  : 'Enable dark mode',
+					},
+					{
+						value : '--disable',
+						desc  : 'Disable dark mode',
+					},
+				],
+			},
+			{
+				value : 'color',
+				desc  : 'Color utilities. Like accent, highlight...',
+				cmds  : [
+					{
+						value : 'accent',
+						desc  : 'Accent color utils',
+						flags : flagColor,
+					},
+					{
+						value : 'highlight',
+						desc  : 'Highlight color utils',
+						flags : flagColor,
+					},
+				],
+				flags : flagColor,
+			},
+		],
+	},
 	fn : async ( { argv } ) => {
 
 		const theme = new Appearance( )
@@ -127,4 +131,6 @@ const cli = new UmacCommand( {
 } )
 
 export default cli
-export { cli }
+export {
+	cli,
+}

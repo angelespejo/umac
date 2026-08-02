@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/utils",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"description": "Utilities for umac",
 	"keywords": [
 		"cli",
@@ -15,7 +15,7 @@
 		"email": "dev@pigeonposse.com"
 	},
 	"repository": {
-		"type": "https",
+		"type": "git",
 		"url": "https://github.com/angelespejo/umac/tree/main",
 		"directory": "packages/utils"
 	},
@@ -23,13 +23,14 @@
 		"type": "individual",
 		"url": "https://pigeonposse.com/contribute"
 	},
-	"license": "GPL-3.0",
+	"license": "MIT",
 	"author": {
 		"name": "Angelo",
 		"email": "angelo@pigeonposse.com",
 		"url": "https://github.com/angelespejo"
 	},
 	"type": "module",
+	"sideEffects": false,
 	"exports": {
 		".": {
 			"types": "./dist/main.d.ts",
@@ -43,8 +44,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "unbuild",
-		"dev": "tsx src/bin.ts"
+		"build": "unbuild"
 	},
 	"dependencies": {
 		"@jxa/run": "1.4.0",

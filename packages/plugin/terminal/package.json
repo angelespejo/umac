@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/terminal",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"description": "MacOS Terminal utils",
 	"keywords": [
 		"apple",
@@ -16,7 +16,7 @@
 		"email": "dev@pigeonposse.com"
 	},
 	"repository": {
-		"type": "https",
+		"type": "git",
 		"url": "https://github.com/angelespejo/umac/tree/main",
 		"directory": "packages/plugin/terminal"
 	},
@@ -24,13 +24,14 @@
 		"type": "individual",
 		"url": "https://pigeonposse.com/contribute"
 	},
-	"license": "GPL-3.0",
+	"license": "MIT",
 	"author": {
 		"name": "Angelo",
 		"email": "angelo@pigeonposse.com",
 		"url": "https://github.com/angelespejo"
 	},
 	"type": "module",
+	"sideEffects": false,
 	"exports": {
 		".": {
 			"types": "./dist/main.d.ts",
@@ -51,10 +52,11 @@
 		"dev": "tsx src/bin.ts"
 	},
 	"devDependencies": {
-		"@umac-js/repo-config": "workspace:*"
+		"@umac-js/repo-config": "workspace:*",
+		"@umac-js/utils": "workspace:*"
 	},
 	"peerDependencies": {
-		"@umac-js/utils": "workspace:*"
+		"@umac-js/utils": "workspace:^"
 	},
 	"publishConfig": {
 		"access": "public",

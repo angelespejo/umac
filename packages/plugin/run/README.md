@@ -11,6 +11,7 @@
 
 [![License](https://img.shields.io/github/license/pigeonposse/umac?style=for-the-badge&color=green&logoColor=white)](/LICENSE)
 [![Version](https://img.shields.io/npm/v/umac?style=for-the-badge&color=blue&label=Version)](https://www.npmjs.com/package/umac)
+{{const.libPkgBadges}}
 
 Run multiple language scripts (jxa, osascript, python, js, bash etc)
 
@@ -29,7 +30,7 @@ Run multiple language scripts (jxa, osascript, python, js, bash etc)
 
 ## 🍎 umac (toolkit)
 
-[Read more](https://github.com/angelespejo/umac)
+[Read more]({{const.pkg.repository.url}})
 
 ## 🗝 Prerequesites
 
@@ -56,21 +57,25 @@ deno add @umac-js/run
 
 ## ➕ More
 
-- ⚒️ [Utils](https://github.com/angelespejo/umac/tree/main/packages/utils)
 - 🍎 [Umac](https://github.com/angelespejo/umac/tree/main/packages/umac)
+- ⚒️ [Utils](https://github.com/angelespejo/umac/tree/main/packages/utils)
 - 🔌 [Plugins](https://github.com/angelespejo/umac/tree/main/packages/plugin)
   - [App](https://github.com/angelespejo/umac/tree/main/packages/plugin/app)
-  - [Cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache)
   - [Appearance](https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance)
+  - [Cache](https://github.com/angelespejo/umac/tree/main/packages/plugin/cache)
   - [Desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop)
+  - [Disk](https://github.com/angelespejo/umac/tree/main/packages/plugin/disk)
   - [Finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder)
+  - [Messages](https://github.com/angelespejo/umac/tree/main/packages/plugin/messages)
+  - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
+  - [Notes](https://github.com/angelespejo/umac/tree/main/packages/plugin/notes)
   - [Open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open)
   - [Run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run)
+  - [Shortcuts](https://github.com/angelespejo/umac/tree/main/packages/plugin/shortcuts)
   - [Spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight)
   - [System](https://github.com/angelespejo/umac/tree/main/packages/plugin/system)
-  - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
-  - [Workflow](https://github.com/angelespejo/umac/tree/main/packages/plugin/workflow)
   - [Terminal](https://github.com/angelespejo/umac/tree/main/packages/plugin/terminal)
+  - [Workflow](https://github.com/angelespejo/umac/tree/main/packages/plugin/workflow)
 
 
 ---
@@ -80,7 +85,7 @@ deno add @umac-js/run
 __umac__ is an open-source project and its development is open to anyone who wants to participate.
 
 [![Issues](https://img.shields.io/badge/Issues-grey?style=for-the-badge)](https://github.com/angelespejo/umac/issues)
-[![Pull requests](https://img.shields.io/badge/Pulls-grey?style=for-the-badge)]({{const.pkg.repository.url}}/pulls)
+[![Pull requests](https://img.shields.io/badge/Pulls-grey?style=for-the-badge)](https://github.com/angelespejo/umac/pulls)
 [![Read more](https://img.shields.io/badge/Read%20more-grey?style=for-the-badge)]({{const.pkg.homepage}})
 
 ## ❤️ Donate
@@ -91,7 +96,7 @@ Help us to develop more interesting things.
 
 ## 📜 License
 
-This software is licensed with __[GPL-3.0](https://github.com/angelespejo/umac/blob/main/LICENSE)__.
+This software is licensed with __[MIT](https://github.com/angelespejo/umac/blob/main/LICENSE)__.
 
 [![Read more](https://img.shields.io/badge/Read-more-grey?style=for-the-badge)](https://github.com/angelespejo/umac/blob/main/LICENSE)
 
@@ -101,9 +106,10 @@ This software is licensed with __[GPL-3.0](https://github.com/angelespejo/umac/b
 
 [![More](https://img.shields.io/badge/Read-more-grey?style=for-the-badge)](https://github.com/pigeonposse)
 
+
+
+
 ---
-
-
 
 [![Web](https://img.shields.io/badge/Web-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com)
 [![About Us](https://img.shields.io/badge/About%20Us-grey?style=for-the-badge&logoColor=white)](https://pigeonposse.com/about)
@@ -120,21 +126,15 @@ This software is licensed with __[GPL-3.0](https://github.com/angelespejo/umac/b
 ██╔═══╝ ██║██║   ██║██╔══╝  ██║   ██║██║╚██╗██║██╔═══╝ ██║   ██║╚════██║╚════██║██╔══╝  
 ██║     ██║╚██████╔╝███████╗╚██████╔╝██║ ╚████║██║     ╚██████╔╝███████║███████║███████╗
 ╚═╝     ╚═╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝      ╚═════╝ ╚══════╝╚══════╝╚══════╝
-                                                                                        
-                                                                                        
-                                                                                        
-█████╗█████╗█████╗█████╗█████╗█████╗█████╗                                              
-╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝                                              
-                                                                                        
-                                                                                        
-                                                                                        
+█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗█████╗                                  
+╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝╚════╝                                  
 ██╗   ██╗███╗   ███╗ █████╗  ██████╗                                                    
 ██║   ██║████╗ ████║██╔══██╗██╔════╝                                                    
 ██║   ██║██╔████╔██║███████║██║                                                         
 ██║   ██║██║╚██╔╝██║██╔══██║██║                                                         
 ╚██████╔╝██║ ╚═╝ ██║██║  ██║╚██████╗                                                    
  ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝                                                    
-                                                                                        
+
 - Author: [Angelo](https://github.com/angelespejo)
 
 

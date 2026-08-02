@@ -9,5 +9,5 @@
 echo
 echo '🚀 Lint commit meessage'
 echo
-pnpm --silent . lint commitlint --silent $1
+pnpm --silent dovenv lint commitlint --silent $1
 echo

@@ -9,10 +9,12 @@ import {
 	HELP_URL,
 	version,
 } from './const'
-import { Interacting } from './core'
-import { Alert }       from './core/alert'
-import { Dialog }      from './core/dialog'
-import { cliKeyboard } from './core/keyborad.cli'
+import { Interacting }  from './core'
+import { Alert }        from './core/alert'
+import { Clipboard }    from './core/clipboard'
+import { cliClipboard } from './core/clipboard.cli'
+import { Dialog }       from './core/dialog'
+import { cliKeyboard }  from './core/keyborad.cli'
 import {
 	NotificationOpts,
 	Notification,
@@ -31,6 +33,7 @@ export {
 	Dialog,
 	Say,
 	Prompt,
+	Clipboard,
 }
 
 export const CMD = {
@@ -118,138 +121,141 @@ export const cli = new UmacCommand( {
 	version,
 	name     : BIN_NAME,
 	helpURL  : HELP_URL,
-	helpOpts : { cmds : [
-		{
-			value : CMD.NOTFICATION,
-			desc  : 'Set a macOS notification',
-			flags : [
-				flags[0],
-				{
-					value : '--title',
-					desc  : 'Set title',
-				},
+	helpOpts : {
+		cmds : [
+			{
+				value : CMD.NOTFICATION,
+				desc  : 'Set a macOS notification',
+				flags : [
+					flags[0],
+					{
+						value : '--title',
+						desc  : 'Set title',
+					},
 
-				{
-					value : '--subtitle',
-					desc  : 'Set subtitle for notification',
-				},
-				{
-					value : '--sound',
-					desc  : 'Set a custom sound',
-				},
-			],
-		},
-		{
-			value : CMD.DIALOG,
-			desc  : 'Set a macOS dialog',
-			flags : dialogFlags,
-		},
-		{
-			value : CMD.ALERT,
-			desc  : 'Set a macOS alert',
-			flags : [
-				...flags,
-				{
-					value : '--as',
-					desc  : 'Set icon for alert. Choices: critical',
-				},
-			],
-		},
-		{
-			value : CMD.SAY,
-			desc  : 'Display voice message',
-			flags : [ flags[0] ],
-		},
-		cliSiri.cmd,
-		cliScreen.cmd,
-		cliKeyboard.cmd,
-		{
-			value : CMD.PROMPT,
-			desc  : 'Set custom prompts like, text, choices, files, color etc',
-			cmds  : [
-				{
-					value : CMD.PROMPT_FILE,
-					desc  : 'Folder prompt',
-					flags : [
-						...fileFlags,
-						{
-							value : '--type',
-							desc  : 'Specify allowed file types',
-						},
-					],
-				},
-				{
-					value : CMD.PROMPT_FOLDER,
-					desc  : 'Folder prompt',
-					flags : fileFlags,
-				},
-				{
-					value : CMD.PROMPT_COLOR,
-					desc  : 'Color prompt',
-					flags : [
-						{
-							value : 'default',
-							desc  : 'Default RGA color. Must be a array. --default 255 255 0',
-						},
-					],
-					examples : [
-						{
-							value : '$0 prompt color --default 255 255 0',
-							desc  : 'Set color dialog with default color',
-						},
-					],
-				},
-				{
-					value : CMD.PROMPT_SELECT,
-					desc  : 'Select prompt',
-					flags : [
-						...flagsDialogShared,
-						{
-							value : '--title',
-							desc  : 'Set title for notification',
-						},
-						{
-							value : '--items',
-							desc  : 'Set select items',
-						},
-						{
-							value : '--default-items',
-							desc  : 'Set default items',
-						},
-						{
-							value : '--multiple',
-							desc  : 'Allow multiple items to be selected',
-						},
-						{
-							value : '--empty',
-							desc  : 'Allow empty selection',
-						},
-					],
-				},
-				{
-					value : CMD.PROMPT_INPUT,
-					desc  : 'File prompt',
-					flags : [
-						...dialogFlags,
-						{
-							value : '--hidden',
-							desc  : 'Hide to user the text input value',
-						},
-						{
-							value : '--default',
-							desc  : 'Default value',
-						},
-					],
-					examples : [
-						{
-							value : '$0 prompt input --default 255 255 0',
-							desc  : 'Set color dialog with default color',
-						},
-					],
-				},
-			],
-		},
-	] },
+					{
+						value : '--subtitle',
+						desc  : 'Set subtitle for notification',
+					},
+					{
+						value : '--sound',
+						desc  : 'Set a custom sound',
+					},
+				],
+			},
+			{
+				value : CMD.DIALOG,
+				desc  : 'Set a macOS dialog',
+				flags : dialogFlags,
+			},
+			{
+				value : CMD.ALERT,
+				desc  : 'Set a macOS alert',
+				flags : [
+					...flags,
+					{
+						value : '--as',
+						desc  : 'Set icon for alert. Choices: critical',
+					},
+				],
+			},
+			{
+				value : CMD.SAY,
+				desc  : 'Display voice message',
+				flags : [ flags[0] ],
+			},
+			cliSiri.cmd,
+			cliScreen.cmd,
+			cliKeyboard.cmd,
+			cliClipboard.cmd,
+			{
+				value : CMD.PROMPT,
+				desc  : 'Set custom prompts like, text, choices, files, color etc',
+				cmds  : [
+					{
+						value : CMD.PROMPT_FILE,
+						desc  : 'Folder prompt',
+						flags : [
+							...fileFlags,
+							{
+								value : '--type',
+								desc  : 'Specify allowed file types',
+							},
+						],
+					},
+					{
+						value : CMD.PROMPT_FOLDER,
+						desc  : 'Folder prompt',
+						flags : fileFlags,
+					},
+					{
+						value : CMD.PROMPT_COLOR,
+						desc  : 'Color prompt',
+						flags : [
+							{
+								value : 'default',
+								desc  : 'Default RGA color. Must be a array. --default 255 255 0',
+							},
+						],
+						examples : [
+							{
+								value : '$0 prompt color --default 255 255 0',
+								desc  : 'Set color dialog with default color',
+							},
+						],
+					},
+					{
+						value : CMD.PROMPT_SELECT,
+						desc  : 'Select prompt',
+						flags : [
+							...flagsDialogShared,
+							{
+								value : '--title',
+								desc  : 'Set title for notification',
+							},
+							{
+								value : '--items',
+								desc  : 'Set select items',
+							},
+							{
+								value : '--default-items',
+								desc  : 'Set default items',
+							},
+							{
+								value : '--multiple',
+								desc  : 'Allow multiple items to be selected',
+							},
+							{
+								value : '--empty',
+								desc  : 'Allow empty selection',
+							},
+						],
+					},
+					{
+						value : CMD.PROMPT_INPUT,
+						desc  : 'File prompt',
+						flags : [
+							...dialogFlags,
+							{
+								value : '--hidden',
+								desc  : 'Hide to user the text input value',
+							},
+							{
+								value : '--default',
+								desc  : 'Default value',
+							},
+						],
+						examples : [
+							{
+								value : '$0 prompt input --default 255 255 0',
+								desc  : 'Set color dialog with default color',
+							},
+						],
+					},
+				],
+			},
+		],
+	},
 	fn : async data => {
 
 		const { argv } = data
@@ -415,6 +421,11 @@ export const cli = new UmacCommand( {
 		else if ( argv.existsCmd( cliSiri.cmd.value ) ) {
 
 			await cliSiri.fn( data )
+
+		}
+		else if ( argv.existsCmd( cliClipboard.cmd.value ) ) {
+
+			await cliClipboard.fn( data )
 
 		}
 		else console.log( data.getHelp( ) )

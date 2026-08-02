@@ -24,18 +24,20 @@ const cli = new UmacCommand( {
 	version,
 	name     : BIN_NAME,
 	helpURL  : HELP_URL,
-	helpOpts : { cmds : cmds.map( value => ( {
-		value,
-		desc  : WORKFLOW_DESCRIPTIONS[value],
-		flags : value === WORKFLOW_CMD.COPY
-			? [
-				{
-					value : '--output, -o',
-					desc  : 'Output to copy workflows directory',
-				},
-			]
-			: undefined,
-	} ) ) },
+	helpOpts : {
+		cmds : cmds.map( value => ( {
+			value,
+			desc  : WORKFLOW_DESCRIPTIONS[value],
+			flags : value === WORKFLOW_CMD.COPY
+				? [
+					{
+						value : '--output, -o',
+						desc  : 'Output to copy workflows directory',
+					},
+				]
+				: undefined,
+		} ) ),
+	},
 	fn : async ( { argv } ) => {
 
 		const wf = new Workflow( )

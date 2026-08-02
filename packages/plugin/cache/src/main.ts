@@ -21,16 +21,18 @@ const cli = new UmacCommand( {
 	version,
 	name     : BIN_NAME,
 	helpURL  : HELP_URL,
-	helpOpts : { cmds : [
-		{
-			value : CMD.OPEN,
-			desc  : 'Open cache dir',
-		},
-		{
-			value : CMD.REMOVE,
-			desc  : 'Remove cache dir or path',
-		},
-	] },
+	helpOpts : {
+		cmds : [
+			{
+				value : CMD.OPEN,
+				desc  : 'Open cache dir',
+			},
+			{
+				value : CMD.REMOVE,
+				desc  : 'Remove cache dir or path',
+			},
+		],
+	},
 	fn : async ( { argv } ) => {
 
 		const cache = new Cache()
@@ -51,4 +53,6 @@ const cli = new UmacCommand( {
 } )
 
 export default cli
-export { cli }
+export {
+	cli,
+}

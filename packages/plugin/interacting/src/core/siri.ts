@@ -1,4 +1,4 @@
-/* eslint-disable jsdoc/check-tag-names */
+
 import { execute } from './_shared'
 
 export class Siri {

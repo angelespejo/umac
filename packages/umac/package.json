@@ -1,6 +1,6 @@
 {
 	"name": "umac",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"description": "Terminal utilities for MacOS",
 	"keywords": [
 		"cli",
@@ -15,7 +15,7 @@
 		"email": "dev@pigeonposse.com"
 	},
 	"repository": {
-		"type": "https",
+		"type": "git",
 		"url": "https://github.com/angelespejo/umac/tree/main",
 		"directory": "packages/umac"
 	},
@@ -23,13 +23,14 @@
 		"type": "individual",
 		"url": "https://pigeonposse.com/contribute"
 	},
-	"license": "GPL-3.0",
+	"license": "MIT",
 	"author": {
 		"name": "Angelo",
 		"email": "angelo@pigeonposse.com",
 		"url": "https://github.com/angelespejo"
 	},
 	"type": "module",
+	"sideEffects": false,
 	"exports": {
 		".": {
 			"types": "./dist/main.d.ts",
@@ -51,15 +52,19 @@
 		"dev": "tsx src/bin.ts"
 	},
 	"dependencies": {
-		"@clippium/updater": "1.0.2",
+		"@clippium/updater": "~1.0.4",
 		"@umac-js/app": "workspace:*",
 		"@umac-js/appearance": "workspace:*",
 		"@umac-js/cache": "workspace:*",
 		"@umac-js/desktop": "workspace:*",
+		"@umac-js/disk": "workspace:*",
 		"@umac-js/finder": "workspace:*",
 		"@umac-js/interacting": "workspace:*",
+		"@umac-js/messages": "workspace:*",
+		"@umac-js/notes": "workspace:*",
 		"@umac-js/open": "workspace:*",
 		"@umac-js/run": "workspace:*",
+		"@umac-js/shortcuts": "workspace:*",
 		"@umac-js/spotlight": "workspace:*",
 		"@umac-js/system": "workspace:*",
 		"@umac-js/terminal": "workspace:*",

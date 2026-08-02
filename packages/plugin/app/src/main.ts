@@ -36,97 +36,99 @@ export const cli = new UmacCommand( {
 	version,
 	name     : BIN_NAME,
 	helpURL  : HELP_URL,
-	helpOpts : { cmds : [
-		{
-			value      : `${CMD.INSTALL}, ${CMD_ALIAS.INSTALL}`,
-			posicional : 'app',
-			desc       : `Install apps`,
-			examples   : [
-				{
-					value : '$0 app install appName1 appName2',
-					desc  : 'install multiple apps',
-				},
-			],
-		},
-		{
-			value      : `${CMD.UNINSTALL}, ${CMD_ALIAS.UNINSTALL}`,
-			posicional : 'app',
-			desc       : `Uninstall apps using brew`,
-			examples   : [
-				{
-					value : '$0 app uninstall app1 app2',
-					desc  : 'Uninstall multiple apps',
-				},
-			],
-		},
-		{
-			value      : `${CMD.SEARCH}, ${CMD_ALIAS.SEARCH}`,
-			posicional : 'query',
-			desc       : `Search apps with ${italic( 'brew search' )}`,
-			examples   : [
-				{
-					value : '$0 app search vpn',
-					desc  : 'Search vpn apps',
-				},
-			],
-		},
-		{
-			value      : CMD.CLOSE,
-			posicional : 'pattern',
-			desc       : `Close apps`,
-			flags      : [
-				{
-					value : '--ask',
-					desc  : 'Displays a message to the user to select the applications that should be closed',
+	helpOpts : {
+		cmds : [
+			{
+				value      : `${CMD.INSTALL}, ${CMD_ALIAS.INSTALL}`,
+				posicional : 'app',
+				desc       : `Install apps`,
+				examples   : [
+					{
+						value : '$0 app install appName1 appName2',
+						desc  : 'install multiple apps',
+					},
+				],
+			},
+			{
+				value      : `${CMD.UNINSTALL}, ${CMD_ALIAS.UNINSTALL}`,
+				posicional : 'app',
+				desc       : `Uninstall apps using brew`,
+				examples   : [
+					{
+						value : '$0 app uninstall app1 app2',
+						desc  : 'Uninstall multiple apps',
+					},
+				],
+			},
+			{
+				value      : `${CMD.SEARCH}, ${CMD_ALIAS.SEARCH}`,
+				posicional : 'query',
+				desc       : `Search apps with ${italic( 'brew search' )}`,
+				examples   : [
+					{
+						value : '$0 app search vpn',
+						desc  : 'Search vpn apps',
+					},
+				],
+			},
+			{
+				value      : CMD.CLOSE,
+				posicional : 'pattern',
+				desc       : `Close apps`,
+				flags      : [
+					{
+						value : '--ask',
+						desc  : 'Displays a message to the user to select the applications that should be closed',
 
-				},
-			],
-			examples : [
-				{
-					value : '$0 app close app1 app2',
-					desc  : 'Close specific apps',
-				},
-				{
-					value : '$0 app close "*"',
-					desc  : 'Force close all apps',
-				},
-				{
-					value : '$0 app close "*Avast*"',
-					desc  : 'Close all apps that contains avast name',
-				},
-			],
-		},
+					},
+				],
+				examples : [
+					{
+						value : '$0 app close app1 app2',
+						desc  : 'Close specific apps',
+					},
+					{
+						value : '$0 app close "*"',
+						desc  : 'Force close all apps',
+					},
+					{
+						value : '$0 app close "*Avast*"',
+						desc  : 'Close all apps that contains avast name',
+					},
+				],
+			},
 
-		{
-			value     : CMD.UNDEV,
-			flagsDesc : 'If there are not flags, Show status of unidentified apps',
-			desc      : `Manage unidentified apps`,
-			flags     : [
-				{
-					value : '--toggle',
-					desc  : 'Toggle status of unidentified apps',
-				},
-				{
-					value : '--enable',
-					desc  : 'Enable unidentified apps',
-				},
-				{
-					value : '--disable',
-					desc  : 'Disable unidentified apps',
-				},
-			],
-		},
-		{
-			value    : 'list',
-			desc     : 'List apps',
-			examples : [
-				{
-					value : 'app dev list \'!Avast*\' \'!*.avast*\'',
-					desc  : 'list all apps less Avast apps',
-				},
-			],
-		},
-	] },
+			{
+				value     : CMD.UNDEV,
+				flagsDesc : 'If there are not flags, Show status of unidentified apps',
+				desc      : `Manage unidentified apps`,
+				flags     : [
+					{
+						value : '--toggle',
+						desc  : 'Toggle status of unidentified apps',
+					},
+					{
+						value : '--enable',
+						desc  : 'Enable unidentified apps',
+					},
+					{
+						value : '--disable',
+						desc  : 'Disable unidentified apps',
+					},
+				],
+			},
+			{
+				value    : 'list',
+				desc     : 'List apps',
+				examples : [
+					{
+						value : 'app dev list \'!Avast*\' \'!*.avast*\'',
+						desc  : 'list all apps less Avast apps',
+					},
+				],
+			},
+		],
+	},
 	fn : async ( {
 		argv, getHelp,
 	} ) => {
