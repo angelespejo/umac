@@ -1,5 +1,14 @@
 # @umac-js/workflow
 
+## 2.2.2
+
+### Patch Changes
+
+- up docs
+
+- Updated dependencies []:
+  - @umac-js/utils@2.2.2
+
 ## 2.2.1
 
 ### Patch Changes

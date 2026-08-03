@@ -1,5 +1,11 @@
 # @umac-js/utils
 
+## 2.2.2
+
+### Patch Changes
+
+- up docs
+
 ## 2.2.1
 
 ### Patch Changes

@@ -37,18 +37,12 @@ jobs:
 
       - name: ⬇️🛑 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.13.1
-      - name: ⬇️🛎 Checkout
-        uses: actions/checkout@v7
-      - name: ⬇️🥡 Install pnpm
+      - uses: actions/checkout@v7
+      - name: ⬇️🥡🟢 Install node & pnpm
         uses: pnpm/action-setup@v6
-      - name: ⬇️🟢 Setup node
-        uses: actions/setup-node@v7
         with:
-          node-version: 24.18.1
-          cache: 'pnpm'
+          cache: true
       - uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: 1.3.14
       - name: 🐙😺 Check GitHub API Rate Limit
         id: rate_limit
         run: |

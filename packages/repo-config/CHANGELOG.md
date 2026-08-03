@@ -1,5 +1,11 @@
 # @umac-js/repo-config
 
+## 2.2.2
+
+### Patch Changes
+
+- up docs
+
 ## 2.2.1
 
 ### Patch Changes

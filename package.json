@@ -56,11 +56,17 @@
 		"unbuild": "3.6.1",
 		"vitest": "4.1.10"
 	},
-	"packageManager": "pnpm@11.18.0",
+	"packageManager": "pnpm@11.20.0",
 	"engines": {
 		"node": ">=20.0.0",
 		"pnpm": ">=8.10.0",
 		"bun": ">=1.2.0"
+	},
+	"devEngines": {
+		"runtime": {
+			"name": "node",
+			"version": "24.18.1"
+		}
 	},
 	"extra": {
 		"id": "umac",
