@@ -14,23 +14,25 @@
 - Run scripts
 - ...
 
-## 🗝 Prerequesites
+## 🗝 Prerequisites
 
-Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
+- A system based on **DarwinOS**, that is, any **Apple** computer 🍎
 
-## 🔢 Use Executable
+## 🚀 Quick start
 
-You can download the binary directly from the [releases]({{const.pkg.repository.url}}/releases) section
+### JavaScript / TypeScript library
 
-## 🟢 JavaScript / Typescript library 
+You can also use `umac` as a **JS** / **TS** library directly in your project.
 
-> Now You can use `umac` on your **JS** / **TS** project
+### CLI
 
-## 🚀 CLI
-
-Execute cli with:
+Quickly run the command line with:
 
 ```bash
-umac <command> [...flags]
+npx umac <command> [...flags]
 ```
+
+### Use Executable
+
+You can download the binary directly from the [releases]({{const.pkg.repository.url}}/releases) section
 

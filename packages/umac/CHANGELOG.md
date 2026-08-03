@@ -1,5 +1,30 @@
 # umac
 
+## 2.2.1
+
+### Patch Changes
+
+- add documentation
+
+- Updated dependencies []:
+  - @umac-js/interacting@2.2.1
+  - @umac-js/appearance@2.2.1
+  - @umac-js/shortcuts@2.2.1
+  - @umac-js/spotlight@2.2.1
+  - @umac-js/messages@2.2.1
+  - @umac-js/terminal@2.2.1
+  - @umac-js/workflow@2.2.1
+  - @umac-js/desktop@2.2.1
+  - @umac-js/finder@2.2.1
+  - @umac-js/system@2.2.1
+  - @umac-js/cache@2.2.1
+  - @umac-js/notes@2.2.1
+  - @umac-js/disk@2.2.1
+  - @umac-js/open@2.2.1
+  - @umac-js/app@2.2.1
+  - @umac-js/run@2.2.1
+  - @umac-js/utils@2.2.1
+
 ## 2.2.0
 
 ### Minor Changes

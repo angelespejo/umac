@@ -18,8 +18,11 @@ MacOS Interacting utils
 ## Table of contents
 
 - [🍎 umac (toolkit)](#-umac-toolkit)
-- [🗝 Prerequesites](#-prerequesites)
-- [🟢 JavaScript / Typescript library](#-javascript--typescript-library)
+- [🗝 Prerequisites](#-prerequisites)
+- [🚀 Quick start](#-quick-start)
+  - [JavaScript / TypeScript library](#javascript--typescript-library)
+  - [CLI](#cli)
+  - [Use Executable](#use-executable)
 - [🔑 Installation](#-installation)
 - [➕ More](#-more)
 - [👨‍💻 Development](#-development)
@@ -30,15 +33,31 @@ MacOS Interacting utils
 
 ## 🍎 umac (toolkit)
 
+**umac** is a toolkit with terminal utilities for **macOS** 🍎: install apps, force close apps, clear cache, add desk notifications, change shell, and more.
+
 [Read more](https://github.com/angelespejo/umac/)
 
-## 🗝 Prerequesites
+## 🗝 Prerequisites
 
-Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
+- A system based on **DarwinOS**, that is, any **Apple** computer 🍎
 
-## 🟢 JavaScript / Typescript library 
+## 🚀 Quick start
 
-> Now You can use `umac` on your **JS** / **TS** project
+### JavaScript / TypeScript library
+
+You can also use `umac` as a **JS** / **TS** library directly in your project.
+
+### CLI
+
+Quickly run the command line with:
+
+```bash
+npx umac <command> [...flags]
+```
+
+### Use Executable
+
+You can download the binary directly from the [releases](https://github.com/angelespejo/umac/releases) section
 
 
 ## 🔑 Installation
@@ -57,8 +76,8 @@ deno add @umac-js/interacting
 
 ## ➕ More
 
-- 🍎 [Umac](https://github.com/angelespejo/umac/tree/main/packages/umac)
 - ⚒️ [Utils](https://github.com/angelespejo/umac/tree/main/packages/utils)
+- 🍎 [Umac](https://github.com/angelespejo/umac/tree/main/packages/umac)
 - 🔌 [Plugins](https://github.com/angelespejo/umac/tree/main/packages/plugin)
   - [App](https://github.com/angelespejo/umac/tree/main/packages/plugin/app)
   - [Appearance](https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance)
@@ -66,10 +85,10 @@ deno add @umac-js/interacting
   - [Desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop)
   - [Disk](https://github.com/angelespejo/umac/tree/main/packages/plugin/disk)
   - [Finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder)
-  - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
   - [Messages](https://github.com/angelespejo/umac/tree/main/packages/plugin/messages)
-  - [Notes](https://github.com/angelespejo/umac/tree/main/packages/plugin/notes)
+  - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
   - [Open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open)
+  - [Notes](https://github.com/angelespejo/umac/tree/main/packages/plugin/notes)
   - [Run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run)
   - [Shortcuts](https://github.com/angelespejo/umac/tree/main/packages/plugin/shortcuts)
   - [Spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight)

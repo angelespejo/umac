@@ -18,10 +18,11 @@ Terminal utilities for MacOS: install apps, force close apps, clear cache, add d
 ## Table of contents
 
 - [What can we do with `umac`?](#what-can-we-do-with-umac)
-- [🗝 Prerequesites](#-prerequesites)
-- [🔢 Use Executable](#-use-executable)
-- [🟢 JavaScript / Typescript library](#-javascript--typescript-library)
-- [🚀 CLI](#-cli)
+- [🗝 Prerequisites](#-prerequisites)
+- [🚀 Quick start](#-quick-start)
+  - [JavaScript / TypeScript library](#javascript--typescript-library)
+  - [CLI](#cli)
+  - [Use Executable](#use-executable)
 - [🔑 Installation](#-installation)
 - [⚙️ Usage](#-usage)
   - [Apps](#apps)
@@ -30,12 +31,16 @@ Terminal utilities for MacOS: install apps, force close apps, clear cache, add d
     - [Search](#search)
     - [Unidentified apps](#unidentified-apps)
     - [Close](#close)
+    - [List](#list)
   - [Cache](#cache)
     - [Open cache Directory in Finder](#open-cache-directory-in-finder)
     - [Remove](#remove)
   - [Open](#open)
     - [Examples](#examples)
   - [Desktop](#desktop)
+    - [Remove](#remove)
+    - [Change](#change)
+    - [Add](#add)
   - [Interact / Interacting](#interact--interacting)
     - [Notification](#notification)
     - [Dialog](#dialog)
@@ -60,10 +65,45 @@ Terminal utilities for MacOS: install apps, force close apps, clear cache, add d
     - [Hardware](#hardware)
     - [Version](#version)
   - [Finder](#finder)
+    - [Close](#close)
+    - [Reload](#reload)
+    - [Dotfiles](#dotfiles)
   - [Workflow](#workflow)
+    - [List](#list)
+    - [Copy](#copy)
+    - [Open dir](#open-dir)
+    - [Open](#open)
+    - [New](#new)
   - [Appearance](#appearance)
     - [Dark mode](#dark-mode)
     - [Color](#color)
+  - [Disk](#disk)
+    - [List](#list)
+    - [Space](#space)
+    - [Info](#info)
+    - [Eject](#eject)
+  - [Messages](#messages)
+    - [Open](#open)
+    - [Send](#send)
+    - [List](#list)
+    - [Read messages](#read-messages)
+    - [Services](#services)
+  - [Notes](#notes)
+    - [Open](#open)
+    - [Open new](#open-new)
+    - [Add](#add)
+    - [Remove](#remove)
+    - [Add folder](#add-folder)
+    - [Remove folder](#remove-folder)
+    - [Move](#move)
+    - [Rename](#rename)
+    - [Exists](#exists)
+    - [List](#list)
+  - [Shortcuts](#shortcuts)
+    - [Open](#open)
+    - [List](#list)
+    - [Run](#run)
+    - [View](#view)
 - [☑️ TO DO](#-to-do)
 - [➕ More](#-more)
 - [👨‍💻 Development](#-development)
@@ -88,25 +128,27 @@ Terminal utilities for MacOS: install apps, force close apps, clear cache, add d
 - Run scripts
 - ...
 
-## 🗝 Prerequesites
+## 🗝 Prerequisites
 
-Have a system based on **DarwinOS**, that is, any **Apple** computer 🍎
+- A system based on **DarwinOS**, that is, any **Apple** computer 🍎
 
-## 🔢 Use Executable
+## 🚀 Quick start
 
-You can download the binary directly from the [releases](https://github.com/angelespejo/umac/releases) section
+### JavaScript / TypeScript library
 
-## 🟢 JavaScript / Typescript library 
+You can also use `umac` as a **JS** / **TS** library directly in your project.
 
-> Now You can use `umac` on your **JS** / **TS** project
+### CLI
 
-## 🚀 CLI
-
-Execute cli with:
+Quickly run the command line with:
 
 ```bash
-umac <command> [...flags]
+npx umac <command> [...flags]
 ```
+
+### Use Executable
+
+You can download the binary directly from the [releases](https://github.com/angelespejo/umac/releases) section
 
 
 
@@ -235,6 +277,16 @@ Close all apps that contains avast name
 umac app close "*Avast*"
 ```
 
+#### List
+
+List system apps.
+
+```bash
+umac app list
+# or
+umac app list '!Avast*' '!*.avast*'
+```
+
 ### Cache
 
 ```bash
@@ -291,6 +343,36 @@ umac desk -h
 ```
 
 > ℹ️  You can also use [umac/desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop) independently.
+
+#### Remove
+
+Remove Desktop image.
+
+```bash
+umac desktop remove
+# or
+umac desktop remove imageName
+```
+
+#### Change
+
+Change the Desktop image in the desktop pictures directory.
+
+```bash
+umac desktop change imagePath
+```
+
+#### Add
+
+Add a Desktop image to the desktop pictures directory.
+
+```bash
+umac desktop add imagePath
+# or
+umac desktop add imagePath --dir
+# or
+umac desktop add imagePath --sys
+```
 
 
 ### Interact / Interacting
@@ -534,6 +616,36 @@ umac finder --help
 
 > ℹ️  You can also use [umac/finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder) independently.
 
+#### Close
+
+Close all Finder windows and force exit from Finder.
+
+```bash
+umac finder close
+```
+
+#### Reload
+
+Reload Finder.
+
+```bash
+umac finder reload
+```
+
+#### Dotfiles
+
+Show, hide or toggle dotfiles visibility.
+
+```bash
+umac finder dotfiles
+# or
+umac finder dotfiles --toggle
+# or
+umac finder dotfiles --enable
+# or
+umac finder dotfiles --disable
+```
+
 ### Workflow
 
 MacOS Workflow utils
@@ -545,6 +657,46 @@ umac wf -h
 ```
 
 > ℹ️  You can also use [umac/workflow](https://github.com/angelespejo/umac/tree/main/packages/plugin/workflow) independently.
+
+#### List
+
+Lists all available workflows in the services directory.
+
+```bash
+umac workflow list
+```
+
+#### Copy
+
+Copies all workflows to the specified directory.
+
+```bash
+umac workflow copy --output <dir>
+```
+
+#### Open dir
+
+Opens the services directory in the file explorer.
+
+```bash
+umac workflow open-dir
+```
+
+#### Open
+
+Prompts the user to select and open a workflow with Automator.
+
+```bash
+umac workflow open
+```
+
+#### New
+
+Opens a new project in Automator.
+
+```bash
+umac workflow new
+```
 
 ### Appearance
 
@@ -558,14 +710,288 @@ umac appearance --help
 
 #### Dark mode
 
+Dark mode utilities. Toggle, set, get...
+
 ```bash
-umac appearance dark-mode --help
+umac appearance dark-mode
+# or
+umac appearance dark-mode --toggle
+# or
+umac appearance dark-mode --enable
+# or
+umac appearance dark-mode --disable
 ```
 
 #### Color
 
+Color utilities. Like accent, highlight...
+
 ```bash
-umac appearance color --help
+umac appearance color
+# or
+umac appearance color accent
+# or
+umac appearance color highlight
+```
+
+### Disk
+
+MacOS Disk utils
+
+```bash
+umac disk --help
+```
+
+> ℹ️  You can also use [umac/disk](https://github.com/angelespejo/umac/tree/main/packages/plugin/disk) independently.
+
+#### List
+
+List disks and their partitions.
+
+```bash
+umac disk list
+# or
+umac disk list --res=json
+```
+
+#### Space
+
+Show disk space usage.
+
+```bash
+umac disk space
+# or
+umac disk space --res=json
+```
+
+#### Info
+
+Show detailed info about a disk or volume.
+
+```bash
+umac disk info /dev/disk0
+```
+
+#### Eject
+
+Eject a disk or volume.
+
+```bash
+umac disk eject disk3s1
+```
+
+### Messages
+
+MacOS Messages.app utils
+
+```bash
+umac messages --help
+```
+
+> ℹ️  You can also use [umac/messages](https://github.com/angelespejo/umac/tree/main/packages/plugin/messages) independently.
+
+#### Open
+
+Open the Messages app.
+
+```bash
+umac messages open
+```
+
+#### Send
+
+Send a message to a buddy handle or a chat id.
+
+```bash
+umac messages send -t "angel@pigeonposse.com" -m "Hola!"
+# or
+umac messages send -t "iMessage;-;angel@pigeonposse.com" -m "Hola!"
+```
+
+#### List
+
+List the currently open chats.
+
+```bash
+umac messages list
+# or
+umac messages list --name "Work"
+# or
+umac messages list --participants "angelo@pigeonposse.com"
+```
+
+#### Read messages
+
+Read the messages of a chat.
+
+```bash
+umac messages messages "iMessage;-;angelo@pigeonposse.com"
+# or
+umac messages messages "iMessage;-;angelo@pigeonposse.com" --limit 10
+```
+
+#### Services
+
+List the services configured in Messages.
+
+```bash
+umac messages services
+```
+
+### Notes
+
+MacOS Notes utils
+
+```bash
+umac notes --help
+```
+
+> ℹ️  You can also use [umac/notes](https://github.com/angelespejo/umac/tree/main/packages/plugin/notes) independently.
+
+#### Open
+
+Open Apple Notes app or focus a specific note.
+
+```bash
+umac notes open
+# or
+umac notes open "Ideas"
+```
+
+#### Open new
+
+Create and focus a new blank note or a titled note in a folder path.
+
+```bash
+umac notes open-new
+# or
+umac notes open-new "Quick Note"
+```
+
+#### Add
+
+Create a new note (creates parent folders if missing).
+
+```bash
+umac notes add "Shopping List"
+# or
+umac notes add "Work" "Projects" "Q1 Roadmap"
+```
+
+#### Remove
+
+Remove a note by title or path.
+
+```bash
+umac notes remove "Shopping List"
+# or
+umac notes remove "Work" "Projects" "Q1 Roadmap"
+```
+
+#### Add folder
+
+Create a new folder or nested subfolders hierarchy.
+
+```bash
+umac notes add-folder "Work"
+# or
+umac notes add-folder "Work" "Projects" "2026"
+```
+
+#### Remove folder
+
+Remove a folder or nested folder path.
+
+```bash
+umac notes remove-folder "Work" "Old Projects"
+# or
+umac notes remove-folder "Work" "Drafts" --only-notes
+```
+
+#### Move
+
+Move a note to a target folder.
+
+```bash
+umac notes move "Shopping List" --to "Work"
+```
+
+#### Rename
+
+Rename a note or folder.
+
+```bash
+umac notes rename "Shopping List" --name "Groceries"
+```
+
+#### Exists
+
+Check if a note or folder exists.
+
+```bash
+umac notes exists "Work"
+# or
+umac notes exists "Work" "Projects" "Q1 Roadmap"
+```
+
+#### List
+
+List all notes with their metadata.
+
+```bash
+umac notes list
+# or
+umac notes list --name "Meeting"
+# or
+umac notes list --folder "Work" "Projects"
+```
+
+### Shortcuts
+
+MacOS Shortcuts utils
+
+```bash
+umac shortcuts --help
+```
+
+> ℹ️  You can also use [umac/shortcuts](https://github.com/angelespejo/umac/tree/main/packages/plugin/shortcuts) independently.
+
+#### Open
+
+Open the Shortcuts app.
+
+```bash
+umac shortcuts open
+```
+
+#### List
+
+List shortcuts or folders.
+
+```bash
+umac shortcuts list
+# or
+umac shortcuts list --folder "My Folder"
+# or
+umac shortcuts list --folders
+```
+
+#### Run
+
+Run a shortcut.
+
+```bash
+umac shortcuts run "My Shortcut"
+# or
+umac shortcuts run "Resize Image" -i "photo.jpg" -o "resized.jpg"
+```
+
+#### View
+
+View a shortcut in the Shortcuts app.
+
+```bash
+umac shortcuts view "My Shortcut"
 ```
 
 ## ☑️ TO DO
@@ -573,8 +999,8 @@ umac appearance color --help
 - [Read more](https://github.com/angelespejo/umac/blob/main/docs/todo/v2.md)
 ## ➕ More
 
-- 🍎 [Umac](https://github.com/angelespejo/umac/tree/main/packages/umac)
 - ⚒️ [Utils](https://github.com/angelespejo/umac/tree/main/packages/utils)
+- 🍎 [Umac](https://github.com/angelespejo/umac/tree/main/packages/umac)
 - 🔌 [Plugins](https://github.com/angelespejo/umac/tree/main/packages/plugin)
   - [App](https://github.com/angelespejo/umac/tree/main/packages/plugin/app)
   - [Appearance](https://github.com/angelespejo/umac/tree/main/packages/plugin/appearance)
@@ -582,10 +1008,10 @@ umac appearance color --help
   - [Desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop)
   - [Disk](https://github.com/angelespejo/umac/tree/main/packages/plugin/disk)
   - [Finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder)
-  - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
   - [Messages](https://github.com/angelespejo/umac/tree/main/packages/plugin/messages)
-  - [Notes](https://github.com/angelespejo/umac/tree/main/packages/plugin/notes)
+  - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
   - [Open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open)
+  - [Notes](https://github.com/angelespejo/umac/tree/main/packages/plugin/notes)
   - [Run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run)
   - [Shortcuts](https://github.com/angelespejo/umac/tree/main/packages/plugin/shortcuts)
   - [Spotlight](https://github.com/angelespejo/umac/tree/main/packages/plugin/spotlight)
