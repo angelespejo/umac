@@ -13,7 +13,7 @@
 	},
 	"funding": {
 		"type": "individual",
-		"url": "https://pigeonposse.com/contribute"
+		"url": "https://github.com/sponsors/angelespejo"
 	},
 	"license": "MIT",
 	"author": {
@@ -51,7 +51,7 @@
 		"binarium": "~2.1.2",
 		"eslint": "10.8.0",
 		"tslib": "2.8.1",
-		"tsx": "4.23.4",
+		"tsx": "4.23.5",
 		"typescript": "5.9.3",
 		"unbuild": "3.6.1",
 		"vitest": "4.1.10"
@@ -65,7 +65,7 @@
 	"extra": {
 		"id": "umac",
 		"productName": "umac",
-		"action": "Terminal utilities for macos",
+		"action": "Terminal utilities for macOS",
 		"licenseURL": "https://github.com/angelespejo/umac/blob/main/LICENSE",
 		"changelogURL": "https://github.com/angelespejo/umac/blob/main/packages/umac/CHANGELOG.md",
 		"contributingURL": "https://github.com/pigeonposse/.github/blob/main/CONTRIBUTING.md",

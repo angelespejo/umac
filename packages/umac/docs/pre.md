@@ -1,6 +1,6 @@
 ## 🍎 umac (toolkit)
 
-[Read more]({{const.pkg.repository.url}})
+[Read more]({{const.REPO_URL}})
 
 ## 🗝 Prerequesites
 

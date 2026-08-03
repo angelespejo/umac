@@ -7,11 +7,11 @@
 [![Instagram](https://img.shields.io/badge/Instagram-black?style=for-the-badge&logoColor=white&logo=instagram)](https://www.instagram.com/pigeon.posse/)
 [![Medium](https://img.shields.io/badge/Medium-black?style=for-the-badge&logoColor=white&logo=medium)](https://medium.com/@pigeonposse)
 
-[![BANNER](https://github.com/angelespejo/umac/blob/main/docs/public/banner.png?raw=true)](https://github.com/angelespejo/umac)
+[![BANNER](https://github.com/angelespejo/umac//blob/main/docs/public/banner.png?raw=true)](https://github.com/angelespejo/umac)
 
 [![License](https://img.shields.io/github/license/pigeonposse/umac?style=for-the-badge&color=green&logoColor=white)](/LICENSE)
 [![Version](https://img.shields.io/npm/v/umac?style=for-the-badge&color=blue&label=Version)](https://www.npmjs.com/package/umac)
-{{const.libPkgBadges}}
+
 
 MacOS Cache utils
 
@@ -30,7 +30,7 @@ MacOS Cache utils
 
 ## 🍎 umac (toolkit)
 
-[Read more]({{const.pkg.repository.url}})
+[Read more](https://github.com/angelespejo/umac/)
 
 ## 🗝 Prerequesites
 
@@ -66,8 +66,8 @@ deno add @umac-js/cache
   - [Desktop](https://github.com/angelespejo/umac/tree/main/packages/plugin/desktop)
   - [Disk](https://github.com/angelespejo/umac/tree/main/packages/plugin/disk)
   - [Finder](https://github.com/angelespejo/umac/tree/main/packages/plugin/finder)
-  - [Messages](https://github.com/angelespejo/umac/tree/main/packages/plugin/messages)
   - [Interacting](https://github.com/angelespejo/umac/tree/main/packages/plugin/interacting)
+  - [Messages](https://github.com/angelespejo/umac/tree/main/packages/plugin/messages)
   - [Notes](https://github.com/angelespejo/umac/tree/main/packages/plugin/notes)
   - [Open](https://github.com/angelespejo/umac/tree/main/packages/plugin/open)
   - [Run](https://github.com/angelespejo/umac/tree/main/packages/plugin/run)
@@ -85,14 +85,14 @@ deno add @umac-js/cache
 __umac__ is an open-source project and its development is open to anyone who wants to participate.
 
 [![Issues](https://img.shields.io/badge/Issues-grey?style=for-the-badge)](https://github.com/angelespejo/umac/issues)
-[![Pull requests](https://img.shields.io/badge/Pulls-grey?style=for-the-badge)](https://github.com/angelespejo/umac/pulls)
+[![Pull requests](https://img.shields.io/badge/Pulls-grey?style=for-the-badge)]({{const.REPO_URL}}pulls)
 [![Read more](https://img.shields.io/badge/Read%20more-grey?style=for-the-badge)]({{const.pkg.homepage}})
 
 ## ❤️ Donate
 
 Help us to develop more interesting things.
 
-[![Donate](https://img.shields.io/badge/Donate-grey?style=for-the-badge)](https://pigeonposse.com/contribute)
+[![Donate](https://img.shields.io/badge/Donate-grey?style=for-the-badge)](https://github.com/sponsors/angelespejo)
 
 ## 📜 License
 
