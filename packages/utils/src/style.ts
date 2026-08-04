@@ -1,6 +1,7 @@
 import { styleText } from 'node:util'
 
 import {
+	STYLE_BACKGROUND_COLOR,
 	STYLE_FOREGROUND_COLOR,
 	STYLE_MODIFIER,
 	StyleBackgroundColor,
@@ -11,7 +12,7 @@ import {
 export const color = Object.fromEntries(
 	[
 		...Object.entries( STYLE_FOREGROUND_COLOR ),
-		...Object.entries( STYLE_FOREGROUND_COLOR ),
+		...Object.entries( STYLE_BACKGROUND_COLOR ),
 		...Object.entries( STYLE_MODIFIER ),
 	]
 		.map( ( [ key, value ] ) => [ key, ( v: string ) => styleText( value, v ) ] ),

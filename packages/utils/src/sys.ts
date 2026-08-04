@@ -113,22 +113,18 @@ export const isPath = ( str: string ) => {
 
 	if ( isAbsolute( str ) || /^(\.\/|\.\.\/|[A-Za-z]:\\|\/)/.test( str ) ) {
 
-		if ( isAbsolute( str ) || /^(\.\/|\.\.\/|[A-Za-z]:\\|\/)/.test( str ) ) {
+		if ( /\s(?!\\)/.test( str ) && !/\\\s/.test( str ) )
+			return false
 
-			if ( /\s(?!\\)/.test( str ) && !/\\\s/.test( str ) )
-				return false
+		try {
 
-			try {
+			const normalizedPath = join( str )
+			return normalizedPath !== ''
 
-				const normalizedPath = join( str )
-				return normalizedPath !== ''
+		}
+		catch {
 
-			}
-			catch {
-
-				return false
-
-			}
+			return false
 
 		}
 

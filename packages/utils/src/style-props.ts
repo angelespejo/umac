@@ -1,17 +1,10 @@
-export type StyleForegroundColor
-	= | 'black' | 'blackBright' | 'blue' | 'blueBright' | 'cyan' | 'cyanBright'
-		| 'gray' | 'green' | 'greenBright' | 'grey' | 'magenta' | 'magentaBright'
-		| 'red' | 'redBright' | 'white' | 'whiteBright' | 'yellow' | 'yellowBright'
+import type {
+	InspectColorBackground, InspectColorForeground, InspectColorModifier,
+} from 'node:util'
 
-export type StyleBackgroundColor
-	= | 'bgBlack' | 'bgBlackBright' | 'bgBlue' | 'bgBlueBright' | 'bgCyan'
-		| 'bgCyanBright' | 'bgGray' | 'bgGreen' | 'bgGreenBright' | 'bgGrey'
-		| 'bgMagenta' | 'bgMagentaBright' | 'bgRed' | 'bgRedBright' | 'bgWhite'
-		| 'bgWhiteBright' | 'bgYellow' | 'bgYellowBright'
-
-export type StyleModifier
-	= | 'blink' | 'bold' | 'dim' | 'doubleunderline' | 'framed' | 'hidden'
-		| 'inverse' | 'italic' | 'overlined' | 'reset' | 'strikethrough' | 'underline'
+export type StyleForegroundColor = InspectColorForeground
+export type StyleBackgroundColor = InspectColorBackground
+export type StyleModifier = InspectColorModifier
 
 export const STYLE_FOREGROUND_COLOR = {
 	black         : 'black',
@@ -22,7 +15,8 @@ export const STYLE_FOREGROUND_COLOR = {
 	magenta       : 'magenta',
 	cyan          : 'cyan',
 	white         : 'white',
-	blackBright   : 'blackBright',
+	gray          : 'gray',
+	// blackBright   : 'blackBright',
 	redBright     : 'redBright',
 	greenBright   : 'greenBright',
 	yellowBright  : 'yellowBright',
@@ -30,11 +24,11 @@ export const STYLE_FOREGROUND_COLOR = {
 	magentaBright : 'magentaBright',
 	cyanBright    : 'cyanBright',
 	whiteBright   : 'whiteBright',
-} as const
+} satisfies Record<InspectColorForeground, InspectColorForeground>
 
 export const STYLE_BACKGROUND_COLOR = {
 	bgBlack         : 'bgBlack',
-	bgBlackBright   : 'bgBlackBright',
+	// bgBlackBright   : 'bgBlackBright',
 	bgBlue          : 'bgBlue',
 	bgBlueBright    : 'bgBlueBright',
 	bgCyan          : 'bgCyan',
@@ -42,7 +36,7 @@ export const STYLE_BACKGROUND_COLOR = {
 	bgGray          : 'bgGray',
 	bgGreen         : 'bgGreen',
 	bgGreenBright   : 'bgGreenBright',
-	bgGrey          : 'bgGrey',
+	// bgGrey          : 'bgGrey',
 	bgMagenta       : 'bgMagenta',
 	bgMagentaBright : 'bgMagentaBright',
 	bgRed           : 'bgRed',
@@ -51,19 +45,19 @@ export const STYLE_BACKGROUND_COLOR = {
 	bgWhiteBright   : 'bgWhiteBright',
 	bgYellow        : 'bgYellow',
 	bgYellowBright  : 'bgYellowBright',
-} as const
+} satisfies Record<InspectColorBackground, InspectColorBackground>
 
 export const STYLE_MODIFIER = {
 	blink           : 'blink',
 	bold            : 'bold',
 	dim             : 'dim',
 	doubleunderline : 'doubleunderline',
-	framed          : 'framed',
+	// framed          : 'framed',
 	hidden          : 'hidden',
 	inverse         : 'inverse',
 	italic          : 'italic',
-	overlined       : 'overlined',
+	// overlined       : 'overlined',
 	reset           : 'reset',
 	strikethrough   : 'strikethrough',
 	underline       : 'underline',
-} as const
+} satisfies Record<InspectColorModifier, InspectColorModifier>

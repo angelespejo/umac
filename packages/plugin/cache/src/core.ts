@@ -72,7 +72,7 @@ export class Cache {
 	 */
 	async removeSystemCache() {
 
-		this.#exec( `sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder` )
+		await this.#exec( `sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder` )
 
 	}
 
