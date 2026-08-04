@@ -10,17 +10,20 @@ on:
       - main
   workflow_dispatch:
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 env:
   GITHUB_TOKEN: ${{ github.token }}
   NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+
 permissions:
-  contents: write # to create release (changesets/action)
-  pull-requests: write # to create pull request (changesets/action)
-  issues: write # to post issue comments (changesets/action
-  id-token: write # to use OpenID Connect token for provenance (changesets/action)
-  actions: write # to create workflow dispatches 
+  contents: write       # to create release (changesets/action)
+  pull-requests: write  # to create pull request (changesets/action)
+  issues: write         # to post issue comments (changesets/action
+  id-token: write       # to use OpenID Connect token for provenance (changesets/action)
+  actions: write        # to create workflow dispatches 
 
 ###############################################################################
 # JOBS
@@ -35,11 +38,9 @@ jobs:
       # INIT
       #########################################################################
 
-      - name: ⬇️🛑 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.13.1
       - uses: actions/checkout@v7
       - name: ⬇️🥡🟢 Install node & pnpm
-        uses: pnpm/action-setup@v6
+        uses: pnpm/setup@v1
         with:
           cache: true
       - uses: oven-sh/setup-bun@v2
