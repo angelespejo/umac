@@ -1,5 +1,30 @@
 # umac
 
+## 2.2.3
+
+### Patch Changes
+
+- [`1685660`](https://github.com/angelespejo/umac/commit/1685660bbbf4ed64a9c394ba788c21c19268f463) Thanks [@angelespejo](https://github.com/angelespejo)! - verify version in npm
+
+- Updated dependencies [[`1685660`](https://github.com/angelespejo/umac/commit/1685660bbbf4ed64a9c394ba788c21c19268f463)]:
+  - @umac-js/app@2.2.3
+  - @umac-js/appearance@2.2.3
+  - @umac-js/cache@2.2.3
+  - @umac-js/desktop@2.2.3
+  - @umac-js/disk@2.2.3
+  - @umac-js/finder@2.2.3
+  - @umac-js/interacting@2.2.3
+  - @umac-js/messages@2.2.3
+  - @umac-js/notes@2.2.3
+  - @umac-js/open@2.2.3
+  - @umac-js/run@2.2.3
+  - @umac-js/shortcuts@2.2.3
+  - @umac-js/spotlight@2.2.3
+  - @umac-js/system@2.2.3
+  - @umac-js/terminal@2.2.3
+  - @umac-js/workflow@2.2.3
+  - @umac-js/utils@2.2.3
+
 ## 2.2.2
 
 ### Patch Changes

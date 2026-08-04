@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/terminal",
-	"version": "2.2.2",
+	"version": "2.2.3",
 	"description": "MacOS Terminal utils",
 	"keywords": [
 		"apple",

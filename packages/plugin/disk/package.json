@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/disk",
-	"version": "2.2.2",
+	"version": "2.2.3",
 	"description": "MacOS Disk utils",
 	"keywords": [
 		"cli",

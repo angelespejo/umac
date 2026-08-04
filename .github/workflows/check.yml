@@ -102,7 +102,7 @@ jobs:
           version: pnpm dovenv pkg version --silent
           publish: pnpm dovenv pkg publish --silent
           commit: "chore(release): version packages 🦋 [skip ci]"
-          createGithubReleases: true
+          createGithubReleases: false
         env:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ env.NPM_TOKEN }}

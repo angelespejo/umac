@@ -3,7 +3,7 @@
 	"changelog": [
 		"@changesets/changelog-github",
 		{
-			"repo": "pigeonposse/umac"
+			"repo": "angelespejo/umac"
 		}
 	],
 	"commit": false,

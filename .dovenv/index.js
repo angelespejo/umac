@@ -138,7 +138,7 @@ export default defineConfig(
 
 					const data          = await utils.getPkgsData()
 					const WORKFLOW_FILE = 'check.yml'
-					const GH_ORG        = utils.pkg.extra.githubAccount
+					const GH_ACCOUNT    = utils.pkg.extra.githubAccount
 					const GH_REPO       = utils.pkg.extra.id
 
 					for ( let index = 0; index < data.length; index++ ) {
@@ -150,7 +150,7 @@ export default defineConfig(
 						try {
 
 							await execPromisified(
-								`npm trust github "${packageName}" --json --file "${WORKFLOW_FILE}" --repo "${GH_ORG}/${GH_REPO}" --allow-publish --allow-stage-publish --yes --no-engine-strict`,
+								`npm trust github "${packageName}" --json --file "${WORKFLOW_FILE}" --repo "${GH_ACCOUNT}/${GH_REPO}" --allow-publish --allow-stage-publish --yes --no-engine-strict`,
 							)
 
 							console.log( `✓ Trusted publisher added for ${packageName}` )
