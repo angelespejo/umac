@@ -244,7 +244,7 @@ const cli = new UmacCommand( {
 		else if ( argv.existsCmd( CMD.OPEN_NEW ) ) {
 
 			const target = argv.getCmdValues( CMD.OPEN_NEW ) || []
-			console.log( target )
+			// console.log( target )
 			await notes.openNew( target.length > 0 ? target : undefined )
 			console.log( successStyle( `New note created and brought to focus` ) )
 

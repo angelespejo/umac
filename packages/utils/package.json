@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/utils",
-	"version": "2.2.4",
+	"version": "2.2.5",
 	"description": "Utilities for umac",
 	"keywords": [
 		"cli",

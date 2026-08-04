@@ -1,5 +1,11 @@
 # @umac-js/repo-config
 
+## 2.2.5
+
+### Patch Changes
+
+- Remove console log from plugin
+
 ## 2.2.4
 
 ### Patch Changes

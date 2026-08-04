@@ -1,5 +1,14 @@
 # @umac-js/workflow
 
+## 2.2.5
+
+### Patch Changes
+
+- Remove console log from plugin
+
+- Updated dependencies []:
+  - @umac-js/utils@2.2.5
+
 ## 2.2.4
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/workflow",
-	"version": "2.2.4",
+	"version": "2.2.5",
 	"description": "MacOS Workflow utils",
 	"keywords": [
 		"cli",
