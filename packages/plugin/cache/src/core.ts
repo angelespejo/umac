@@ -1,9 +1,10 @@
 import {
 	exec,
+	formatBytes,
+	getPathsData,
 	joinPath,
 	PATH,
 	promptSelect,
-	readDir,
 	removePathIfExist,
 } from '@umac-js/utils'
 
@@ -40,11 +41,28 @@ export class Cache {
 	 *
 	 * @returns {string} The path of the cache type that was removed.
 	 */
-	async askForRemove() {
+	async askForRemove(): Promise<string> {
 
-		const dir    = PATH.CACHE_DIR
-		const paths  = ( await readDir( dir ) ).map( v => v.name )
-		const select = await promptSelect( 'Select a cache type to remove:', [ 'All', ...paths ] )
+		const dir       = PATH.CACHE_DIR
+		const pathsData = await getPathsData( dir )
+
+		// Calculate total size for 'All'
+		const totalSize = pathsData.reduce( ( acc, item ) => acc + item.size, 0 )
+
+		// Sort paths by size in descending order (largest first)
+		const sortedPaths = pathsData.sort( ( a, b ) => b.size - a.size )
+
+		const paths = sortedPaths.map( v => ( {
+			value : v.name,
+			desc  : `(${formatBytes( v.size )})`,
+		} ) )
+
+		const allOption = {
+			value : 'All',
+			desc  : `(${formatBytes( totalSize )})`,
+		}
+
+		const select = await promptSelect( 'Select a cache type to remove:', [ allOption, ...paths ] )
 		const path   = select === 'All' ? dir : joinPath( dir, select )
 
 		await removePathIfExist( path )

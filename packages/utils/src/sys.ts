@@ -1,8 +1,7 @@
-// import {
-// 	globby,
-// 	globbyStream,
-// } from 'globby'
-import { createWriteStream } from 'node:fs'
+
+import {
+	createWriteStream, type Dirent,
+} from 'node:fs'
 import {
 	stat,
 	writeFile as nodeWriteFile,
@@ -59,23 +58,6 @@ export {
 }
 
 export const writeFile = nodeWriteFile
-
-// /**
-//  * Find files and directories using glob patterns.
-//  * @example const paths = await getPaths(['*', '!src']);
-//  * console.log(paths);
-//  * //=> ['pigeon', 'rainbow']
-//  */
-// export const getPaths = globby
-
-// /**
-//  * Find files and directories using glob patterns.
-//  * @example
-//  * for await (const path of getPathsStream('*.tmp')) {
-//  *    console.log(paths);
-//  * }
-//  */
-// export const getPathsStream = globbyStream
 
 /**
  * Checks if two file paths are equal after normalization.
@@ -211,6 +193,105 @@ export const getCurrentDir = ( path = import.meta.url ) =>
 export function joinPath( ...paths: string[] ): string {
 
 	return join( ...paths )
+
+}
+
+/**
+ * Calculates the total size of a file or directory in Bytes.
+ * Recursively traverses subdirectories to aggregate the cumulative size.
+ *
+ * @param   {string}          path - The target file or directory path.
+ * @returns {Promise<number>}      The total size in bytes, or 0 if an error occurs.
+ */
+export const getPathSizeBytes = async ( path: string ): Promise<number> => {
+
+	try {
+
+		const stats = await stat( path )
+		if ( !stats.isDirectory() ) return stats.size
+
+		const entries = await readdir( path, { withFileTypes: true } )
+		const sizes   = await Promise.all( entries.map( entry =>
+			getPathSizeBytes( joinPath( path, entry.name ) ),
+		) )
+
+		return sizes.reduce( ( acc, curr ) => acc + curr, 0 )
+
+	}
+	catch {
+
+		return 0
+
+	}
+
+}
+
+/**
+ * Options for path retrieval.
+ */
+type GetPathsOptions = {
+	/**
+	 * Whether to ignore system-generated macOS files (e.g., .DS_Store, ._* files).
+	 *
+	 * @default true
+	 */
+	ignoreMacOsFiles? : boolean
+}
+
+/**
+ * Reads a directory and returns its filtered file entries.
+ *
+ * @param   {string}           dir     - The directory path to read.
+ * @param   {GetPathsOptions}  options - Configuration options for path retrieval.
+ * @returns {Dirent<string>[]}         A promise that resolves to an array of filtered file entries.
+ */
+export const getPaths = async ( dir: string, options: GetPathsOptions = {} ) => {
+
+	const { ignoreMacOsFiles = true } = options
+	const macOsFilesRegex             = /^(\.DS_Store|\.Localized|\._.*|\.Spotlight-V100|\.Trashes|\.fseventsd)$/i
+
+	const files = await readDir( dir )
+
+	if ( ignoreMacOsFiles )
+		return files.filter( file => !macOsFilesRegex.test( file.name ) )
+
+	return files
+
+}
+
+/**
+ * Extended file entry containing path details and calculated size.
+ */
+export type PathData = Dirent<string> & {
+	/** The absolute or relative joined path to the file/directory. */
+	fullPath : string
+	/** Total size in bytes. */
+	size     : number
+}
+
+/**
+ * Reads a directory and returns entries enriched with their full path and calculated size in bytes.
+ *
+ * @param   {string}              dir     - The directory path to read.
+ * @param   {GetPathsOptions}     options - Configuration options for path retrieval.
+ * @returns {Promise<PathData[]>}         A promise that resolves to an array of file entries with size and fullPath metadata.
+ */
+export const getPathsData = async ( dir: string, options: GetPathsOptions = {} ): Promise<PathData[]> => {
+
+	const files = await getPaths( dir, options )
+	const data  = files.map( async file => {
+
+		const fullPath = joinPath( file.parentPath, file.name )
+		const bytes    = await getPathSizeBytes( fullPath )
+
+		return {
+			...file,
+			fullPath,
+			size : bytes,
+		} as unknown as PathData
+
+	} )
+	return await Promise.all( data )
 
 }
 

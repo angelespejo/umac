@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/open",
-	"version": "2.2.5",
+	"version": "2.2.6",
 	"description": "Open a file, directory or URL with a specific application",
 	"keywords": [
 		"cli",

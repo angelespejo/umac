@@ -4,8 +4,8 @@ import {
 	promptSelect,
 	ensureDir,
 	copyDir,
-	readDir,
 	joinPath,
+	getPaths,
 } from '@umac-js/utils'
 
 export const WORKFLOW_CMD = {
@@ -41,7 +41,8 @@ export class Workflow {
 
 	async list() {
 
-		const files = ( await readDir( this.#servicesDir ) ).map( file => joinPath( file.parentPath, file.name ) )
+		const files = ( await getPaths( this.#servicesDir ) )
+			.map( file => joinPath( file.parentPath, file.name ) )
 		return files
 
 	}
@@ -68,7 +69,7 @@ export class Workflow {
 
 	async open() {
 
-		const services = ( await readDir( this.#servicesDir ) ).map( file => file.name )
+		const services = ( await getPaths( this.#servicesDir ) ).map( file => file.name )
 
 		const selectedService = await promptSelect( 'Select workflow to open:', services )
 

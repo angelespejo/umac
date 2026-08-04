@@ -1,5 +1,30 @@
 # umac
 
+## 2.2.6
+
+### Patch Changes
+
+- Fix issues, add functions to utils plugin
+
+- Updated dependencies []:
+  - @umac-js/workflow@2.2.6
+  - @umac-js/cache@2.2.6
+  - @umac-js/utils@2.2.6
+  - @umac-js/app@2.2.6
+  - @umac-js/appearance@2.2.6
+  - @umac-js/desktop@2.2.6
+  - @umac-js/disk@2.2.6
+  - @umac-js/finder@2.2.6
+  - @umac-js/interacting@2.2.6
+  - @umac-js/messages@2.2.6
+  - @umac-js/notes@2.2.6
+  - @umac-js/open@2.2.6
+  - @umac-js/run@2.2.6
+  - @umac-js/shortcuts@2.2.6
+  - @umac-js/spotlight@2.2.6
+  - @umac-js/system@2.2.6
+  - @umac-js/terminal@2.2.6
+
 ## 2.2.5
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/notes",
-	"version": "2.2.5",
+	"version": "2.2.6",
 	"description": "MacOS Notes utils",
 	"keywords": [
 		"cli",

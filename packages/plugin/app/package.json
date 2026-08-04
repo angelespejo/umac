@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/app",
-	"version": "2.2.5",
+	"version": "2.2.6",
 	"description": "MacOS App utils",
 	"keywords": [
 		"apps",

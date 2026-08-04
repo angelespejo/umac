@@ -116,3 +116,65 @@ export const getInputString = async ( input: string ) => {
 	return input
 
 }
+
+/**
+ * Formatting options for byte conversion.
+ */
+export type FormatBytesOptions = {
+	/**
+	 * Number of decimal places to include.
+	 *
+	 * @default 2
+	 */
+	decimals? : number
+	/**
+	 * Whether to use binary units (1024 / KiB, MiB) or decimal units (1000 / KB, MB).
+	 *
+	 * @default true
+	 */
+	binary?   : boolean
+}
+
+/**
+ * Converts a byte number into a human-readable size string (e.g., "1.5 MB", "2.34 GB").
+ *
+ * @param   {number}             bytes   - The number of bytes to format.
+ * @param   {FormatBytesOptions} options - Formatting options for precision and binary standard.
+ * @returns {string}                     Human-readable formatted string.
+ */
+export const formatBytes = ( bytes: number, options: FormatBytesOptions = {} ): string => {
+
+	const {
+		decimals = 2, binary = true,
+	} = options
+
+	if ( bytes === 0 || isNaN( bytes ) ) return '0 B'
+
+	const k     = binary ? 1024 : 1000
+	const dm    = decimals < 0 ? 0 : decimals
+	const units = binary
+		? [
+			'B',
+			'KiB',
+			'MiB',
+			'GiB',
+			'TiB',
+			'PiB',
+		]
+		: [
+			'B',
+			'KB',
+			'MB',
+			'GB',
+			'TB',
+			'PB',
+		]
+
+	const i     = Math.floor( Math.log( Math.abs( bytes ) ) / Math.log( k ) )
+	const index = Math.min( i, units.length - 1 )
+
+	const value = ( bytes / Math.pow( k, index ) ).toFixed( dm )
+
+	return `${parseFloat( value )} ${units[index]}`
+
+}

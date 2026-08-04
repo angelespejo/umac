@@ -1,5 +1,14 @@
 # @umac-js/open
 
+## 2.2.6
+
+### Patch Changes
+
+- Fix issues, add functions to utils plugin
+
+- Updated dependencies []:
+  - @umac-js/utils@2.2.6
+
 ## 2.2.5
 
 ### Patch Changes

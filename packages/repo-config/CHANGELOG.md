@@ -1,5 +1,11 @@
 # @umac-js/repo-config
 
+## 2.2.6
+
+### Patch Changes
+
+- Fix issues, add functions to utils plugin
+
 ## 2.2.5
 
 ### Patch Changes

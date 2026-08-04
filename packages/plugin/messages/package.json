@@ -1,6 +1,6 @@
 {
 	"name": "@umac-js/messages",
-	"version": "2.2.5",
+	"version": "2.2.6",
 	"description": "MacOS Messages.app utils",
 	"keywords": [
 		"cli",
