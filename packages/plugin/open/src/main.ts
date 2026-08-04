@@ -1,6 +1,8 @@
 import {
 	bold,
 	const2Flag,
+	flag2Const,
+	isDirectory,
 	successStyle,
 	UmacCommand,
 } from '@umac-js/utils'
@@ -12,11 +14,10 @@ import {
 	version,
 } from './const'
 import {
-	APP_PATH,
-	Open,
+	Open, APP_PATH,
 } from './core'
 
-const browserOpts = Object.keys( APP_PATH ).map( key => const2Flag( key ) )
+const browserOpts = [ ...Object.keys( APP_PATH ).map( key => const2Flag( key ) ), 'browser-default' ]
 
 const cli = new UmacCommand( {
 	description,
@@ -28,7 +29,7 @@ const cli = new UmacCommand( {
 			{
 				value      : 'path',
 				posicional : true,
-				desc       : 'The path to open. Defualts to the current directory',
+				desc       : 'The path to open. Defaults to the current directory',
 			},
 		],
 		flagsDesc : `if no flags are provided, the default path will be opened in ${bold( 'Finder' )}`,
@@ -49,20 +50,38 @@ const cli = new UmacCommand( {
 				value : `$0 ./package.json --text-edit`,
 				desc  : 'Open the file in TextEdit App',
 			},
-
 		],
 	},
 	fn : async ( {
 		argv, process,
 	} ) => {
 
-		const path = argv.getPositionalAt( 0 )
-		const ID   = browserOpts.filter( key => argv.existsFlag( key ) )?.[0]
+		const path           = argv.getPositionalAt( 0 ) || process.cwd()
+		const idFlag         = browserOpts.find( key => argv.existsFlag( key ) )
+		const ID             = idFlag ? flag2Const( idFlag ) : undefined
+		const browserDefault =  ID === 'BROWSER_DEFAULT'
 
 		const open = new Open()
-		await open.run( path, ID )
 
-		console.log( successStyle( `Opened "${path || process.cwd()}" in ${bold( ID ? ID : ( path?.startsWith( 'http' ) ? 'Default Browser' : 'Finder' ) )}` ) )
+		const appOption = ID && browserDefault
+			? { type: 'browser-default' as const }
+			: ID
+				? {
+					value : ID,
+					type  : 'app' as const,
+				}
+				: undefined
+
+		await open.run( path, appOption )
+		const isDir = await isDirectory( path )
+
+		const targetName = ID && browserDefault
+			? 'Browser default'
+			: ID
+				? ( isDir ? 'Finder' : 'Xcode' )
+				: 'Finder'
+
+		console.log( successStyle( `Opened "${path}" in ${bold( targetName )}` ) )
 
 	},
 } )

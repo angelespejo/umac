@@ -1,9 +1,9 @@
 import {
 	exec,
-	flag2Const,
 	process,
 	existsPath,
 	getStringType,
+
 } from '@umac-js/utils'
 
 export const APP_PATH = {
@@ -20,23 +20,82 @@ export const APP_PATH = {
 	PREVIEW   : '/System/Applications/Preview.app',
 } as const
 
+export type OpenAppOption = string | {
+	value : string
+	type  : 'app' | 'bundle'
+} | {
+	type : 'browser-default'
+}
 export class Open {
 
-	PATHS = APP_PATH
+	async #exec( cmd:string ) {
 
-	async run( filePath = process.cwd(), app?: string ): Promise<void> {
+		const {
+			stderr, stdout,
+		} = await exec( cmd )
+		if ( stderr ) throw new Error( stderr.toString() )
+		return stdout.toString()
+
+	}
+
+	/**
+	 * Retrieves the Bundle Identifier of the default web browser configured in macOS
+	 * by querying LaunchServices defaults.
+	 *
+	 * @returns {Promise<string>} A promise that resolves to the command execution result containing the Bundle ID (e.g., "com.brave.browser").
+	 */
+	async #fetchDefaultBrowserBundleId(): Promise<string> {
+
+		const res = await this.#exec(
+			`defaults read com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers 2>/dev/null | awk -v RS="}" '/LSHandlerURLScheme = http/ {print $0}' | grep "LSHandlerRoleAll =" | head -n1 | cut -d '"' -f 2`,
+		)
+		return res.trim()
+
+	}
+
+	/**
+	 * Opens a file or URL with the specified application or default macOS handler.
+	 *
+	 * @param   {string}        filePath - The target file path or URL to open.
+	 * @param   {OpenAppOption} [app]    - Target application name/path, Bundle ID object `{ value, type }`, or string.
+	 * @returns {Promise<void>}
+	 */
+	async run( filePath = process.cwd(), app?: OpenAppOption ): Promise<void> {
 
 		const type = getStringType( filePath )
 
 		if ( type !== 'url' && !( await existsPath( filePath ) ) )
 			throw new Error( `The provided path does not exist: ${filePath}` )
 
-		app           = app ? flag2Const( app ) : undefined
-		const appPath = app && app in APP_PATH ? APP_PATH[app as keyof typeof APP_PATH] : app || undefined
+		let command: string
 
-		const command = appPath
-			? `open -a "${appPath}" "${filePath}"`
-			: `open "${filePath}"`
+		if ( app ) {
+
+			if ( typeof app === 'object' ) {
+
+				if ( app.type === 'browser-default' ) {
+
+					const id = await this.#fetchDefaultBrowserBundleId()
+					command  = `open -b "${id}" "${filePath}"`
+
+				}
+				else
+					command = `open ${app.type === 'bundle' ? '-b' : '-a'} "${app.value}" "${filePath}"`
+
+			}
+			else {
+
+				const appPath = app in APP_PATH ? APP_PATH[app as keyof typeof APP_PATH] : app || undefined
+				command       = appPath ? `open -a "${appPath}" "${filePath}"` : `open ${filePath}`
+
+			}
+
+		}
+		else {
+
+			command = `open "${filePath}"`
+
+		}
 
 		try {
 

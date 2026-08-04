@@ -1,5 +1,30 @@
 # umac
 
+## 2.2.7
+
+### Patch Changes
+
+- Add browser default to open plugin
+
+- Updated dependencies []:
+  - @umac-js/open@2.2.7
+  - @umac-js/app@2.2.7
+  - @umac-js/appearance@2.2.7
+  - @umac-js/cache@2.2.7
+  - @umac-js/desktop@2.2.7
+  - @umac-js/disk@2.2.7
+  - @umac-js/finder@2.2.7
+  - @umac-js/interacting@2.2.7
+  - @umac-js/messages@2.2.7
+  - @umac-js/notes@2.2.7
+  - @umac-js/run@2.2.7
+  - @umac-js/shortcuts@2.2.7
+  - @umac-js/spotlight@2.2.7
+  - @umac-js/system@2.2.7
+  - @umac-js/terminal@2.2.7
+  - @umac-js/workflow@2.2.7
+  - @umac-js/utils@2.2.7
+
 ## 2.2.6
 
 ### Patch Changes

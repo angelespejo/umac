@@ -1,5 +1,14 @@
 # @umac-js/notes
 
+## 2.2.7
+
+### Patch Changes
+
+- Add browser default to open plugin
+
+- Updated dependencies []:
+  - @umac-js/utils@2.2.7
+
 ## 2.2.6
 
 ### Patch Changes

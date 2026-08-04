@@ -1,5 +1,11 @@
 # @umac-js/repo-config
 
+## 2.2.7
+
+### Patch Changes
+
+- Add browser default to open plugin
+
 ## 2.2.6
 
 ### Patch Changes
