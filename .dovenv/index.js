@@ -15,6 +15,8 @@ import {
 	Predocs,
 	templates,
 } from '@dovenv/theme-pigeonposse'
+import { exec as execCb } from 'node:child_process'
+import { promisify }      from 'node:util'
 
 import core from './const.js'
 
@@ -24,7 +26,8 @@ import core from './const.js'
  * @param   {...string}       v - The path segments to the target file (e.g., 'folder', 'subfolder', 'file.txt').
  * @returns {Promise<string>}   A promise that resolves to the UTF-8 content of the file.
  */
-const readPath = ( ...v ) => readFile( joinPath( ...v ), 'utf-8' )
+const readPath        = ( ...v ) => readFile( joinPath( ...v ), 'utf-8' )
+const execPromisified = promisify( execCb )
 
 export default defineConfig(
 	pigeonposseMonorepoTheme( {
@@ -127,109 +130,51 @@ export default defineConfig(
 
 		},
 	} ),
-	// {
-	// 	custom : {
-	// 		predocs : {
+	{
+		custom : {
+			trust : {
+				desc : 'Set trust to npm repositories',
+				fn   : async ( { utils } ) => {
 
-	// 			desc : 'Predocs function',
-	// 			fn   : async ( { utils } ) => {
+					const data          = await utils.getPkgsData()
+					const WORKFLOW_FILE = 'check.yml'
+					const GH_ORG        = utils.pkg.extra.githubAccount
+					const GH_REPO       = utils.pkg.extra.id
 
-	// 				const wsDir   = utils.wsDir
-	// 				const wsPkg   = utils.pkg
-	// 				const repoURL = wsPkg.repository.url
+					for ( let index = 0; index < data.length; index++ ) {
 
-	// 				if ( !repoURL ) throw new Error( `Repository url (wsPkg.repository.url) does not eists in ${wsDir}` )
+						const pkg = data[index]
+						if ( pkg.content.private === 'true' || pkg.content.private === true ) continue
+						const packageName =  pkg.content.name
 
-	// 				await removeDirIfExist( joinPath( wsDir, 'docs', 'guide' ) )
+						try {
 
-	// 				const docs = new Predocs( {
-	// 					utils,
-	// 					opts : { emoji: { umac: '🍎' } },
-	// 				} )
+							await execPromisified(
+								`npm trust github "${packageName}" --json --file "${WORKFLOW_FILE}" --repo "${GH_ORG}/${GH_REPO}" --allow-publish --allow-stage-publish --yes --no-engine-strict`,
+							)
 
-	// 				const docsInfo = await docs.getMarkdownInfo()
-	// 				docsInfo.more  = docsInfo.more.replaceAll( 'guide', 'packages' )
-	// 				const temp     = new templates.Templates( { utils } )
+							console.log( `✓ Trusted publisher added for ${packageName}` )
 
-	// 				const pkgs = await utils.getPkgPaths()
+						}
+						catch ( error ) {
 
-	// 				for ( const pkg of pkgs ) {
+							if ( error.summary?.includes( '409 Conflict' ) || error.stderr?.includes( '409 Conflict' ) || error.stdout?.includes( '409 Conflict' ) ) {
 
-	// 					let content = '',
-	// 						/** @type {import('@dovenv/core/utils').PackageJSON} */
-	// 						data        = await getObjectFromFile( pkg )
+								console.log( `ℹ Trusted publisher already exists for ${packageName} (skipped)` )
 
-	// 					const isWs      = data.workspaces ? true : false
-	// 					const isPrivate = data.private === true || data.private === 'true' ? true : false
-	// 					const pkgDir    = pkg.replace( 'package.json', '' )
-	// 					const readmeDir = joinPath( pkgDir, 'README.md' )
-	// 					const isCore    = data.name === 'umac'
-	// 					const directory = isWs ? undefined : relativePath( wsDir, pkgDir )
-	// 					const homepage  = isWs ? repoURL : joinUrl( repoURL, 'tree/main', directory )
-	// 					if ( !data.files && !isPrivate ) data.files = [ 'dist' ]
-	// 					data = {
-	// 						...data,
-	// 						homepage,
-	// 						bugs       : wsPkg.bugs,
-	// 						repository : {
-	// 							type : 'git',
-	// 							url  : isWs ? repoURL : joinUrl( repoURL, 'tree/main' ),
-	// 							directory,
-	// 						},
-	// 						funding       : wsPkg.funding,
-	// 						license       : wsPkg.license,
-	// 						author        : wsPkg.author,
-	// 						publishConfig : isPrivate
-	// 							? undefined
-	// 							: {
-	// 								access   : 'public',
-	// 								registry : 'https://registry.npmjs.org/',
-	// 							},
-	// 					}
-	// 					await writeFileContent( pkg, object2string( data ) )
+							}
+							else {
 
-	// 					if ( isWs || isCore ) content += ( await readPath( utils.config.const.coreDir, 'docs/index.md' ) )
-	// 					content += docsInfo.more
+								throw error
 
-	// 					await temp.get( {
-	// 						// @see https://github.com/pigeonposse/dovenv/blob/main/packages/theme/pigeonposse/src/docs/data/templates.ts
-	// 						input   : docs.template.readmePkg,
-	// 						output  : readmeDir,
-	// 						partial : {
-	// 							footer       : { input: docs.partial.footer },
-	// 							content      : { input: content },
-	// 							precontent   : { input: await readPath( utils.config.const.coreDir, isWs ? 'docs/ws.md' : 'docs/pre.md' ) },
-	// 							installation : { input: docs.partial.installation },
-	// 						},
-	// 						const : {
-	// 							title        : isWs ? data.extra.productName : data.name,
-	// 							libPkg       : isWs ? utils.config.const.corePkg : data,
-	// 							desc         : data.description,
-	// 							info         : docsInfo,
-	// 							contributors : '',
-	// 							banner       : `[![BANNER]({{const.REPO_URL}}/blob/main/docs/public/banner.png?raw=true)]({{const.pkg.homepage}})`,
-	// 							libPkgBadges : '',
-	// 						},
-	// 						hook : {
-	// 							afterPartials : async data => {
+							}
 
-	// 								data.const.toc = await geMDTocString( {
-	// 									input           : data.content,
-	// 									title           : 'Table of contents',
-	// 									removeH1        : true,
-	// 									maxHeadingLevel : 4,
-	// 								} )
+						}
 
-	// 								return data
+					}
 
-	// 							},
-	// 						},
-	// 					} )
-
-	// 				}
-
-	// 			},
-	// 		},
-	// 	},
-	// },
+				},
+			},
+		},
+	},
 )

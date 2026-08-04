@@ -52,7 +52,7 @@
 		"dev": "tsx src/bin.ts"
 	},
 	"dependencies": {
-		"@clippium/updater": "~1.0.4",
+		"@clippium/updater": "~1.0.5",
 		"@umac-js/app": "workspace:*",
 		"@umac-js/appearance": "workspace:*",
 		"@umac-js/cache": "workspace:*",
